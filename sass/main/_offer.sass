@@ -1,0 +1,63 @@
+.offer 
+
+  // Нижний ряд 
+  &-row 
+    display: flex
+    justify-content: space-between
+    &.c-4
+      .offer-item 
+        width: calc(25% - 24px)
+    &.c-3
+      .offer-item 
+        width: calc(33% - 28px)
+    &.c-2
+      .offer-item 
+        width: calc(50% - 33px)
+    &.c-1
+      .offer-item 
+        width: 100%
+  &-item 
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    cursor: pointer
+    border-radius: 16px 
+    background: linear-gradient(94.67deg, #FAFAFB 0%, #FAFAFB 100%)
+    padding: 24px 12px
+    transition: 0.2s
+
+    &__img 
+      position: relative
+      margin-right: 10px
+      height: 32px
+      width: 32px
+      img 
+        opacity: 1
+      .img-hover 
+        position: absolute
+        top: 0 
+        left: 0
+        opacity: 0 !important
+        transform-origin: center
+        transform: scale(1.1)
+
+    &__text 
+      font-weight: 500
+      font-size: 16px
+      line-height: 24px
+
+    
+
+@media ( min-width: 992px )
+  .offer
+    &-item:hover 
+      background: linear-gradient(94.67deg, #6FD167 0%, #1DB610 100%)
+      transition: 0.2s
+      img 
+        opacity: 0
+      .img-hover
+        // transition: 0.2s
+
+        opacity: 1 !important
+      .offer-item__text 
+        color: #fff

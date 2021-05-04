@@ -1,0 +1,65 @@
+* 
+  outline: none  !important
+  margin: 0
+  padding: 0
+  color: $text
+  box-sizing: border-box
+  outline: 0 !important
+  outline-offset: 0 !important
+  transition: 0 !important
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  opacity: 1
+  font-family: 'Roboto', sans-serif
+  font-weight: 400
+
+
+
+@media screen and ( min-width: 768px  )
+  *
+    scrollbar-color: $primary #F6F7FA
+    scrollbar-width: thin 
+  ::-webkit-scrollbar 
+    width: 4px 
+    height: 4px 
+    background-color: #F6F7FA
+  ::-webkit-scrollbar-thumb 
+    background-color: $primary
+    border-radius: 10px
+
+
+.wrap 
+  width: 1220px
+  margin: 0 auto  
+
+
+.btn 
+  padding: 18px 24px
+  display: block
+  background-color: $primary
+  border-radius: 4px
+  transition: 0.2s
+  border: 1px solid $primary
+
+.section 
+  padding-top: 90px
+  &-title 
+    +bold
+    font-size: 40px
+    line-height: 56px
+    margin-bottom: 30px
+    &.title-img-left 
+      img 
+        margin-right: 15px
+    &.title-img-right
+      img 
+        margin-left: 15px
+
+@media ( min-width: 992px  )
+  .btn 
+    &:hover 
+      background-color: #FFE436
+      transition: 0.2s
+    &:focus
+      border: 1px solid #FF8E00
+      transition: 0.2s
+
