@@ -1,24 +1,31 @@
+// Шаблоны для динамической вставки 
+const templates = (document.querySelector('templates')) ? document.querySelector('templates') : document.body
+
 // Слейдер на главной странице
 const heroSlider = new Swiper('#heroSlider', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
   speed: 400,
+  allowTouchMove: false,
+  autoplay: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
 
-  // If we need pagination
+  },
+
   pagination: {
-    el: '.swiper-pagination',
-    // type: 'custom',
-    // renderCustom: function (swiper, current, total) {
+    el: '.hero-pagination',
+    type: 'bullets',
+    clickable: true,
+    bulletClass: 'pagination-item',
+    bulletActiveClass: 'current',
+    renderBullet: function (index, className) {
+      let item = templates.querySelector('#js-pagination')
 
-    //   let html = ''
-
-    //   for (let i = 0; i < total; i++){
-    //     html+= '<div></div>'
-    //   }
-
-    //   return html
-    // }
+      return item.innerHTML
+    }
   },
 
   // Navigation arrows
@@ -26,27 +33,47 @@ const heroSlider = new Swiper('#heroSlider', {
     nextEl: '.hero-slider__arrow.next',
     prevEl: '.hero-slider__arrow.prev',
   },
+  on: {
+    init: function () {
+      let container = document.querySelector('#heroSlider')
+
+      let fraction = container.querySelector('.hero-slider__fraction')
+      if (fraction)
+        fraction.textContent = '1/' + container.getAttribute('data-slides-count')
+    },
+  },
+
 
 
 });
+
+
+
+heroSlider.on('activeIndexChange', function () {
+  let fraction = heroSlider.el.querySelector('.hero-slider__fraction')
+  if (fraction)
+    fraction.textContent = (heroSlider.realIndex + 1) + '/' + heroSlider.el.getAttribute('data-slides-count')
+});
+
 
 // Слайдер в модальном окне для информации о личном кабинете родителя 
 const modalProfileSlider = new Swiper('#modalProfileSlider', {
   speed: 100,
   direction: 'horizontal',
   slidesPerView: 1,
+  autoHeight: true,
   navigation: {
     nextEl: '.modal-profile__arrow.next',
     prevEl: '.modal-profile__arrow.prev',
   },
   spaceBetween: 10,
   effect: 'fade',
-  init: false,
+  // init: false,
 
 });
 
 // Слайдер личный кабинет родителя на главной странице 
-let profileSlideOffset = (window.innerWidth - document.querySelector('.wrap').clientWidth) / 2
+let profileSlideOffset = (window.innerWidth - document.querySelector('#wrap').clientWidth) / 2
 const profileSlider = new Swiper('#profileSlider', {
   speed: 400,
   direction: 'horizontal',
@@ -60,6 +87,8 @@ const profileSlider = new Swiper('#profileSlider', {
   },
 
 });
+
+
 profileSlider.slides.forEach(function (slide) {
   slide.addEventListener('click', function (e) {
     let modalProfile = document.querySelector('.modal-profile')
@@ -72,6 +101,7 @@ profileSlider.slides.forEach(function (slide) {
     }
   })
 })
+
 
 
 

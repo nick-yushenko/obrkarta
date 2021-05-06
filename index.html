@@ -8,6 +8,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
+  <!-- Swiper подключать лучше внешней ссылкой (скорость загрзуки выше), подключается до основных стилей  -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.min.css">
 
@@ -16,7 +17,26 @@
 </head>
 
 <body>
+  <!-- 
+    TEMPLATES. 
+    Используется для динамический вставки на странице.
+    Рекомендуется вставлять только на тех страницах, где это действительно необходимо
+    Этот блок должен быть всегда в самом начале страницы. 
+  -->
+  <div class="templates">
+    <div id="js-pagination" style="display: none;">
 
+      <svg class="pagination-item" id="sdf" width="12" height="12">
+        <circle class="circle-bg" stroke="#10002B" stroke-width="1" cx="6" cy="6" r="5" fill="transparent">
+        </circle>
+        <circle class="circle" stroke="#10002B" stroke-width="1" cx="6" cy="6" r="5" fill="transparent">
+        </circle>
+
+      </svg>
+    </div>
+
+    <div id="wrap" class="wrap"></div>
+  </div>
   <div class="modal modal-profile ">
     <div class="modal-bg"></div>
 
@@ -24,7 +44,6 @@
       <div class="modal-close">
         <img src="img/icons/close-icon.svg" alt="">
       </div>
-      <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <div class="swiper-slide modal-profile-slide">
           <h4 class="modal-profile-slide__title">Личный кабинет родителя на сайте и в мобильном приложении</h4>
@@ -36,7 +55,10 @@
             </p>
           </div>
 
-          <img src="img/profile/modal-profile-1.png" alt="" class="modal-profile-slide__img">
+          <div class="modal-profile-slide__img">
+            <img src="img/profile/modal-profile-1.png" alt="">
+            <img src="img/profile/modal-profile-1-mb.png" alt="" class="mb">
+          </div>
         </div>
         <div class="swiper-slide modal-profile-slide">
           <h4 class="modal-profile-slide__title">Онлайн-пополнение Обркарты и Транспортной карты без комиссии</h4>
@@ -48,7 +70,10 @@
             </p>
           </div>
 
-          <img src="img/profile/modal-profile-2.png" alt="" class="modal-profile-slide__img">
+          <div class="modal-profile-slide__img">
+            <img src="img/profile/modal-profile-2.png" alt="">
+            <img src="img/profile/modal-profile-2-mb.png" alt="" class="mb">
+          </div>
         </div>
         <div class="swiper-slide modal-profile-slide">
           <h4 class="modal-profile-slide__title">Электронный дневник и посещаемость</h4>
@@ -60,7 +85,10 @@
             </p>
           </div>
 
-          <img src="img/profile/modal-profile-3.png" alt="" class="modal-profile-slide__img">
+          <div class="modal-profile-slide__img">
+            <img src="img/profile/modal-profile-3.png" alt="">
+            <img src="img/profile/modal-profile-3-mb.png" alt="" class="mb">
+          </div>
         </div>
         <div class="swiper-slide modal-profile-slide">
           <h4 class="modal-profile-slide__title">Настройка питания </h4>
@@ -72,7 +100,10 @@
             </p>
           </div>
 
-          <img src="img/profile/modal-profile-4.png" alt="" class="modal-profile-slide__img">
+          <div class="modal-profile-slide__img">
+            <img src="img/profile/modal-profile-4.png" alt="">
+            <img src="img/profile/modal-profile-4-mb.png" alt="" class="mb">
+          </div>
         </div>
         <div class="swiper-slide modal-profile-slide">
           <h4 class="modal-profile-slide__title">Предзаказ обедов в школьной столовой</h4>
@@ -83,7 +114,10 @@
             </p>
           </div>
 
-          <img src="img/profile/modal-profile-5.png" alt="" class="modal-profile-slide__img">
+          <div class="modal-profile-slide__img">
+            <img src="img/profile/modal-profile-5.png" alt="">
+            <img src="img/profile/modal-profile-5-mb.png" alt="" class="mb">
+          </div>
         </div>
         <div class="swiper-slide modal-profile-slide">
           <h4 class="modal-profile-slide__title">Контроль расходов по карте</h4>
@@ -95,7 +129,10 @@
             </p>
           </div>
 
-          <img src="img/profile/modal-profile-6.png" alt="" class="modal-profile-slide__img">
+          <div class="modal-profile-slide__img">
+            <img src="img/profile/modal-profile-6.png" alt="">
+            <img src="img/profile/modal-profile-6-mb.png" alt="" class="mb">
+          </div>
         </div>
         <div class="swiper-slide modal-profile-slide">
           <h4 class="modal-profile-slide__title">Электронная библиотека</h4>
@@ -107,7 +144,10 @@
             </p>
           </div>
 
-          <img src="img/profile/modal-profile-7.png" alt="" class="modal-profile-slide__img">
+          <div class="modal-profile-slide__img">
+            <img src="img/profile/modal-profile-7.png" alt="">
+            <img src="img/profile/modal-profile-7-mb.png" alt="" class="mb">
+          </div>
         </div>
         <div class="swiper-slide modal-profile-slide">
           <h4 class="modal-profile-slide__title">PUSH-уведомления</h4>
@@ -119,7 +159,10 @@
             </p>
           </div>
 
-          <img src="img/profile/modal-profile-8.png" alt="" class="modal-profile-slide__img">
+          <div class="modal-profile-slide__img">
+            <img src="img/profile/modal-profile-8.png" alt="">
+            <img src="img/profile/modal-profile-8-mb.png" alt="" class="mb">
+          </div>
         </div>
       </div>
 
@@ -137,7 +180,9 @@
   </div>
   <main class="main">
     <section class="hero">
-      <div class="swiper-container hero-slider" id="heroSlider">
+
+      <!--data-slides-count - число слайдов -->
+      <div class="swiper-container hero-slider" id="heroSlider" data-slides-count="4">
 
         <div class="swiper-wrapper">
           <!-- Slides -->
@@ -226,8 +271,10 @@
           </div>
         </div>
 
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination hero-pagination">
+        </div>
 
+        <!-- при рендере страницы написать 1/n, где n - число слайдов -->
         <div class="hero-slider__fraction">1/5</div>
 
         <div class="hero-slider__arrow prev">
@@ -247,55 +294,66 @@
         </h2>
 
         <!-- 
-          классы c-2, c-3 отвечают за количество карточек (больших), так как необходима возможность их удаления через админку 
+          классы c-2, c-3 отвечают за количество карточек (больших)
           Классы offer-1, offer-2 и offer-3 отвечают за позиционирование картинки внутри блока  
         -->
         <div class="offer-wrap c-3 ">
           <a href="#" class="offer-block offer-1">
-            <span class="offer-block__title">Доставка карт / браслетов школьника</span>
+            <span class="offer-block__title">Доставка карт / браслетов <span class="br"></span> школьника</span>
             <img src="img/offer/offer-img-1.png" alt="" class="offer-block__img">
           </a>
           <a href="#" class="offer-block offer-2">
-            <span class="offer-block__title">Школьное <br> питание</span>
+            <span class="offer-block__title">Школьное <span class="br"></span> питание</span>
             <img src="img/offer/offer-img-2.png" alt="" class="offer-block__img">
           </a>
           <a href="#" class="offer-block offer-3">
-            <span class="offer-block__title">Страхование <br> школьников</span>
+            <span class="offer-block__title">Страхование <span class="br"></span> школьников</span>
             <img src="img/offer/offer-img-3.png" alt="" class="offer-block__img">
           </a>
         </div>
-        <!-- классы c-2, c-3, c-4 отвечают за количество карточек (маленьких), так как необходима возможность их удаления через админку -->
-        <div class="offer-row c-4">
-          <a href="#" class="offer-item">
+      </div>
+
+      <!-- классы c-2, c-3, c-4, c-5 отвечают за количество карточек (маленьких), так как необходима возможность их удаления через админку -->
+      <div class="wrap offer-row__wrap">
+
+        <div class="offer-row">
+
+          <a href="#" class="offer-item ">
             <div class="offer-item__img">
               <img src="img/offer/offer-1.svg" alt="">
               <img src="img/offer/offer-1_hover.svg" alt="" class="img-hover">
             </div>
             <span class="offer-item__text">Система контроля доступа</span>
           </a>
-          <a href="#" class="offer-item">
+
+
+          <a href="#" class="offer-item ">
             <div class="offer-item__img">
               <img src="img/offer/offer-2.svg" alt="">
               <img src="img/offer/offer-2_hover.svg" alt="" class="img-hover">
             </div>
             <span class="offer-item__text">Система контроля доступа</span>
           </a>
-          <a href="#" class="offer-item">
+          <a href="#" class="offer-item ">
             <div class="offer-item__img">
               <img src="img/offer/offer-3.svg" alt="">
               <img src="img/offer/offer-3_hover.svg" alt="" class="img-hover">
             </div>
             <span class="offer-item__text">Система контроля доступа</span>
           </a>
-          <a href="#" class="offer-item">
+          <a href="#" class="offer-item ">
             <div class="offer-item__img">
               <img src="img/offer/offer-4.svg" alt="">
               <img src="img/offer/offer-4_hover.svg" alt="" class="img-hover">
             </div>
             <span class="offer-item__text">Система контроля доступа</span>
           </a>
+
         </div>
+
+
       </div>
+
     </section>
 
     <section class="section benefit">
@@ -327,11 +385,11 @@
           </div>
           <div class="benefit-block">
             <img src="img/benefit/benefit-2.svg" alt="" class="benefit-block__img">
-            <span class="benefit-block__text">Лучший социальный проект 2020</span>
+            <span class="benefit-block__text">Лучший социальный проект&nbsp;2020</span>
           </div>
           <div class="benefit-block">
             <img src="img/benefit/benefit-3.svg" alt="" class="benefit-block__img">
-            <span class="benefit-block__text">Надежная программа</span>
+            <span class="benefit-block__text">Надежная <span class="br"></span> программа</span>
           </div>
           <div class="benefit-block">
             <img src="img/benefit/benefit-4.svg" alt="" class="benefit-block__img">
@@ -344,7 +402,8 @@
     <section class="section profile">
       <div class="wrap">
         <a href="news.html" class="section-title title-img title-img-right">
-          Личный кабинет родителя<img src="img/icons/link-icon.svg" alt="">
+          <span> Личный кабинет родителя</span>
+          <img src="img/icons/link-icon.svg" alt="">
         </a>
       </div>
 
@@ -429,7 +488,8 @@
       <div class="wrap">
 
         <a href="news.html" class="section-title title-img title-img-right">
-          Новости<img src="img/icons/link-icon.svg" alt="">
+          <span>Новости</span>
+          <img src="img/icons/link-icon.svg" alt="">
         </a>
 
         <div class="news-main-wrap">
@@ -485,6 +545,7 @@
 
   </main>
 
+  <!-- Swiper Можно подключить в шапке. Подключать лучше внешней ссылкой (скорость загрзуки выше)  -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/index.js"></script>
 </body>
