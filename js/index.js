@@ -68,7 +68,7 @@ const modalProfileSlider = new Swiper('#modalProfileSlider', {
   },
   spaceBetween: 10,
   effect: 'fade',
-  // init: false,
+  init: false,
 
 });
 
