@@ -7,11 +7,11 @@ const heroSlider = new Swiper('#heroSlider', {
   direction: 'horizontal',
   loop: true,
   speed: 400,
-  allowTouchMove: false,
+  allowTouchMove: true,
   autoplay: true,
   autoplay: {
     delay: 5000,
-    disableOnInteraction: false
+    disableOnInteraction: false,
 
   },
 
@@ -43,10 +43,15 @@ const heroSlider = new Swiper('#heroSlider', {
     },
   },
 
-
+  breakpoints: {
+    // when window width is >= 768px
+    760: {
+      allowTouchMove: false,
+     
+    },
+  }
 
 });
-
 
 
 heroSlider.on('activeIndexChange', function () {
@@ -78,14 +83,27 @@ const profileSlider = new Swiper('#profileSlider', {
   speed: 400,
   direction: 'horizontal',
   slidesPerView: "auto",
-  spaceBetween: 30,
   slidesOffsetBefore: profileSlideOffset,
   slidesOffsetAfter: profileSlideOffset,
-  navigation: {
-    nextEl: '.profile-slider__arrow.next',
-    prevEl: '.profile-slider__arrow.prev',
-  },
+  spaceBetween: 10,
 
+
+  breakpoints: {
+    // when window width is >= 768px
+    768: {
+      spaceBetween: 30,
+
+      navigation: {
+
+        nextEl: '.profile-slider__arrow.next',
+        prevEl: '.profile-slider__arrow.prev',
+      },
+    },
+    // when window width is >= 425
+    425: {
+      spaceBetween: 20,
+    }
+  }
 });
 
 
