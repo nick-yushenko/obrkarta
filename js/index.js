@@ -173,10 +173,10 @@ const serviceSlider = new Swiper('#serviceSlider', {
   autoHeight: true,
   allowTouchMove: false,
   spaceBetween: 25,
-  effect: 'fade',
+  effect: 'swipe',
 
   pagination: {
-    el: '.service-nav',
+    el: '.service-nav_mb',
     type: 'bullets',
     clickable: true,
     bulletClass: 'service-nav__item ',
@@ -190,6 +190,28 @@ const serviceSlider = new Swiper('#serviceSlider', {
       return '<div class="' + className + '">' + navItem + '</div>';
     }
   },
+
+  breakpoints: {
+    // when window width is >= 768px
+    1024: {
+      pagination: {
+        el: '.service-nav',
+        type: 'bullets',
+        clickable: true,
+        bulletClass: 'service-nav__item ',
+        bulletActiveClass: 'current',
+        renderBullet: function (index, className) {
+          let serviceSlides = document.querySelectorAll('.service-slide')
+          let navItem = index + 1
+          if (serviceSlides[index])
+            navItem = serviceSlides[index].querySelector('.service-slide__title').innerHTML
+
+          return '<div class="' + className + '">' + navItem + '</div>';
+        }
+      },
+
+    },
+  }
 
 });
 serviceSlider.on('slideChange', function () {
