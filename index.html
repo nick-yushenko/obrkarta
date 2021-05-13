@@ -37,6 +37,8 @@
 
     <div id="wrap" class="wrap"></div>
   </div>
+
+
   <div class="modal modal-profile ">
     <div class="modal-bg"></div>
 
@@ -108,9 +110,10 @@
         <div class="swiper-slide modal-profile-slide">
           <h4 class="modal-profile-slide__title">Предзаказ обедов в школьной столовой</h4>
           <div class="modal-profile-slide__text">
-            Заказывайте блюда ребенку в школьной столовой из дома. Вам не придется делать Предзаказ ежедневно. Можно
-            установить продолжительность повтора питания: несколько дней, неделя, месяц или любой другой удобный вам
-            период. Стоимость питания будет списываться с Обркарты в день получения обеда ребенком.
+            <p>
+              Заказывайте блюда ребенку в школьной столовой из дома. Вам не придется делать Предзаказ ежедневно. Можно
+              установить продолжительность повтора питания: несколько дней, неделя, месяц или любой другой удобный вам
+              период. Стоимость питания будет списываться с Обркарты в день получения обеда ребенком.
             </p>
           </div>
 
@@ -178,8 +181,18 @@
 
     </div>
   </div>
+
+  <header class="header">
+    Это хедер
+  </header>
+
+
   <main class="main">
-    <section class="hero">
+    <!-- 
+      Классы mb-1, mb-2 задаются для секция и для заголовков (только для тех, что с классом section-title). 
+      Устанавливает отступ снизу (mb-2 - большой отступ, а mb-1 - маленький ) 
+     -->
+    <section class="hero section mb-1">
 
       <!--data-slides-count - число слайдов -->
       <div class="swiper-container hero-slider" id="heroSlider" data-slides-count="4">
@@ -187,6 +200,7 @@
         <!-- Класс hero-slide-70 или hero-slide-80  назначаются в том случае, 
           если на мобильных устройствах (450 пикселей и меньше) текст наезжает на картинку.
           Смещает картинку сильнее вправо  -->
+
         <div class="swiper-wrapper">
           <div class="swiper-slide hero-slide dark " style="background-color:#8F9BD5;">
 
@@ -292,9 +306,9 @@
       </div>
     </section>
 
-    <section class="section offer">
+    <section class="section offer mb-1">
       <div class="wrap">
-        <h2 class="section-title title-img title-img-left">
+        <h2 class="section-title title-img title-img-left mb-1">
           <img src="img/icons/fire-icon.svg" alt="">Предложения
         </h2>
 
@@ -321,7 +335,7 @@
       <!-- классы c-2, c-3, c-4, c-5 отвечают за количество карточек (маленьких), так как необходима возможность их удаления через админку -->
       <div class="wrap offer-row__wrap">
 
-        <div class="offer-row">
+        <div class="offer-row  c-4">
 
           <a href="#" class="offer-item ">
             <div class="offer-item__img">
@@ -337,21 +351,21 @@
               <img src="img/offer/offer-2.svg" alt="">
               <img src="img/offer/offer-2_hover.svg" alt="" class="img-hover">
             </div>
-            <span class="offer-item__text">Система контроля доступа</span>
+            <span class="offer-item__text">Проездной в общественном транспорте</span>
           </a>
           <a href="#" class="offer-item ">
             <div class="offer-item__img">
               <img src="img/offer/offer-3.svg" alt="">
               <img src="img/offer/offer-3_hover.svg" alt="" class="img-hover">
             </div>
-            <span class="offer-item__text">Система контроля доступа</span>
+            <span class="offer-item__text">Электронная библиотека</span>
           </a>
           <a href="#" class="offer-item ">
             <div class="offer-item__img">
               <img src="img/offer/offer-4.svg" alt="">
               <img src="img/offer/offer-4_hover.svg" alt="" class="img-hover">
             </div>
-            <span class="offer-item__text">Система контроля доступа</span>
+            <span class="offer-item__text">Шкафы-локеры и электронные замки</span>
           </a>
 
         </div>
@@ -361,9 +375,9 @@
 
     </section>
 
-    <section class="section benefit">
+    <section class="section benefit mb-1">
       <div class="wrap">
-        <h2 class="section-title">Преимущества</h2>
+        <h2 class="section-title mb-1">Преимущества</h2>
         <div class="benefit-row">
           <div class="benefit-item">
             <span class="num">468&nbsp;000</span>
@@ -404,7 +418,7 @@
       </div>
     </section>
 
-    <section class="section profile">
+    <section class="section profile mb-1">
       <div class="wrap">
         <a href="news.html" class="section-title profile-title title-img title-img-right">
           <span> Личный кабинет родителя</span>
@@ -489,10 +503,10 @@
       </div>
     </section>
 
-    <section class="section news-main">
+    <section class="section news-main mb-1">
       <div class="wrap">
 
-        <a href="news.html" class="section-title title-img title-img-right">
+        <a href="news.html" class="section-title mb-1 title-img title-img-right">
           <span>Новости</span>
           <img src="img/icons/link-icon.svg" alt="">
         </a>
@@ -556,6 +570,9 @@
 
   <!-- Swiper Можно подключить в шапке. Подключать лучше внешней ссылкой (скорость загрзуки выше)  -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.mask.min.js"></script>
   <script src="js/index.js"></script>
 </body>
 

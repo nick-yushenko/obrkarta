@@ -1,6 +1,21 @@
 // Шаблоны для динамической вставки 
 const templates = (document.querySelector('templates')) ? document.querySelector('templates') : document.body
 
+// якорные ссылки 
+const anchors = document.querySelectorAll('a.anchor')
+if (anchors)
+  anchors.forEach(function (item) {
+    item.addEventListener('click', function () {
+      let blockID = item.getAttribute('href').substring(1)
+
+      $("html, body").animate({
+        scrollTop: $('#' + blockID).offset().top + "px"
+      }, {
+        duration: 500,
+        easing: "swing"
+      });
+    })
+  })
 // Слейдер на главной странице
 const heroSlider = new Swiper('#heroSlider', {
   // Optional parameters
@@ -64,7 +79,7 @@ heroSlider.on('activeIndexChange', function () {
 
 
 // Слайдер личный кабинет родителя на главной странице 
-if (document.querySelector('#profileSlider') && document.querySelector('#modalProfileSlider')) {
+if (document.querySelector('#profileSlider')) {
   let profileSlideOffset = (window.innerWidth - document.querySelector('#wrap').clientWidth) / 2
   const profileSlider = new Swiper('#profileSlider', {
     speed: 400,
@@ -106,22 +121,22 @@ if (document.querySelector('#profileSlider') && document.querySelector('#modalPr
       }
     })
   })
-
   // Слайдер в модальном окне для информации о личном кабинете родителя 
-  const modalProfileSlider = new Swiper('#modalProfileSlider', {
-    speed: 100,
-    direction: 'horizontal',
-    slidesPerView: 1,
-    autoHeight: true,
-    navigation: {
-      nextEl: '.modal-profile__arrow.next',
-      prevEl: '.modal-profile__arrow.prev',
-    },
-    spaceBetween: 10,
-    effect: 'fade',
-    init: false,
+  if (document.querySelector('.modal-profile'))
+    var modalProfileSlider = new Swiper('#modalProfileSlider', {
+      speed: 100,
+      direction: 'horizontal',
+      slidesPerView: 1,
+      autoHeight: true,
+      navigation: {
+        nextEl: '.modal-profile__arrow.next',
+        prevEl: '.modal-profile__arrow.prev',
+      },
+      spaceBetween: 10,
+      effect: 'fade',
+      init: false,
 
-  });
+    });
 }
 // Обрезка текста в карточках новостей
 const newsBlocks = document.querySelectorAll('.js-news-block')
@@ -193,7 +208,7 @@ const serviceSlider = new Swiper('#serviceSlider', {
 
   breakpoints: {
     // when window width is >= 768px
-    1024: {
+    1025: {
       pagination: {
         el: '.service-nav',
         type: 'bullets',
@@ -258,3 +273,193 @@ const servicePhotoSlider = new Swiper('#servicePhotos', {
   },
 
 });
+
+// подсказки для инпутов 
+const inputs = document.querySelectorAll('.input-block.js-hint')
+if (inputs.length > 0) {
+  inputs.forEach(function (item) {
+    let input = item.querySelector('input')
+    input.addEventListener('input', function (e) {
+      if (input.value.length == 0)
+        input.classList.remove('notEmpty')
+      else
+        input.classList.add('notEmpty')
+    })
+  })
+}
+const textareas = document.querySelectorAll('.textarea-block.js-hint')
+if (textareas.length > 0) {
+  textareas.forEach(function (item) {
+    let textarea = item.querySelector('textarea')
+    textarea.addEventListener('input', function (e) {
+      if (textarea.value.length == 0)
+        textarea.classList.remove('notEmpty')
+      else
+        textarea.classList.add('notEmpty')
+    })
+  })
+}
+
+// ---------
+// Валидации
+// ---------
+
+//  Активация кнопки отправки формы 
+function activateSubmit(form) {
+
+  function onChangeField() {
+    if (form != null) {
+
+      if (this.classList.contains('field')) {
+        if (this.getAttribute('type') == 'email') {
+          let str = /[А-Яа-яЁё(),*&%$#№!?=+'"/|\<>`~\\ ]/g
+
+          this.value = this.value.replace(str, '')
+          if (this.value.length > 0 && this.value.indexOf('@') > -1 && this.value.length > this.value.indexOf('@') + 1) {
+            this.classList.add('success')
+          } else
+            this.classList.remove('success')
+
+
+
+        } else if (this.getAttribute('type') == 'phone') {
+          if (this.value.length == 15)
+            this.classList.add('success')
+          else
+            this.classList.remove('success')
+        } else {
+          if (this.value.length > 0)
+            this.classList.add('success')
+          else
+            this.classList.remove('success')
+
+        }
+
+      } else {
+        this.parentElement.parentElement.querySelector('.select__head input').classList.add('success')
+      }
+
+      checkForm()
+    }
+
+  }
+
+  function checkForm() {
+    if (form != null) {
+
+      let successFieldsCount = form.querySelectorAll('.success').length
+      if (successFieldsCount == fieldsCount) {
+        form.querySelector('input.form-submit').classList.remove('disabled')
+
+      } else {
+        form.querySelector('input.form-submit').classList.add('disabled')
+      }
+    }
+
+  }
+
+
+  const fields = (form == null) ? null : form.querySelectorAll('.field')
+
+  let fieldsCount = (form == null) ? -1 : fields.length
+
+  if (fields != null && fields.length > 0)
+    fields.forEach(function (field) {
+
+      if (field.parentElement.parentElement.classList.contains('select')) { // проверка дроплиста
+        const selectItems = field.parentElement.parentElement.querySelectorAll('.select__item')
+        selectItems.forEach(function (item) {
+          item.addEventListener('click', onChangeField)
+        })
+      } else {
+        field.addEventListener('input', onChangeField)
+      }
+
+    })
+
+}
+
+// Маска ввода номера телефона
+$('input.phone').mask('(000) 000-00-00')
+
+// Валидация формы обратной связи (сотрудничество, франшиза и тд)
+
+$.validator.addMethod("pwcheckallowedchars", function (value) {
+  return /^[a-zA-Zа-яА-я-() ]+$/.test(value) // has only allowed chars letter
+}, "Недопустимое значение");
+
+$('#brifForm').validate({
+  rules: {
+    obrmail: {
+      email: true
+    },
+    obrname: {
+      required: true,
+      pwcheckallowedchars: true,
+    },
+    obrtel: {
+      required: true
+    },
+    message: {
+      required: true
+    },
+
+  },
+  messages: {
+    obrmail: {
+      email: jQuery.validator.format('Введен некорректный e-mail')
+    },
+    obrname: {
+      required: jQuery.validator.format("Поле не заполнено"),
+      minlength: jQuery.validator.format("Минимум 2 символа"),
+      maxlength: jQuery.validator.format("Максимум 80 символов"),
+    },
+    obrtel: {
+      required: jQuery.validator.format("Поле не заполнено"),
+      minlength: jQuery.validator.format("номер указан неполностью"),
+
+    },
+    message: {
+      required: jQuery.validator.format("Поле не заполнено"),
+      minlength: jQuery.validator.format("Минимум 10 символов"),
+
+    }
+  },
+  errorElement: "span",
+  errorClass: "invalid",
+  highlight: function (element) {
+    $(element).parent().addClass("invalid");
+  },
+  unhighlight: function (element) {
+    $(element).parent().removeClass("invalid");
+  },
+  focusInvalid: false,
+  onkeyup: function (element) {
+    let submit = document.querySelector(' #brifForm .form-submit')
+
+    if ($('#brifForm').validate().checkForm()) {
+      submit.classList.remove('disabled')
+    } else {
+      submit.classList.add('disabled')
+    }
+
+    // этот код взят из события onkeyup по умолчанию. Нужен чтобы скрывать/показывать ошибку после каждого введенного символа 
+    var excludedKeys = [
+      16, 17, 18, 20, 35, 36, 37,
+      38, 39, 40, 45, 144, 225
+    ];
+    if (event.which === 9 && this.elementValue(element) === "" || $.inArray(event.keyCode, excludedKeys) !== -1) {
+      return;
+    } else if (element.name in this.submitted || element.name in this.invalid) {
+      this.element(element);
+    }
+  },
+
+
+});
+
+
+
+
+// if (document.querySelector('#brifForm'))
+//   activateSubmit(document.querySelector('#brifForm'))
