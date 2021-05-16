@@ -2,6 +2,10 @@
 const templates = (document.querySelector('templates')) ? document.querySelector('templates') : document.body
 
 // якорные ссылки 
+let headerHeight = 0
+if (document.querySelector('.header')) {
+  headerHeight = document.querySelector('.header').clientHeight
+}
 const anchors = document.querySelectorAll('a.anchor')
 if (anchors)
   anchors.forEach(function (item) {
@@ -9,7 +13,7 @@ if (anchors)
       let blockID = item.getAttribute('href').substring(1)
 
       $("html, body").animate({
-        scrollTop: $('#' + blockID).offset().top + "px"
+        scrollTop: $('#' + blockID).offset().top - headerHeight + "px"
       }, {
         duration: 500,
         easing: "swing"
@@ -229,23 +233,7 @@ const serviceSlider = new Swiper('#serviceSlider', {
   }
 
 });
-serviceSlider.on('slideChange', function () {
-  // Прокрутить навигацию до текущего элемента (на декстопах)
-  // текущий булет 
-  // console.log($('.service-nav__item.current').offset().top)
-  // let offset = 0;
-  // $('.service-nav__item').each(function( index ) {
-  //   if (index == serviceSlider.realIndex)
-  //   {
-  //     offset = $(this).offset().top
-  //   }
-  // })
 
-  // $('.service-nav').animate({
-  //   scrollTop: $('.service-nav__item.current').offset().top
-  // }, 300)
-
-})
 
 const servicePhotoSlider = new Swiper('#servicePhotos', {
   // Optional parameters
@@ -273,6 +261,71 @@ const servicePhotoSlider = new Swiper('#servicePhotos', {
   },
 
 });
+
+// Слайдер на страницах сотруднечества 
+const coopSlider = new Swiper('#coopSlider', {
+  // Optional parameters
+  speed: 300,
+  spaceBetween: 15,
+  loop: true,
+  effect: 'fade',
+  // Navigation arrows
+  autoplay: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+
+  },
+  navigation: {
+    nextEl: '.service-photos-arrow.next',
+    prevEl: '.service-photos-arrow.prev',
+  },
+  pagination: {
+    el: '.service-photos-pagination',
+    type: 'bullets',
+    clickable: true,
+    bulletClass: 'service-photos-pagination__item ',
+    bulletActiveClass: 'current',
+    renderBullet: function (index, className) {
+
+
+      return '<div class="' + className + '"></div>';
+    }
+  },
+
+});
+const coopSlider2 = new Swiper('#coopSlider2', {
+  // Optional parameters
+  speed: 300,
+  spaceBetween: 15,
+  loop: true,
+  effect: 'fade',
+  // Navigation arrows
+  autoplay: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+
+  },
+  navigation: {
+    nextEl: '.service-photos-arrow.next',
+    prevEl: '.service-photos-arrow.prev',
+  },
+  pagination: {
+    el: '.service-photos-pagination',
+    type: 'bullets',
+    clickable: true,
+    bulletClass: 'service-photos-pagination__item ',
+    bulletActiveClass: 'current',
+    renderBullet: function (index, className) {
+
+
+      return '<div class="' + className + '"></div>';
+    }
+  },
+
+});
+
 
 // подсказки для инпутов 
 const inputs = document.querySelectorAll('.input-block.js-hint')
@@ -303,81 +356,6 @@ if (textareas.length > 0) {
 // ---------
 // Валидации
 // ---------
-
-//  Активация кнопки отправки формы 
-function activateSubmit(form) {
-
-  function onChangeField() {
-    if (form != null) {
-
-      if (this.classList.contains('field')) {
-        if (this.getAttribute('type') == 'email') {
-          let str = /[А-Яа-яЁё(),*&%$#№!?=+'"/|\<>`~\\ ]/g
-
-          this.value = this.value.replace(str, '')
-          if (this.value.length > 0 && this.value.indexOf('@') > -1 && this.value.length > this.value.indexOf('@') + 1) {
-            this.classList.add('success')
-          } else
-            this.classList.remove('success')
-
-
-
-        } else if (this.getAttribute('type') == 'phone') {
-          if (this.value.length == 15)
-            this.classList.add('success')
-          else
-            this.classList.remove('success')
-        } else {
-          if (this.value.length > 0)
-            this.classList.add('success')
-          else
-            this.classList.remove('success')
-
-        }
-
-      } else {
-        this.parentElement.parentElement.querySelector('.select__head input').classList.add('success')
-      }
-
-      checkForm()
-    }
-
-  }
-
-  function checkForm() {
-    if (form != null) {
-
-      let successFieldsCount = form.querySelectorAll('.success').length
-      if (successFieldsCount == fieldsCount) {
-        form.querySelector('input.form-submit').classList.remove('disabled')
-
-      } else {
-        form.querySelector('input.form-submit').classList.add('disabled')
-      }
-    }
-
-  }
-
-
-  const fields = (form == null) ? null : form.querySelectorAll('.field')
-
-  let fieldsCount = (form == null) ? -1 : fields.length
-
-  if (fields != null && fields.length > 0)
-    fields.forEach(function (field) {
-
-      if (field.parentElement.parentElement.classList.contains('select')) { // проверка дроплиста
-        const selectItems = field.parentElement.parentElement.querySelectorAll('.select__item')
-        selectItems.forEach(function (item) {
-          item.addEventListener('click', onChangeField)
-        })
-      } else {
-        field.addEventListener('input', onChangeField)
-      }
-
-    })
-
-}
 
 // Маска ввода номера телефона
 $('input.phone').mask('(000) 000-00-00')
