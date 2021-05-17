@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/swiper.min.css" />
+  <link rel="stylesheet" href="css/style.min.css">
+
+
+  <title>Образовательная карта - О проекте</title>
+</head>
+
+<body>
+  <div class="templates">
+
+
+    <div id="wrap" class="wrap"></div>
+  </div>
+  <header class="header">
+    Это хедер
+  </header>
+  <main class="main ">
+    <!-- класс h-2 устанавливает более низкую высоту блока -->
+    <section class="section coop-hero h-2 mb-1 " style="background-color: #CDEAFF;">
+      <div class="wrap">
+        <div class="coop-hero-wrap">
+          <div class="coop-hero-descr">
+            <h1 class="section-title h1  coop-hero-title">Шкафы локеры</h1>
+
+            <div class="coop-hero-text">
+              <p>
+                Организация безопасности и безналичной системы оплаты питания в школах
+              </p>
+            </div>
+
+
+            <a href="#brif" class="btn anchor coop-hero-btn">Оформить заявку на сотрудничество</a>
+          </div>
+
+          <div class="coop-hero-img">
+            <img src="img/pages/coop/hero/coop-hero-5.png" alt="">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section  coop-about">
+      <div class="wrap">
+        <h2 class="section-title mb-1">О системе</h2>
+        <div class="coop-about-text">
+          <p>
+            Школьная система хранения включает в&nbsp;себя персональные шкафы-локеры учеников, сгруппированные
+            в&nbsp;общие
+            секции. Шкафы-локеры уже давно получили широкое распространение в&nbsp;зарубежных учебных заведениях
+            и&nbsp;используются для хранения личных вещей, одежды, сменной обуви и&nbsp;школьных принадлежностей
+            учеников.
+            Шкафы-локеры состоят из&nbsp;блоков, в&nbsp;каждом из&nbsp;которых от&nbsp;2&nbsp;до&nbsp;4&nbsp;секций
+            с&nbsp;электромеханическими замками,
+            управляющимися одним считывателем карт, расположенным в&nbsp;центре. При поднесении карты к&nbsp;считывателю
+            система
+            откроет именно ту&nbsp;секцию, которая принадлежит ученику.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 
+      класс js-hint добавляет анимацию в подсказку для поля ввода.
+      autocomplete="off" - это нужно прописать для input, если используется динамическая подсказка 
+      Если она не нужна, то убрать этот класс и вместо div.hint писать подсказку в placeholder
+    -->
+    <!-- 
+      Аттрибут name у полей должен быть уникальным, чтобы браузер Chrome не пытался подсказать свои значения 
+    -->
+
+    <section class="section brif mb-1 bg " id="brif">
+      <div class="wrap">
+        <form action="#" class="brif-form" id="brifForm">
+          <h3 class="brif-title">
+            Заказать звонок
+          </h3>
+          <div class="brif-wrap">
+
+            <div class="brif-block">
+              <div class="input-block js-hint">
+                <input type="text" class="" autocomplete="off" name="obrname" minlength="2" maxlength="80">
+
+                <div class="hint">
+                  Как к Вам обращаться
+                </div>
+              </div>
+              <div class="input-block js-hint">
+                <input type="text" class="phone " autocomplete="off" name="obrtel" minlength="15" maxlength="15">
+
+                <div class="hint">
+                  Контактный телефон
+                </div>
+              </div>
+              <div class="input-block js-hint">
+                <input type="email" autocomplete="off" name="obrmail">
+
+                <div class="hint">
+                  E-mail
+                </div>
+              </div>
+            </div>
+
+            <div class="brif-block">
+              <div class="textarea-block js-hint">
+                <textarea name="message" class="" id="" autocomplete="off" minlength="10" maxlength="1000"></textarea>
+                <div class="hint">
+                  Комментарий
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <input type="submit" value="Заказать звонок" class="btn brif-submit form-submit disabled">
+          <span class="brif-privacy">
+            Нажимая на кнопку “Заказать звонок”, вы даете согласие на обработку персональных данных
+          </span>
+        </form>
+      </div>
+    </section>
+
+    <section class="section profile mb-1">
+      <div class="wrap">
+        <a href="news.html" class="section-title profile-title ">
+          Другие варианты сотрудничества
+        </a>
+      </div>
+
+      <div class="swiper-container profile-slider" id="profileSlider">
+
+
+        <div class="swiper-wrapper">
+
+          <a href="franchise.html" class="swiper-slide profile-slide">
+            <div class="profile-slide__block" style="background-color: #CAF7FF;">
+              <span class="profile-slide__title">Франшиза</span>
+              <span class="profile-slide__txt">Подробнее</span>
+              <img src="img/pages/coop/others/others-6.png" alt="" class="profile-slide__img">
+            </div>
+          </a>
+          <a href="control.html" class="swiper-slide profile-slide">
+            <div class="profile-slide__block" style="background-color: #FFCCDB;">
+              <span class="profile-slide__title">Контроль доступа <br> и&nbsp;видеонаблюдение</span>
+              <span class="profile-slide__txt">Подробнее</span>
+              <img src="img/pages/coop/others/others-2.png" alt="" class="profile-slide__img">
+
+            </div>
+          </a>
+          <a href="food.html" class="swiper-slide profile-slide">
+            <div class="profile-slide__block" style="background-color: #CAF7FF;">
+              <span class="profile-slide__title">Модуль “Питание”</span>
+              <span class="profile-slide__txt">Подробнее</span>
+              <img src="img/pages/coop/others/others-1.png" alt="" class="profile-slide__img">
+            </div>
+          </a>
+          <a href="library.html" class="swiper-slide profile-slide">
+            <div class="profile-slide__block" style="background-color: #D7DEFF;">
+              <span class="profile-slide__title">Электронная библиотека</span>
+              <span class="profile-slide__txt">Подробнее</span>
+              <img src="img/pages/coop/others/others-3.png" alt="" class="profile-slide__img">
+
+            </div>
+          </a>
+          <a href="projectAd.html" class="swiper-slide profile-slide">
+            <div class="profile-slide__block" style="background-color: #C3F0EE;">
+              <span class="profile-slide__title">Реклама в проекте <br> “Образовательная карта”</span>
+              <span class="profile-slide__txt">Подробнее</span>
+              <img src="img/pages/coop/others/others-5.png" alt="" class="profile-slide__img">
+
+            </div>
+          </a>
+
+        </div>
+
+        <div class="profile-slider__arrow prev swiper-button">
+          <img src="img/icons/slide-arrow-icon.svg" alt="">
+        </div>
+        <div class="profile-slider__arrow next swiper-button">
+          <img src="img/icons/slide-arrow-icon.svg" alt="">
+        </div>
+
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    А это футер
+  </footer>
+
+  <script src="js/swiper.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.mask.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
