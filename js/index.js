@@ -11,9 +11,13 @@ if (anchors)
   anchors.forEach(function (item) {
     item.addEventListener('click', function () {
       let blockID = item.getAttribute('href').substring(1)
-
+      let paddingTop = $('#' + blockID).css('padding-top')
+      paddingTop = paddingTop.substr(0, paddingTop.length - 2)
+      if (paddingTop > 10) {
+        console.log(paddingTop)
+      }
       $("html, body").animate({
-        scrollTop: $('#' + blockID).offset().top - headerHeight + "px"
+        scrollTop: $('#' + blockID).offset().top + Number(paddingTop) - 10 - headerHeight + "px"
       }, {
         duration: 500,
         easing: "swing"
