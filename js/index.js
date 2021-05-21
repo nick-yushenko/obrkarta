@@ -13,9 +13,6 @@ if (anchors)
       let blockID = item.getAttribute('href').substring(1)
       let paddingTop = $('#' + blockID).css('padding-top')
       paddingTop = paddingTop.substr(0, paddingTop.length - 2)
-      if (paddingTop > 10) {
-        console.log(paddingTop)
-      }
       $("html, body").animate({
         scrollTop: $('#' + blockID).offset().top + Number(paddingTop) - 10 - headerHeight + "px"
       }, {
@@ -447,23 +444,102 @@ const lockerItems = document.querySelectorAll('.inside-item')
 const lockerNavItems = document.querySelectorAll('.inside-img .i')
 
 if (lockerItems && lockerNavItems) {
+  // Ховеры
+  lockerItems.forEach(function (item) {
+    item.addEventListener('mouseover', function (e) {
+      let num = item.getAttribute('data-num')
+      item.classList.add('current')
+
+      lockerNavItems.forEach(function (navItem) {
+        let navNum = navItem.getAttribute('data-num')
+        if (num == navNum) {
+          navItem.classList.add('current')
+
+        }
+        else {
+
+          navItem.classList.remove('current')
+          navItem.classList.remove('current-click')
+
+        }
+      })
+    })
+    item.addEventListener('mouseout', function (e) {
+
+      item.classList.remove('current')
+
+      lockerNavItems.forEach(function (navItem) {
+        navItem.classList.remove('current')
+      })
+    })
+  })
   lockerNavItems.forEach(function (navItem) {
+
     navItem.addEventListener('mouseover', function (e) {
-      let navItemNum = navItem.getAttribute('data-num')
+      navItem.classList.add('current')
+
+      let navNum = navItem.getAttribute('data-num')
       lockerItems.forEach(function (item) {
-        let itemNum = item.getAttribute('data-num')
-        if (navItemNum == itemNum) {
+        let num = item.getAttribute('data-num')
+
+        if (num == navNum)
           item.classList.add('current')
-        } else {
+        else {
           item.classList.remove('current')
+          navItem.classList.remove('current-click')
+
 
         }
       })
     })
     navItem.addEventListener('mouseout', function (e) {
+      navItem.classList.remove('current')
+
+
       lockerItems.forEach(function (item) {
         item.classList.remove('current')
       })
     })
   })
+
+  // Клик на элемент 
+  // lockerItems.forEach(function (item) {
+  //   item.addEventListener('click', function (e) {
+  //     let num = item.getAttribute('data-num')
+
+  //     lockerNavItems.forEach(function (navItem) {
+  //       let navNum = navItem.getAttribute('data-num')
+  //       if (num == navNum) {
+  //         navItem.classList.add('current-click')
+
+  //         item.classList.add('current-click')
+
+  //       } else {
+  //         navItem.classList.remove('current')
+  //         navItem.classList.remove('current-click')
+
+  //       }
+  //     })
+  //   })
+
+  // })
+
+  // lockerNavItems.forEach(function (navItem) {
+  //   navItem.addEventListener('click', function (e) {
+  //     let navNum = navItem.getAttribute('data-num')
+  //     lockerItems.forEach(function (item) {
+  //       let num = item.getAttribute('data-num')
+
+  //       if (num == navNum) {
+  //         item.classList.add('current-click')
+  //         navItem.classList.add('current-click')
+  //       } else {
+  //         item.classList.remove('current')
+  //         item.classList.remove('current-click')
+
+  //       }
+  //     })
+  //   })
+
+  // })
 }
