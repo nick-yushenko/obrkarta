@@ -441,7 +441,29 @@ $('#brifForm').validate({
 });
 
 
+//  Страница  локкеров. Эффект при наведении 
 
+const lockerItems = document.querySelectorAll('.inside-item')
+const lockerNavItems = document.querySelectorAll('.inside-img .i')
 
-// if (document.querySelector('#brifForm'))
-//   activateSubmit(document.querySelector('#brifForm'))
+if (lockerItems && lockerNavItems) {
+  lockerNavItems.forEach(function (navItem) {
+    navItem.addEventListener('mouseover', function (e) {
+      let navItemNum = navItem.getAttribute('data-num')
+      lockerItems.forEach(function (item) {
+        let itemNum = item.getAttribute('data-num')
+        if (navItemNum == itemNum) {
+          item.classList.add('current')
+        } else {
+          item.classList.remove('current')
+
+        }
+      })
+    })
+    navItem.addEventListener('mouseout', function (e) {
+      lockerItems.forEach(function (item) {
+        item.classList.remove('current')
+      })
+    })
+  })
+}
