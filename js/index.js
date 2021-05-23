@@ -543,3 +543,191 @@ if (lockerItems && lockerNavItems) {
 
   // })
 }
+
+
+
+// Страница заказа 
+
+const orderItems = document.querySelectorAll('.order-item')
+const orderColors = document.querySelectorAll('.order-color')
+const orderTypes = document.querySelectorAll('.order-type')
+
+const orderOptions = document.querySelectorAll('.order-option')
+const orderOptionColor = document.querySelector('.js-option-color')
+const orderOptionType = document.querySelector('.js-option-type')
+
+const orderStudents = document.querySelectorAll('.js-orderDataStudentName')
+// Поля формы 
+const orderItemNameInput = document.querySelector('.js-orderInputItemName')
+const orderUserNameInput = document.querySelector('.js-orderInputUserName')
+const orderAddressInput = document.querySelector('.js-orderInputAddress')
+const orderPriceInput = document.querySelector('.js-orderInputPrice')
+
+// Отображение заказка  
+const orderPhoto = document.querySelector('.js-orderImg')
+const orderItemName = document.querySelector('.js-orderItemName')
+const orderUserName = document.querySelector('.js-orderUserName')
+const orderAddress = document.querySelector('.js-orderAddress')
+const orderPrice = document.querySelector('.js-orderPrice')
+
+
+let order = {
+  type: 'Не выбрано',
+  color: 'Не выбрано',
+  address: 'Не выбрано',
+  price: 'Не выбрано',
+  imgUrl: 'img/pages/order/colors/color-3.png',  // По умолчанию выбран этот цвет
+  student: 'Не выбрано',
+}
+if (orderItems) {
+  orderItems.forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      orderItems.forEach(function (i) {
+        i.classList.remove('current')
+      })
+      item.classList.add('current')
+
+      let target = item.getAttribute('data-target')
+
+      if (target == 'color') { // Выбран браслет
+        orderColors.forEach(function (color) {
+          if (color.classList.contains('current')) {
+            order.type = color.getAttribute('data-order-item-name')
+            order.imgUrl = color.getAttribute('data-order-url')
+          }
+        })
+        order.price = item.getAttribute('data-order-price')
+        setOrder()
+        orderOptions.forEach(function (opt) {
+          opt.classList.remove('opened')
+        })
+        orderOptionColor.classList.add('opened')
+      }
+      if (target == 'null') { // Выбран брелок
+        order.price = item.getAttribute('data-order-price')
+        order.type = item.getAttribute('data-order-type')
+        order.imgUrl = item.getAttribute('data-order-url')
+        setOrder()
+        orderOptions.forEach(function (opt) {
+          opt.classList.remove('opened')
+        })
+      }
+      if (target == 'type') { // выбрана карта
+        orderTypes.forEach(function (type) {
+          if (type.classList.contains('current')) {
+            order.price = type.getAttribute('data-order-price')
+            order.imgUrl = type.getAttribute('data-order-url')
+            order.type = type.getAttribute('data-order-item-name')
+            setOrder()
+          }
+
+        })
+        orderOptions.forEach(function (opt) {
+          opt.classList.remove('opened')
+        })
+        orderOptionType.classList.add('opened')
+      }
+
+
+    })
+  })
+}
+if (orderColors) {
+  orderColors.forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      order.type = item.getAttribute('data-order-item-name')
+      order.imgUrl = item.getAttribute('data-order-url')
+
+      setOrder()
+
+
+      orderColors.forEach(function (i) {
+        i.classList.remove('current')
+      })
+      item.classList.add('current')
+    })
+  })
+}
+if (orderTypes) {
+  orderTypes.forEach(function (item) {
+    item.addEventListener('click', function () {
+
+      order.price = item.getAttribute('data-order-price')
+      order.imgUrl = item.getAttribute('data-order-url')
+      order.type = item.getAttribute('data-order-item-name')
+      setOrder()
+
+      orderTypes.forEach(function (t) {
+        t.classList.remove('current')
+      })
+      item.classList.add('current')
+    })
+  })
+}
+
+if (orderStudents) {
+  orderStudents.forEach(function (st) {
+    st.addEventListener('click', function (e) {
+      order.student = st.getAttribute('data-name')
+      setOrder()
+    })
+  })
+}
+
+initOrder()
+setOrder()
+
+function setOrder() {
+  if (orderPhoto && orderItemName && orderAddress && orderPrice && orderUserName && orderItemNameInput && orderAddressInput && orderPriceInput) {
+    orderPhoto.setAttribute('src', order.imgUrl)
+    orderItemName.textContent = order.type
+    orderAddress.textContent = order.address
+    orderPrice.textContent = order.price + ' руб.'
+    orderUserName.textContent = order.student
+
+    orderItemNameInput.value = order.type
+    orderAddressInput.value = order.address
+    orderPriceInput.value = order.price
+  }
+
+}
+
+
+// Проверка, какие настройки тавара по умолчанию
+function initOrder() {
+  if (orderItems)
+    orderItems.forEach(function (item) {
+      if (item.classList.contains('current')) {
+        if (item.getAttribute('data-target') == 'null') // Если нет дополнительных настроек товара (Выбран брелок)
+          order.type = item.getAttribute('data-order-type')
+        else { // Если есть дополнительные настройки товара (Выбрана карта или браслет )
+          if (item.getAttribute('data-target') == 'color') { // (выбрана карта)
+            orderColors.forEach(function (colorItem) {
+              if (colorItem.classList.contains('current')) {
+                order.imgUrl = colorItem.getAttribute('data-order-url')
+                order.type = colorItem.getAttribute('data-order-item-name')
+                order.price = item.getAttribute('data-order-price')
+              }
+            })
+          }
+          if (item.getAttribute('data-target') == 'null') { // (выбран релок)
+            order.price = item.getAttribute('data-order-price')
+            order.type = item.getAttribute('data-order-type')
+            order.imgUrl = item.getAttribute('data-order-url')
+          }
+          if (item.getAttribute('data-target') == 'type') { // (выбран релок)
+            orderTypes.forEach(function (type) {
+              if (type.classList.contains('current')) {
+                order.price = type.getAttribute('data-order-price')
+                order.imgUrl = type.getAttribute('data-order-url')
+                order.type = type.getAttribute('data-order-item-name')
+              }
+
+            })
+          }
+
+        }
+      }
+    })
+
+}
