@@ -20,6 +20,23 @@
 
     <div id="wrap" class="wrap"></div>
   </div>
+
+  <div class="modal modal-success">
+    <div class="modal-bg"></div>
+
+    <div class="modal-block modal-success-block">
+      <div class="modal-close">
+        <img src="img/icons/close-icon.svg" alt="">
+      </div>
+      <span class="modal-success__title">
+        Ваш заказ с номером 123456 принят
+      </span>
+      <span class="modal-success__text">
+        Сумма к оплате 450 руб.
+      </span>
+      <a href="#" class="btn modal-success__btn">Оплатить</a>
+    </div>
+  </div>
   <header class="header">
     <div class="wrap">
       <a href="index.html" class="header-logo">
@@ -35,7 +52,7 @@
           </div>
           <a href="order.html" class="btn">Заказать карту</a>
           <a href="insurance.html" class="btn-light">Страхование</a>
-          
+
           <a href="faq.html" class="header-nav__help">
             <img src="img/icons/faq-icon.svg" alt="">
             <span>Помощь</span>
@@ -348,14 +365,16 @@
                           <span class="phone">123456347890</span>
                         </div>
                       </li>
-                      <li class="select__item js-orderDataStudentName" data-name="Мария Иванова-Корчагина" data-phone="1234567890">
+                      <li class="select__item js-orderDataStudentName" data-name="Мария Иванова-Корчагина"
+                        data-phone="1234567890">
                         <img src="img/users/user-photo-2.png" alt="">
                         <div class="descr">
                           <span class="name">Мария Иванова-Корчагина</span>
                           <span class="phone">1234567890</span>
                         </div>
                       </li>
-                      <li class="select__item js-orderDataStudentName" data-name="Мария Бурерожденная из дома Иванова-Корчагина" data-phone="1234567890">
+                      <li class="select__item js-orderDataStudentName"
+                        data-name="Мария Бурерожденная из дома Иванова-Корчагина" data-phone="1234567890">
                         <img src="img/users/user-photo-3.png" alt="">
                         <div class="descr">
                           <span class="name">Мария Бурерожденная из дома Иванова-Корчагина</span>
@@ -370,7 +389,7 @@
               </div>
 
               <div class="input-block js-hint order-data__item">
-                <input type="text" class="phone " autocomplete="off" name="orderTel" minlength="15" maxlength="15">
+                <input type="text" class="phone " autocomplete="off" name="orderTel" minlength="18" maxlength="18">
 
                 <div class="hint">
                   Контактный телефон
