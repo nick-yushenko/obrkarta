@@ -25,31 +25,50 @@
         $('.select__head').removeClass('open');
       if ($('.select__list'))
         $('.select__list').fadeOut(5);
-      
+
     }
   }
 
   function droplistChooseItem() {
 
     $('.select__head').removeClass('open');
+    $('.select__head').addClass('notEmpty');
     $('.select__head').removeClass('error');
     $('.select__list').fadeOut(5);
 
+
     const selectInput = this.parentElement.parentElement.parentElement.querySelector('.select__head').querySelector('input')
     const selectHiddenInput = this.parentElement.parentElement.parentElement.querySelector('.select__input')
-    let UserName = this.getAttribute('data-name')
-    let UserPhone = this.getAttribute('data-phone')
-    if (selectInput && selectHiddenInput) {
-      //  Сперва показать в дроплисте
-      selectInput.setAttribute('value', UserName)
-      selectInput.value = UserName
-      // Затем присвоить значение, которое будет передоваться на сервер
-      selectHiddenInput.value = UserName
+    const selectCur = this.parentElement.parentElement.parentElement.querySelector('.select__head .select-cur')
+    if (selectCur) {
+      let curImg = selectCur.querySelector('img')
+      let curName = selectCur.querySelector('.name')
+      let curPhone = selectCur.querySelector('.phone')
+      let img = this.querySelector('img')
+      let name = this.querySelector('.name')
+      let phone = this.querySelector('.phone')
 
-      selectInput.classList.add('notEmpty')
+      curPhone.textContent = phone.textContent
+      curName.textContent = name.textContent
+      curImg.setAttribute('src', img.getAttribute('src'))
+      // для того, чтобы работала валидация 
+      selectInput.setAttribute('value', this.getAttribute('data-name'))
+      selectInput.value = this.getAttribute('data-name')
     } else {
-      console.er('ERROR: в теле выпадающего списка отсутвует поле выбора элемента')
+      let UserName = this.getAttribute('data-name')
+      let UserPhone = this.getAttribute('data-phone')
+      if (selectInput && selectHiddenInput) {
+        //  Сперва показать в дроплисте
+        selectInput.setAttribute('value', UserName)
+        selectInput.value = UserName
+        // Затем присвоить значение, которое будет передоваться на сервер
+        selectHiddenInput.value = UserName
+
+      } else {
+        console.er('ERROR: в теле выпадающего списка отсутвует поле выбора элемента')
+      }
     }
+
 
   }
 

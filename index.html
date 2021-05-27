@@ -183,8 +183,116 @@
   </div>
 
   <header class="header">
-    Это хедер
+    <div class="wrap">
+      <a href="index.html" class="header-logo">
+        <img src="img/logo.svg" alt="">
+        <img src="img/logo-mb.svg" alt="" class="mb">
+      </a>
+      <div class="header-nav">
+        <div class="header-row">
+          <div class="burger js-burger mb">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a href="order.html" class="btn">Заказать карту</a>
+          <a href="insurance.html" class="btn-light">Страхование</a>
+
+          <div class="header-nav__help">
+            <img src="img/icons/faq-icon.svg" alt="">
+            <span>Помощь</span>
+          </div>
+
+          <div class="header-nav__actions">
+            <a href="#">
+              Пополнить Обркарту
+            </a>
+            <a href="#">
+              Пополнить Транспортную карту
+            </a>
+          </div>
+
+          <div class="header-nav__login">
+            <!-- Если сюда будет вставляться фотография пользователя, то к картинке добавить класс avatar -->
+            <img src="img/icons/login-icon.svg" alt="">
+            <span>Войти</span>
+          </div>
+        </div>
+
+        <div class="header-row">
+          <div class="burger js-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="header-nav__actions mb">
+            <a href="#">
+              Пополнить Обркарту
+            </a>
+            <a href="#">
+              Пополнить Транспортную карту
+            </a>
+          </div>
+
+          <div class="header-nav__login mb">
+            <!-- Если сюда будет вставляться фотография пользователя, то к картинке добавить класс avatar -->
+            <img src="img/icons/login-icon.svg" alt="">
+            <span>Войти</span>
+          </div>
+          <nav class="header-nav__list">
+            <ul>
+              <li><a href="about.html">О проекте</a></li>
+              <li><a href="payment.html">Способы пополнения</a></li>
+              <li><a href="https://obrkarta.ru/mobile/">Мобильное приложение</a></li>
+              <li><a href="coop.html">Сотрудничество</a></li>
+              <li><a href="addSchool.html">Подключить школу</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
   </header>
+
+  <div class="menu" id="menu">
+    <div class="wrap menu-btns">
+      <a href="order.html" class="btn">Заказать карту</a>
+      <a href="insurance.html" class="btn-light">Страхование</a>
+    </div>
+    <nav class="menu-nav">
+      <ul>
+        <li>
+          <div class="wrap">
+            <a href="about.html">О проекте</a>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+
+            <a href="payment.html">Способы пополнения</a>
+          </div>
+
+        </li>
+        <li>
+          <div class="wrap">
+            <a href="https://obrkarta.ru/mobile/">Мобильное приложение</a>
+          </div>
+
+        </li>
+        <li>
+          <div class="wrap">
+            <a href="coop.html">Сотрудничество</a>
+          </div>
+
+        </li>
+        <li>
+          <div class="wrap">
+            <a href="addSchool.html">Подключить школу</a>
+          </div>
+
+        </li>
+      </ul>
+    </nav>
+  </div>
 
 
   <main class="main">
@@ -224,7 +332,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="swiper-slide hero-slide hero-slide-80" style="background-color: #DBF6EF;">
             <div class="wrap">
               <div class="hero-slide__descr">
@@ -569,9 +677,30 @@
 
   </main>
 
-  
+
   <footer class="footer">
-    А это футер
+    <section class="download">
+      <div class="wrap">
+        <h2 class="download-title">Скачайте приложение прямо сейчас</h2>
+        <div class="download-btns">
+          <a href="https://apps.apple.com/ru/app/%D0%BE%D0%B1%D1%80%D0%BA%D0%B0%D1%80%D1%82%D0%B0-2-0/id1527869810"
+            class="download-btns__item" target="_blank">
+            <img src="img/pages/about/app/appStore-icon.svg" alt="Скачать в Apple Store">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=ru.obrkarta.apps.android.obrkarta&hl=ru&gl=US"
+            class="download-btns__item" target="_blank">
+            <img src="img/pages/about/app/googlePlay-icon.svg" alt="Скачать в Google Play" >
+          </a>
+          <a href="https://appgallery.huawei.com/#/app/C104090547" class="download-btns__item" target="_blank">
+            <img src="img/pages/about/app/appGallery-icon.svg" alt="Скачать в App Gallery">
+          </a>
+        </div>
+        <div class="download-img">
+          <img src="img/footer/footer-download-img.png" alt="">
+          <img src="img/footer/footer-download-img_mb.png" alt="" class="mb">
+        </div>
+      </div>
+    </section>
   </footer>
 
   <script src="js/swiper.min.js"></script>

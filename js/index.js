@@ -21,6 +21,48 @@ if (anchors)
       });
     })
   })
+
+// открытие меню на планшетах и мобилках 
+const burgerBtns = document.querySelectorAll('.js-burger')
+const menu = document.querySelector('#menu')
+if (menu && burgerBtns.length > 0) {
+  burgerBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      menu.classList.toggle('active')
+      btn.classList.toggle('active')
+      $('.header').toggleClass('menuOpened');
+    })
+  })
+
+
+}
+
+// Клик вне меню 
+
+$(document).click(function (e) {
+  if (!$(e.target).closest('.header').length) { // клик не на хедер
+    if ($(e.target).closest('#menu').length) {
+      return;
+    }
+    else {
+      $('#menu').removeClass('active');
+      $('.js-burger').removeClass('active');
+      $('.header').removeClass('menuOpened');
+
+
+    }
+  }
+  // if (menu && menu.classList.contains('active')) {
+  //   if (!$(e.target).closest('#menu').length) {
+  //     $('#menu').removeClass('active');
+  //   }
+  // }
+  // else {
+  //   alert('no active menu')
+  // }
+});
+
+
 // Слейдер на главной странице
 const heroSlider = new Swiper('#heroSlider', {
   // Optional parameters
@@ -395,7 +437,7 @@ $('#brifForm').validate({
     },
     obrtel: {
       required: jQuery.validator.format("Поле не заполнено"),
-      minlength: jQuery.validator.format("номер указан неполностью"),
+      minlength: jQuery.validator.format("Номер указан не полностью"),
 
     },
     message: {
@@ -437,6 +479,76 @@ $('#brifForm').validate({
 
 });
 
+// Валидация формы заказа 
+$('#orderForm').validate({
+  rules: {
+
+    orderName: {
+      required: true,
+      pwcheckallowedchars: true,
+    },
+
+    orderTel: {
+      required: true,
+    },
+    student: {
+      required: true,
+    }
+
+
+
+  },
+  messages: {
+
+    orderName: {
+      required: jQuery.validator.format("Поле не заполнено"),
+      minlength: jQuery.validator.format("Минимум 2 символа"),
+      maxlength: jQuery.validator.format("Максимум 80 символов"),
+    },
+    orderTel: {
+      required: jQuery.validator.format("Поле не заполнено"),
+      minlength: jQuery.validator.format("Номер указан не полностью"),
+
+    },
+    student: {
+      required: jQuery.validator.format("Поле не заполнено"),
+
+    },
+
+
+  },
+  errorElement: "span",
+  errorClass: "invalid",
+  highlight: function (element) {
+    $(element).parent().addClass("invalid");
+  },
+  unhighlight: function (element) {
+    $(element).parent().removeClass("invalid");
+  },
+  focusInvalid: false,
+  onkeyup: function (element) {
+    let submit = document.querySelector(' #orderForm .form-submit')
+
+    if ($('#orderForm').validate().checkForm()) {
+      submit.classList.remove('disabled')
+    } else {
+      submit.classList.add('disabled')
+    }
+
+    // этот код взят из события onkeyup по умолчанию. Нужен чтобы скрывать/показывать ошибку после каждого введенного символа 
+    var excludedKeys = [
+      16, 17, 18, 20, 35, 36, 37,
+      38, 39, 40, 45, 144, 225
+    ];
+    if (event.which === 9 && this.elementValue(element) === "" || $.inArray(event.keyCode, excludedKeys) !== -1) {
+      return;
+    } else if (element.name in this.submitted || element.name in this.invalid) {
+      this.element(element);
+    }
+  },
+
+
+});
 
 //  Страница  локкеров. Эффект при наведении 
 
@@ -562,6 +674,7 @@ const orderItemNameInput = document.querySelector('.js-orderInputItemName')
 const orderUserNameInput = document.querySelector('.js-orderInputUserName')
 const orderAddressInput = document.querySelector('.js-orderInputAddress')
 const orderPriceInput = document.querySelector('.js-orderInputPrice')
+const orderBankBookInput = document.querySelector('.js-orderInputBankBook')
 
 // Отображение заказка  
 const orderPhoto = document.querySelector('.js-orderImg')
@@ -578,6 +691,7 @@ let order = {
   price: 'Не выбрано',
   imgUrl: 'img/pages/order/colors/color-3.png',  // По умолчанию выбран этот цвет
   student: 'Не выбрано',
+  bankBook: 'Не выбрано'
 }
 if (orderItems) {
   orderItems.forEach(function (item) {
@@ -669,6 +783,8 @@ if (orderStudents) {
   orderStudents.forEach(function (st) {
     st.addEventListener('click', function (e) {
       order.student = st.getAttribute('data-name')
+      order.bankBook = st.getAttribute('data-phone')
+
       setOrder()
     })
   })
@@ -678,7 +794,8 @@ initOrder()
 setOrder()
 
 function setOrder() {
-  if (orderPhoto && orderItemName && orderAddress && orderPrice && orderUserName && orderItemNameInput && orderAddressInput && orderPriceInput) {
+  if (orderPhoto && orderItemName && orderAddress && orderPrice && orderUserName && orderItemNameInput
+    && orderAddressInput && orderPriceInput && orderBankBookInput) {
     orderPhoto.setAttribute('src', order.imgUrl)
     orderItemName.textContent = order.type
     orderAddress.textContent = order.address
@@ -688,6 +805,7 @@ function setOrder() {
     orderItemNameInput.value = order.type
     orderAddressInput.value = order.address
     orderPriceInput.value = order.price
+    orderBankBookInput.value = order.bankBook
   }
 
 }
