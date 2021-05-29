@@ -48,6 +48,11 @@
       let name = this.querySelector('.name')
       let phone = this.querySelector('.phone')
 
+      try {
+        selectInput.classList.remove('invalid')
+        selectInput.parentElement.classList.remove('invalid')
+        selectInput.parentElement.querySelector('span.invalid').style.display = 'none'
+      } catch (e) { }
       curPhone.textContent = phone.textContent
       curName.textContent = name.textContent
       curImg.setAttribute('src', img.getAttribute('src'))

@@ -1,6 +1,7 @@
 // Шаблоны для динамической вставки 
 const templates = (document.querySelector('templates')) ? document.querySelector('templates') : document.body
 
+
 // якорные ссылки 
 let headerHeight = 0
 if (document.querySelector('.header')) {
@@ -311,7 +312,7 @@ const coopSlider = new Swiper('#coopSlider', {
   speed: 300,
   spaceBetween: 15,
   loop: true,
-  effect: 'fade',
+  // effect: 'fade',
   // Navigation arrows
   autoplay: true,
   autoplay: {
@@ -401,7 +402,7 @@ if (textareas.length > 0) {
 // ---------
 
 // Маска ввода номера телефона
-$('input.phone').mask('+7 (000) 000-00-00')
+// $('input.phone').mask('+7 (000) 000-00-00')
 
 // Валидация формы обратной связи (сотрудничество, франшиза и тд)
 
