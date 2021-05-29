@@ -157,7 +157,7 @@
       Если необходимо изменить карточку по умолчанию, для нужной карточки задать класс current, 
       а для input внутри нее атрибут checked    
      -->
-    <section class="section ">
+    <section class="section order-section ">
       <form action="#" class="order" id="orderForm">
         <!-- Значения подставляются через js. Функция SetOrder -->
         <input type="hidden" name="itemName" class="js-orderInputItemName">
@@ -167,165 +167,192 @@
 
 
         <div class="wrap">
-          <h1 class="section-title h1 mb-2">Заказать карту</h1>
+          <h1 class="section-title h1 mb-2 mt-1">Заказать карту</h1>
 
-          <div class="order-block">
-            <h2 class="section-title mb-1">1. Выберите вариант исполнения</h2>
+          <!-- <div class="order-block"> -->
+          <h2 class="section-title mb-1">1. Выберите вариант исполнения</h2>
+        </div>
+        <div class="items-wrapper wrap">
 
-            <div class="order-wrap">
-              <label class="order-item current" data-order-type="Браслет" data-target="color" data-order-price="440">
+          <div class="order-wrap items">
+            <label class="order-item current" data-order-type="Браслет" data-target="color" data-order-price="440">
+              <div class="order-item__img">
                 <img src="img/pages/order/items/item-1.png" alt="Браслет">
-                <div class="radio">
-                  <input type="radio" name="orderType" checked>
-                  <div class="hint"></div>
-                  <span class="name">Браслет</span>
-                  <span class="price">440 руб.</span>
-                </div>
-              </label>
-              <label class="order-item" data-order-type="Брелок" data-order-url="img/pages/order/items/item-2.png"
-                data-target="null" data-order-price="120">
+              </div>
+              <div class="radio">
+                <input type="radio" name="orderType" checked>
+                <div class="hint"></div>
+                <span class="name">Браслет</span>
+                <span class="price">440 руб.</span>
+              </div>
+            </label>
+            <label class="order-item" data-order-type="Брелок" data-order-url="img/pages/order/items/item-2.png"
+              data-target="null" data-order-price="120">
+              <div class="order-item__img">
                 <img src="img/pages/order/items/item-2.png" alt="Брелок">
-                <div class="radio">
-                  <input type="radio" name="orderType">
-                  <div class="hint"></div>
 
-                  <span class="name">Брелок</span>
-                  <span class="price">120 руб.</span>
-                </div>
-              </label>
-              <label class="order-item" data-order-type="Карта" data-target="type" data-order-price="120">
+              </div>
+              <div class="radio">
+                <input type="radio" name="orderType">
+                <div class="hint"></div>
+
+                <span class="name">Брелок</span>
+                <span class="price">120 руб.</span>
+              </div>
+            </label>
+            <label class="order-item" data-order-type="Карта" data-target="type" data-order-price="120">
+              <div class="order-item__img">
                 <img src="img/pages/order/items/item-3.png" alt="Карта">
-                <div class="radio">
-                  <input type="radio" name="orderType">
-                  <div class="hint"></div>
 
-                  <span class="name">Карта</span>
-                  <span class="price">120 руб.</span>
+              </div>
+              <div class="radio">
+                <input type="radio" name="orderType">
+                <div class="hint"></div>
+
+                <span class="name">Карта</span>
+                <span class="price">120 руб.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+
+        <div class="order-option js-option-color opened">
+          <div class="wrap">
+            <span class="order-block__subtitle">Выберите цвет браслета</span>
+          </div>
+          <div class="wrap option-wrapper">
+            <div class="order-wrap">
+              <label class="order-color" data-order-item-name="Белый браслет"
+                data-order-url="img/pages/order/colors/color-1.png">
+                <img src="img/pages/order/colors/color-1.png" alt="Белый Браслет">
+                <div class="radio">
+                  <input type="radio" name="orderColor">
+                  <div class="hint"></div>
+                  <span class="name">Белый</span>
                 </div>
               </label>
-            </div>
-            <div class="order-option js-option-color opened">
-              <span class="order-block__subtitle">Выберите цвет браслета</span>
-              <div class="order-wrap">
-                <label class="order-color" data-order-item-name="Белый браслет"
-                  data-order-url="img/pages/order/colors/color-1.png">
-                  <img src="img/pages/order/colors/color-1.png" alt="Белый Браслет">
-                  <div class="radio">
-                    <input type="radio" name="orderColor">
-                    <div class="hint"></div>
-                    <span class="name">Белый</span>
-                  </div>
-                </label>
-                <label class="order-color" data-order-item-name="Черный браслет"
-                  data-order-url="img/pages/order/colors/color-2.png">
-                  <img src="img/pages/order/colors/color-2.png" alt="Черный Браслет">
-                  <div class="radio">
-                    <input type="radio" name="orderColor">
-                    <div class="hint"></div>
-                    <span class="name">Черный</span>
-                  </div>
-                </label>
-                <label class="order-color current" data-order-item-name="Красный браслет"
-                  data-order-url="img/pages/order/colors/color-3.png">
-                  <img src="img/pages/order/colors/color-3.png" alt="Красный Браслет">
-                  <div class="radio">
-                    <input type="radio" name="orderColor" checked>
-                    <div class="hint"></div>
-                    <span class="name">Красный</span>
-                  </div>
-                </label>
-                <label class="order-color" data-order-item-name="Оранжевый браслет"
-                  data-order-url="img/pages/order/colors/color-4.png">
-                  <img src="img/pages/order/colors/color-4.png" alt="Оранжевый Браслет">
-                  <div class="radio">
-                    <input type="radio" name="orderColor">
-                    <div class="hint"></div>
-                    <span class="name">Оранжевый</span>
-                  </div>
-                </label>
-                <label class="order-color" data-order-item-name="Желтый браслет"
-                  data-order-url="img/pages/order/colors/color-5.png">
-                  <img src="img/pages/order/colors/color-5.png" alt="Желтый Браслет">
-                  <div class="radio">
-                    <input type="radio" name="orderColor">
-                    <div class="hint"></div>
-                    <span class="name">Желтый</span>
-                  </div>
-                </label>
-                <label class="order-color" data-order-item-name="Салатовый браслет"
-                  data-order-url="img/pages/order/colors/color-6.png">
-                  <img src="img/pages/order/colors/color-6.png" alt="Салатовый Браслет">
-                  <div class="radio">
-                    <input type="radio" name="orderColor">
-                    <div class="hint"></div>
-                    <span class="name">Салатовый</span>
-                  </div>
-                </label>
-                <label class="order-color" data-order-item-name="Зеленый браслет"
-                  data-order-url="img/pages/order/colors/color-7.png">
-                  <img src="img/pages/order/colors/color-7.png" alt="Зеленый Браслет">
-                  <div class="radio">
-                    <input type="radio" name="orderColor">
-                    <div class="hint"></div>
-                    <span class="name">Зеленый</span>
-                  </div>
-                </label>
-                <label class="order-color" data-order-item-name="Голубой браслет"
-                  data-order-url="img/pages/order/colors/color-8.png">
-                  <img src="img/pages/order/colors/color-8.png" alt="Голубой Браслет">
-                  <div class="radio">
-                    <input type="radio" name="orderColor">
-                    <div class="hint"></div>
-                    <span class="name">Голубой</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <div class="order-option js-option-type">
-              <span class="order-block__subtitle">Выберите тип карты</span>
-              <div class="order-wrap">
-                <label class="order-type current" data-order-price="440"
-                  data-order-item-name="Карта стандартная (без отверстия)"
-                  data-order-url="img/pages/order/types/type-1.png">
-                  <img src="img/pages/order/types/type-1.png" alt="Карта стандартная (без отверстия)">
-                  <div class="radio">
-                    <input type="radio" name="orderColor" checked>
-                    <div class="hint"></div>
-                    <span class="name">Карта стандартная <br> (без отверстия)</span>
-                    <span class="price">440 руб.</span>
-
-                  </div>
-                </label>
-                <label class="order-type" data-order-price="120"
-                  data-order-item-name="Карта с отверстием + Бейдж вертикальный мягкий"
-                  data-order-url="img/pages/order/types/type-2.png">
-                  <img src="img/pages/order/types/type-2.png" alt="Карта с отверстием + Бейдж вертикальный мягкий">
-                  <div class="radio">
-                    <input type="radio" name="orderColor">
-                    <div class="hint"></div>
-                    <span class="name">Карта с отверстием + <br> Бейдж вертикальный мягкий</span>
-                    <span class="price">120 руб.</span>
-
-                  </div>
-                </label>
-                <label class="order-type" data-order-price="120"
-                  data-order-item-name="Карта с отверстием + Бейдж вертикальный жесткий"
-                  data-order-url="img/pages/order/types/type-3.png">
-                  <img src="img/pages/order/types/type-3.png" alt="Карта с отверстием + Бейдж вертикальный жесткий">
-                  <div class="radio">
-                    <input type="radio" name="orderColor">
-                    <div class="hint"></div>
-                    <span class="name">Карта с отверстием + <br> Бейдж вертикальный жесткий</span>
-                    <span class="price">120 руб.</span>
-
-                  </div>
-                </label>
-
-              </div>
+              <label class="order-color" data-order-item-name="Черный браслет"
+                data-order-url="img/pages/order/colors/color-2.png">
+                <img src="img/pages/order/colors/color-2.png" alt="Черный Браслет">
+                <div class="radio">
+                  <input type="radio" name="orderColor">
+                  <div class="hint"></div>
+                  <span class="name">Черный</span>
+                </div>
+              </label>
+              <label class="order-color current" data-order-item-name="Красный браслет"
+                data-order-url="img/pages/order/colors/color-3.png">
+                <img src="img/pages/order/colors/color-3.png" alt="Красный Браслет">
+                <div class="radio">
+                  <input type="radio" name="orderColor" checked>
+                  <div class="hint"></div>
+                  <span class="name">Красный</span>
+                </div>
+              </label>
+              <label class="order-color" data-order-item-name="Оранжевый браслет"
+                data-order-url="img/pages/order/colors/color-4.png">
+                <img src="img/pages/order/colors/color-4.png" alt="Оранжевый Браслет">
+                <div class="radio">
+                  <input type="radio" name="orderColor">
+                  <div class="hint"></div>
+                  <span class="name">Оранжевый</span>
+                </div>
+              </label>
+              <label class="order-color" data-order-item-name="Желтый браслет"
+                data-order-url="img/pages/order/colors/color-5.png">
+                <img src="img/pages/order/colors/color-5.png" alt="Желтый Браслет">
+                <div class="radio">
+                  <input type="radio" name="orderColor">
+                  <div class="hint"></div>
+                  <span class="name">Желтый</span>
+                </div>
+              </label>
+              <label class="order-color" data-order-item-name="Салатовый браслет"
+                data-order-url="img/pages/order/colors/color-6.png">
+                <img src="img/pages/order/colors/color-6.png" alt="Салатовый Браслет">
+                <div class="radio">
+                  <input type="radio" name="orderColor">
+                  <div class="hint"></div>
+                  <span class="name">Салатовый</span>
+                </div>
+              </label>
+              <label class="order-color" data-order-item-name="Зеленый браслет"
+                data-order-url="img/pages/order/colors/color-7.png">
+                <img src="img/pages/order/colors/color-7.png" alt="Зеленый Браслет">
+                <div class="radio">
+                  <input type="radio" name="orderColor">
+                  <div class="hint"></div>
+                  <span class="name">Зеленый</span>
+                </div>
+              </label>
+              <label class="order-color" data-order-item-name="Голубой браслет"
+                data-order-url="img/pages/order/colors/color-8.png">
+                <img src="img/pages/order/colors/color-8.png" alt="Голубой Браслет">
+                <div class="radio">
+                  <input type="radio" name="orderColor">
+                  <div class="hint"></div>
+                  <span class="name">Голубой</span>
+                </div>
+              </label>
             </div>
           </div>
-          <div class="order-block">
+
+        </div>
+
+        <div class="order-option js-option-type">
+          <div class="wrap">
+            <span class="order-block__subtitle">Выберите тип карты</span>
+          </div>
+          <div class="wrap option-wrapper">
+
+            <div class="order-wrap">
+              <label class="order-type current" data-order-price="440"
+                data-order-item-name="Карта стандартная (без отверстия)"
+                data-order-url="img/pages/order/types/type-1.png">
+                <img src="img/pages/order/types/type-1.png" alt="Карта стандартная (без отверстия)">
+                <div class="radio">
+                  <input type="radio" name="orderCartdType" checked>
+                  <div class="hint"></div>
+                  <span class="name">Карта стандартная <br> (без отверстия)</span>
+                  <span class="price">440 руб.</span>
+
+                </div>
+              </label>
+              <label class="order-type" data-order-price="120"
+                data-order-item-name="Карта с отверстием + Бейдж вертикальный мягкий"
+                data-order-url="img/pages/order/types/type-2.png">
+                <img src="img/pages/order/types/type-2.png" alt="Карта с отверстием + Бейдж вертикальный мягкий">
+                <div class="radio">
+                  <input type="radio" name="orderCartdType">
+                  <div class="hint"></div>
+                  <span class="name">Карта с отверстием + <br> Бейдж вертикальный мягкий</span>
+                  <span class="price">120 руб.</span>
+
+                </div>
+              </label>
+              <label class="order-type" data-order-price="120"
+                data-order-item-name="Карта с отверстием + Бейдж вертикальный жесткий"
+                data-order-url="img/pages/order/types/type-3.png">
+                <img src="img/pages/order/types/type-3.png" alt="Карта с отверстием + Бейдж вертикальный жесткий">
+                <div class="radio">
+                  <input type="radio" name="orderCartdType">
+                  <div class="hint"></div>
+                  <span class="name">Карта с отверстием + <br> Бейдж вертикальный жесткий</span>
+                  <span class="price">120 руб.</span>
+
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="wrap">
+
+          <div class="order-block data">
             <h2 class="section-title mb-1">2. Проверьте личные данные для заказа карты</h2>
 
             <div class="order-data">
@@ -407,28 +434,32 @@
               <div class="order-form__block order-form__img">
                 <img src="img/pages/order/colors/color-3.png" alt="" class="js-orderImg">
               </div>
-              <div class="order-form__block order-form__descr">
-                <div class="descr-item">
-                  <span class="hint">Тип карты</span>
-                  <span class="text js-orderItemName">Не выбрано</span>
-                </div>
+              <div class="order-form-col">
+                <div class="order-form__block order-form__descr">
+                  <div class="descr-item">
+                    <span class="hint">Тип карты</span>
+                    <span class="text js-orderItemName">Не выбрано</span>
+                  </div>
 
-                <div class="descr-item">
-                  <span class="hint">Фамилия, Имя ученика</span>
-                  <span class="text js-orderUserName">Не выбрано</span>
-                </div>
+                  <div class="descr-item">
+                    <span class="hint">Фамилия, Имя ученика</span>
+                    <span class="text js-orderUserName">Не выбрано</span>
+                  </div>
 
-                <div class="descr-item">
-                  <span class="hint">Доставка</span>
-                  <span class="text js-orderAddress">Не выбрано</span>
+                  <div class="descr-item">
+                    <span class="hint">Доставка</span>
+                    <span class="text js-orderAddress">Не выбрано</span>
+                  </div>
+                </div>
+                <div class="order-form__block order-form__sum">
+                  <div class="descr">
+                    <span class="hint">Итоговая стоимость</span>
+                    <span class="price js-orderPrice">Не выбрано</span>
+
+                  </div>
+                  <input type="submit" class="submit btn form-submit disabled" value="Отправить заказ и оплатить">
                 </div>
               </div>
-              <div class="order-form__block order-form__sum">
-                <span class="hint">Итоговая стоимость</span>
-                <span class="price js-orderPrice">Не выбрано</span>
-                <input type="submit" class="submit btn form-submit disabled" value="Отправить заказ и оплатить">
-              </div>
-
             </div>
             <span class="order-block__hint">
               *Карта доставляется до&nbsp;секретаря директора школы на&nbsp;следующий рабочий день после заказа.
