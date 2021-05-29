@@ -1,0 +1,249 @@
+.select 
+  position: relative
+  display: block
+  width: 100%
+  &.disable 
+    .select__head 
+      opacity: 0.6
+  &.withoutArrow
+    .select__head::after
+      background: none !important
+
+.select__head 
+  width: 100%
+  max-width: 100%
+  border-radius: 4px
+  font-size: 18px
+  line-height: 18px
+  cursor: pointer
+  height: 65px
+  background-color: #FAFAFB
+  display: flex
+  position: relative
+  border: 1px solid #D5D9DE
+  transition: 0.2s
+  
+  &.invalid 
+    border: 1px solid #FF4733
+    background: #FFF7F5
+    transition: 0.2s
+    .invalid 
+      position: absolute
+      top: calc(65px + 5px) 
+      left: 24px
+
+      color: #FF4733
+      font-size: 13px
+      line-height: 16px
+
+
+  &.notEmpty 
+    .select-hint 
+      display: none
+    .select-cur 
+      display: flex
+  .select-cur 
+    display: none
+    align-items: center 
+    padding: 12px 20px
+    width: 100%
+    &__img 
+      width: 40px
+      height: 40px
+      border-radius: 50% 
+      object-fit: cover
+      margin-right: 15px
+    .descr 
+      width: calc(100% - 75px)
+      .name 
+        display: block
+        font-size: 16px
+        line-height: 24px
+        color: #000
+        font-weight: 500
+        width: 100%
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow: hidden
+      .phone 
+        color: #8D9AA6
+        font-size: 12px
+        line-height: 16px
+  .select-hint 
+    z-index: 1
+    position: absolute
+    top: calc(65px / 2)
+    transform: translateY(-50%)
+    left: 0  
+    display: block
+    padding: 0 24px
+    color: #747E89
+    line-height: 24px
+    font-size: 16px
+
+    
+    user-select: none
+    transition: 0.2s
+    width: calc(100% - 24px * 2)
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+  div.invalid
+    position: absolute
+    bottom: -18px 
+    left: 0
+  input
+    z-index: 2
+    position: absolute
+    top: 0 
+    left: 0 
+    height: 65px
+    opacity: 0
+    width: 100%
+    height: 100%
+    border: none 
+    outline: none 
+    border-radius: 4px
+    padding: 0 24px 
+    padding-top: 20px
+    color: #10002B
+    font-size: 18px
+    line-height: 24px
+    background-color: #ffffff00
+    border: 1px solid #D5D9DE
+    transition: 0.2s
+    // &.invalid 
+    //   background-color: #FFF2F2
+    //   border-color: #E80101
+    //   transition: 0.3s
+    // &:focus ~ .hint 
+    //   top: calc(65px / 2)
+    //   transform: translateY(-50%)
+    //   line-height: 24px
+    //   font-size: 16px
+
+      
+
+  &.open
+    // input ~ .hint 
+    //   font-size: 14px
+    //   line-height: 20px 
+    //   top: 5px
+    //   transform: none
+    //   transition: 0.2s
+
+    
+
+.select__head::after 
+  width: 16px
+  height: 9px
+  background: #FFF url('../img/icons/select-icon.svg') 
+  background-repeat: no-repeat
+  background-position: center 
+  background-size: cover
+  position: absolute
+  right: 20px
+  bottom: 50%
+  transform: translateY(50%)
+  content: ''
+  display: block
+  pointer-events: none
+  transition: .2s ease-in
+
+.select__head.open::after 
+  width: 16px
+  height: 9px
+  background: #FFF url('../img/icons/select-icon.svg') 
+  background-repeat: no-repeat
+  background-position: center 
+  background-size: cover
+  position: absolute
+  right: 20px
+  bottom: 50%
+  transform: translateY(50%) scale(1, -1)
+  content: ''
+  display: block
+  pointer-events: none
+  transition: .2s ease-in
+
+
+
+
+
+.select__list 
+  display: none
+  position: absolute
+  top: calc(100% + 4px)
+  left: 0
+  right: 0
+  background: #ffffff
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08)
+  border-radius: 4px
+  max-height: 200px
+  overflow: hidden
+  z-index: 100
+  margin: 0 
+  scrollbar-color: dark
+  scrollbar-width: thin
+  overscroll-behavior: contain
+  
+  &-wrap 
+    overflow-x: hidden
+    overflow-y: auto
+    max-height: 200px
+    border: 1px solid #E1E4E7
+    border-radius: 4px
+
+.select__list-wrap
+  &::-webkit-scrollbar 
+    width: 0px 
+    height: 2px 
+    opacity: 0
+    background-color: #ffffff00
+
+  &::-webkit-scrollbar-thumb 
+    background-color: #E1E4E7
+    border-radius: 10px
+
+
+
+.select__list 
+  .select__item 
+    cursor: pointer
+    display: flex
+    align-items: center 
+    justify-content: flex-start
+    padding: 12px 20px
+    border-bottom: 1px solid #E1E4E7
+    
+    img 
+      width: 40px
+      height: 40px
+      border-radius: 50% 
+      object-fit: cover
+      margin-right: 15px
+    .descr 
+      width: calc(100% - 55px)
+
+      .name 
+        display: block
+        font-size: 16px
+        line-height: 24px
+        color: #000
+        font-weight: 500
+        width: 100%
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow: hidden
+      .phone 
+        color: #8D9AA6
+        font-size: 12px
+        line-height: 16px
+    &:last-child
+      border-bottom: none    
+    &.empty 
+      display: none
+
+
+.select__list .select__item:hover 
+    background-color: #FAFAFB

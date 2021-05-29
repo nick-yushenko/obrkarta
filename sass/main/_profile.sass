@@ -1,0 +1,166 @@
+.profile
+  &-title 
+    margin-bottom: 0
+  &-slider 
+    width: 100%
+    height: 275px
+    position: relative
+    &__arrow
+      position: absolute
+      top: calc(50% )
+      display: flex
+      justify-content: center 
+      align-items: center
+      z-index: 10
+      width: 40px
+      height: 40px
+      background-color: #fff
+      border-radius: 50%
+      cursor: pointer
+      transition: 0.2s
+      visibility: visible
+      &.next 
+        right: calc((100% - 1220px) / 2 - 80px )
+        img 
+          transform: rotate(180deg)
+          margin-right: -3px
+      &.prev
+        left: calc((100% - 1220px) / 2 - 80px )
+        img 
+          margin-left: -3px
+      &.disabled
+        visibility: hidden
+        transition: 0.2s
+
+  &-slide
+    border-radius: 15px
+    width: 560px
+    display: flex
+    align-items: flex-end
+    // &:last-child
+    //   margin-right: calc((100% - 1220px) / 2)
+    // &:first-child
+    //   margin-left: calc((100% - 1220px) / 2)
+    
+    &__block 
+      border-radius: 15px 
+      display: flex
+      flex-direction: column 
+      justify-content: space-between
+      position: relative
+      height: 235px
+      width: 100%
+      padding: 30px 40px
+      cursor: pointer
+      transition: 0.2s
+
+    &__title 
+      +bold 
+      font-size: 24px
+      line-height: 32px
+      display: block
+      transition: 0.2s
+      margin-top: 0
+    &__txt 
+      display: block
+      font-size: 16px
+      line-height: 24px
+      transition: 0.2s
+      margin-bottom: 0
+
+    &__img 
+      position: absolute
+      bottom: 0 
+      right: 0
+
+@media ( min-width: 992px )
+  .profile
+    &-slider
+      &__arrow:hover 
+        background-color: #f7f7f7
+        
+        transition: 0.2s
+    &-slide 
+      &__block:hover 
+        .profile-slide
+          &__title 
+            transition: 0.2s
+            margin-top: 7px
+          &__txt
+            transition: 0.2s
+            margin-bottom: 7px
+            text-decoration: underline
+  
+
+
+@media  ( max-width: 1400px )
+  .profile
+    &-slider 
+      &__arrow
+        top: calc(50% )
+        width: 40px
+        height: 40px
+        &.next 
+          right: 50px
+          img 
+            transform: scale(-1, 1)
+            margin-right: -3px
+        &.prev
+          left: 50px
+          img 
+            margin-left: -3px
+
+@media  ( max-width: 768px )
+  .profile-slider__arrow 
+    display: none
+
+@media  ( max-width: 650px )
+  .profile
+    &-title 
+      margin-bottom: 30px
+    &-slider 
+      height: 170px
+      &__arrow
+        top: calc(50% - 20px )
+        &.next 
+          right: 20px
+        &.prev
+          left: 20px
+
+    &-slide
+      border-radius: 15px
+      width: 320px
+      &__block 
+        border-radius: 10px 
+        height: 100%
+        width: 100%
+        padding: 15px
+
+      &__title 
+        z-index: 2
+        font-size: 18px
+        line-height: 24px
+      &__txt 
+        z-index: 2
+        font-size: 14px
+        line-height: 20px
+      &__img 
+        position: absolute
+        z-index: 1
+        bottom: 0 
+        right: 0
+        width: 190px
+
+
+
+@media  ( max-width: 600px )
+  .profile
+    &-title 
+      margin-bottom: 25px
+
+@media  ( max-width: 425px )
+  .profile
+    &-title 
+      margin-bottom: 20px
+
+

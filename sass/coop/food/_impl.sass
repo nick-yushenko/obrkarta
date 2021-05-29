@@ -1,0 +1,106 @@
+.impl 
+  &-item 
+    position: relative
+
+    padding-left: 45px
+
+    margin-bottom: 40px
+    &:last-child
+      margin-bottom: 0
+    &__num 
+      position: absolute
+      top: 0 
+      left: 0
+      color: #E1E4E7
+      font-size: 48px
+      line-height: 60px
+
+    &__title 
+      +bold 
+      font-size: 24px
+      line-height: 32px
+
+      display: block
+
+      margin-bottom: 15px
+
+    &__text 
+      margin-bottom: 15px
+      p
+        color: $text2
+        font-size: 16px
+        line-height: 24px
+        margin-bottom: 10px
+        &:last-child
+          margin-bottom: 0
+    &__list 
+      list-style: none
+
+      li 
+        padding-left: 40px
+        margin-bottom: 8px
+        color: $text2
+        font-size: 16px
+        line-height: 24px
+
+        position: relative
+        &::before
+          content: '' 
+          position: absolute
+          top: 8px
+          left: 8px 
+          width: 8px
+          height: 8px
+          background-color: $text2 
+          border-radius: 50%
+
+
+@media ( max-width: 840px )
+  .impl
+    &-item 
+      margin-bottom: 30px
+
+@media ( max-width: 600px )
+  .impl
+    &-item 
+      padding-left: 35px
+      margin-bottom: 25px
+
+      &__title 
+        font-size: 20px
+        line-height: 28px
+
+        margin-bottom: 10px
+      &__text 
+        margin-bottom: 10px
+        p
+          font-size: 16px
+          line-height: 24px
+      &__list 
+        li 
+          padding-left: 25px
+          margin-bottom: 4px
+          font-size: 16px
+          line-height: 24px
+
+
+@media ( max-width: 425px )
+  .impl
+    &-item 
+
+      &__title 
+        font-size: 18px
+        line-height: 24px
+
+        margin-bottom: 10px
+      &__text 
+        margin-bottom: 10px
+        p
+          font-size: 14px
+          line-height: 20px
+      &__list 
+        li 
+          padding-left: 25px
+          margin-bottom: 4px
+          font-size: 14px
+          line-height: 20px

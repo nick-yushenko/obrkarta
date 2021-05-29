@@ -1,0 +1,573 @@
+.order 
+  &-section 
+    padding-bottom: 85px
+  .section-title 
+    &.h1 
+      +medium
+      display: block
+  &-wrap 
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+  &-block 
+    margin-bottom: 85px
+    &.data 
+      margin-top: 70px
+    &:last-child
+      margin-bottom: 0
+    &__subtitle 
+      +bold 
+      font-size: 24px
+      line-height: 32px
+      margin-bottom: 30px
+      margin-top: 30px
+      display: block
+    &__hint 
+      display: block
+      margin-top: 40px
+      font-size: 16px
+      line-height: 24px
+      color: #A4AEB8
+
+  &-option 
+    display: none 
+    &.opened 
+      display: block
+
+  &-item 
+    width: calc(33% - 20px)
+    border-radius: 12px 
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08)
+    border: 3px solid #ffffff00
+    cursor: pointer
+    transition: 0.1s
+    box-sizing: content-box
+    user-select: none
+    overflow: hidden
+
+    &.current 
+      border: 3px solid #FFD500
+      transition: 0.1s
+
+    &__img 
+      width: 100%
+      height: 225px
+      img 
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    .radio 
+      display: flex
+      flex-direction: column 
+      margin-bottom: 15px
+
+      .name 
+        font-size: 18px
+        line-height: 28px
+
+      .price 
+        color: #A4AEB8 
+        font-size: 16px
+        line-height: 24px
+  
+  &-color
+    width: calc(25% - 24px)
+    margin-bottom: 30px
+    border-radius: 12px 
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08)
+    border: 3px solid #ffffff00
+    cursor: pointer
+    transition: 0.1s
+    box-sizing: content-box
+    user-select: none
+
+    &.current 
+      border: 3px solid #FFD500
+      transition: 0.1s
+
+    img 
+      width: 100%
+    .radio 
+      display: flex
+      flex-direction: column 
+      margin-bottom: 15px
+      padding-left: 40px
+      .name 
+        font-size: 18px
+        line-height: 28px
+
+      .hint 
+        top: 4px
+
+  &-type 
+    width: calc(33% - 20px)
+    border-radius: 12px 
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08)
+    border: 3px solid #ffffff00
+    cursor: pointer
+    transition: 0.1s
+    box-sizing: content-box
+    user-select: none
+
+    &.current 
+      border: 3px solid #FFD500
+      transition: 0.1s
+
+    img 
+      width: 100%
+      object-fit: cover 
+      height: 225px
+    .radio 
+      display: block
+      // display: flex
+      // align-items: flex-end
+      padding-left: 43px
+      margin-bottom: 15px
+
+      .name 
+        font-size: 18px
+        line-height: 28px
+        margin-right: 8px
+
+
+      .price 
+        color: #A4AEB8 
+        font-size: 16px
+        line-height: 28px
+        display: block
+        display: inline-block
+  
+  &-form 
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    &__block 
+      width: calc(33% - 20px)
+    &__img 
+      height: 270px
+      overflow: hidden
+      border: 1px solid #E1E4E7
+      border-radius: 8px
+      box-sizing: content-box
+      display: flex
+      align-items: center
+      justify-content: center
+      img
+        width: 100%
+        // object-fit: cover
+    &-col 
+      width: calc(66% - 20px)
+      display: flex
+      align-items: flex-start
+      justify-content: space-between
+    &__descr 
+      width: calc( 50% - 20px )
+      .descr-item 
+        margin-bottom: 24px
+        &:last-child
+          margin-bottom: 0
+
+        .hint 
+          display: block
+          color: #A4AEB8
+          font-size: 14px
+          line-height: 20px
+          margin-bottom: 8px
+          font-weight: 500
+        .text 
+          display: block
+          font-size: 18px
+          line-height: 28px
+
+    &__sum 
+      width: calc( 50% - 20px )
+
+      .hint
+        display: block
+        color: #A4AEB8
+        font-size: 14px
+        line-height: 20px
+        margin-bottom: 8px
+        font-weight: 500
+      .price 
+        display: block
+        +bold
+        font-size: 40px
+        line-height: 56px
+        margin-bottom: 15px
+      .submit 
+        width: 280px
+
+
+  &-data 
+    display: flex
+    align-items: center 
+    justify-content: space-between
+    &__item 
+      width: calc(33% - 20px)
+
+
+
+@media ( min-width: 992px )
+  .order-type:hover,
+  .order-color:hover,
+    border: 3px solid #FFD500
+    transition: 0.1s
+
+@media  ( max-width: 1200px )
+  .order
+    .section-title 
+      &.mb-2 
+        margin-bottom: 50px
+      &.mb-1 
+        margin-bottom: 25px
+
+@media ( max-width: 1100px )
+  .order
+    &-item 
+      &__img 
+        height: 200px 
+    &-type 
+      img 
+        height: 200px
+@media ( max-width: 1024px )
+  .order 
+    &-block 
+      &__hint 
+        margin-top: 30px
+    &-item 
+      &__img 
+        height: 180px 
+      .radio 
+        padding-left: 40px
+    &-type 
+      img 
+        height: 180px
+    &-type 
+      .radio 
+        padding-left: 40px
+        .name 
+          font-size: 16px
+          line-height: 24px
+        .price 
+          font-size: 16px
+          line-height: 24px
+
+          display: block
+    &-form 
+      align-items: stretch
+      
+      &__img 
+        height: auto
+      &-col 
+        flex-wrap: wrap 
+      &__descr 
+        width: 100%
+        margin-bottom: 30px
+        .descr-item 
+          margin-bottom: 15px
+          .hint 
+            font-size: 14px
+            line-height: 20px
+            margin-bottom: 4px
+      &__sum 
+        width: 100%
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        .hint 
+          margin-bottom: 4px
+        .price 
+          margin-bottom: 0
+        .btn 
+          margin-left: auto
+@media ( max-width: 940px )
+  .order 
+    &-data 
+      flex-wrap: wrap 
+      &__item 
+        width: 100%
+        margin-bottom: 40px
+        &:last-child
+          margin-bottom: 0
+    &-wrap 
+      justify-content: flex-start
+    &-form 
+      &__block 
+        width: 250px 
+      &-col 
+        width: calc(100% - 265px)
+      &__descr 
+        width: 100%
+      &__sum 
+        width: 100%
+    &-item 
+      width: 30%
+      margin-right: 16px
+      &__img 
+        height: 140px
+
+    &-type 
+      width: 30%
+      margin-right: 16px
+      img 
+        height: 140px
+    &-color
+      width: 30%
+      margin-bottom: 15px
+      margin-right: 16px
+
+@media ( max-width: 840px )
+  .order 
+    &-section 
+      padding-bottom: 60px
+    &-block
+      &__subtitle 
+        margin-bottom: 15px  
+    &-item 
+      width: 30%
+      margin-right: 16px
+      &__img 
+        height: 130px
+
+    &-type 
+      width: 30%
+      margin-right: 16px
+      img 
+        height: 130px
+
+
+@media ( max-width: 750px  )
+  .order 
+    &-section
+      // background-color: #fcfcfc
+    .section-title 
+      &.mb-2 
+        margin-bottom: 20px
+    &-block 
+      &__subtitle 
+        margin-top: 0
+    &-item 
+      width: 200px
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08)
+      .radio 
+
+        padding: 15px
+        padding-top: 0
+        margin-bottom: 0
+        .hint 
+          display: none
+    .items-wrapper,
+    .option-wrapper
+      width: 100%
+      overflow-x: scroll
+      width: 100%
+      padding-bottom: 20px
+      // padding-left: 100px
+      &::-webkit-scrollbar-thumb 
+        background-color: #fff
+      &::-webkit-scrollbar
+        background-color: #fff
+      .order-wrap 
+        width: max-content
+        padding: 0 5%
+
+    &-color 
+      width: 200px
+      margin-bottom: 0
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08)
+      &:last-child
+        margin-right: 0
+      .radio 
+        padding: 15px
+        padding-top: 0
+        margin-bottom: 0
+        .hint 
+          display: none
+         
+    &-type
+      display: flex
+      align-items: center
+      width: 420px
+      margin-bottom: 0
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08)
+      img 
+        height: auto
+        width: 220px
+      .radio 
+        padding: 15px
+        padding-top: 0
+        margin-bottom: 0
+        .hint 
+          display: none
+    &-form 
+      flex-direction: column
+      &-col 
+        width: 100%
+      &__img 
+        margin-bottom: 15px
+@media ( max-width: 550px  )
+  .order 
+    &-section 
+      padding-bottom: 30px
+    &-block 
+      margin-bottom: 50px
+      &.data 
+        margin-top: 30px
+      &__subtitle 
+        margin-top: 0
+      &__hint 
+        margin-top: 15px
+    &-item 
+      width: 100%
+      margin-right: 0
+      margin-bottom: 15px
+      box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08)
+      display: flex
+      align-items: center 
+      justify-content: flex-start
+      &__img 
+        width: 150px
+        display: flex
+        align-items: center 
+        justify-content: center
+        img 
+          // width: 
+          object-fit: contain
+      .radio 
+
+        padding: 15px
+        padding-top: 0
+        margin-bottom: 0
+        .hint 
+          display: none
+    .items-wrapper 
+      width: 90%
+      overflow: visible
+
+      .order-wrap 
+        width: 100%
+        padding: 0
+
+
+
+
+    .option-wrapper
+      width: 100%
+      overflow-x: scroll
+      width: 100%
+      padding-bottom: 20px
+      // padding-left: 100px
+      &::-webkit-scrollbar-thumb 
+        background-color: #fff
+      &::-webkit-scrollbar
+        background-color: #fff
+      .order-wrap 
+        width: max-content
+        padding: 0 5%
+
+    &-color 
+      width: 200px
+      margin-bottom: 0
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08)
+      
+      .radio 
+        padding: 15px
+        padding-top: 0
+        margin-bottom: 0
+        .hint 
+          display: none
+         
+    &-type
+      display: flex
+      align-items: center
+      width: 420px
+      margin-bottom: 0
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08)
+      img 
+        height: auto
+        width: 220px
+      .radio 
+        padding: 15px
+        padding-top: 0
+        margin-bottom: 0
+        .hint 
+          display: none
+    &-data 
+      &__item 
+        margin-bottom: 30px
+
+    &-form 
+      &__sum 
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-start
+        .btn 
+          margin-left: 0
+          margin-top: 15px
+@media ( max-width: 425px )
+  .order 
+    .items-wrapper 
+      width: 92%
+    .option-wrapper
+      .order-wrap 
+        width: max-content
+        padding: 0 4%
+    .section-title 
+      &.h1 
+        margin-bottom: 15px
+        font-size: 28px
+        line-height: 36px
+    &-block 
+      &__hint 
+        font-size: 14px
+        line-height: 20px
+    &-type 
+      &:last-child
+        margin-right: 0
+    &-form 
+      &__img 
+        width: 100%
+      &__descr 
+        margin-bottom: 10px
+      &__sum
+        .btn 
+          width: 100%
+        .descr 
+          width: 100%
+          display: flex
+          align-items: center 
+          justify-content: space-between
+    &-color 
+      width: 180px
+      margin-right: 8px
+      .radio 
+        padding: 8px 15px
+    &-type 
+      width: auto
+      max-width: 300px
+      img
+        width: 115px
+
+      .radio 
+        .name
+          font-size: 14px
+          line-height: 20px
+@media ( max-width: 380px )
+  .order 
+    &-item 
+      margin-bottom: 10px
+    &-form 
+      &__sum
+        .btn 
+          width: 100%
+        .descr 
+          width: 100%
+          display: flex
+          align-items: center 
+          justify-content: space-between
+          .price 
+            font-size: 32px
+            line-height: 40px

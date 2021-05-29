@@ -1,0 +1,363 @@
+.modal 
+  position: fixed
+  top: 0 
+  left: 0 
+  width: 100%
+  height: 100vh
+  z-index: 100
+  display: flex
+  align-items: center
+  justify-content: center
+  display: none
+  &.active 
+    display: flex
+  &-bg 
+    position: absolute
+    top: 0 
+    left: 0 
+    width: 100%
+    height: 100%
+    background-color:  rgba(#202326, 0.5)
+  &-block 
+    position: relative
+    border-radius: 12px
+    background-color: #fff
+  &-close 
+    position: absolute
+    top: 25px
+    right: 25px
+    width: 25px
+    height: 25px
+    cursor: pointer
+    z-index: 100
+    display: flex
+    align-items: center
+    justify-content: center
+  &-profile
+    &__arrow 
+      position: absolute
+      top: calc(50% - 56px / 2)
+      z-index: 150
+      border-radius: 50%
+      height: 56px
+      width: 56px
+      display: flex
+      align-items: center 
+      justify-content: center
+      cursor: pointer
+      background-color: rgba(0,0,0,0)
+      transition: 0.2s
+      &.prev 
+        left: calc((100% - 800px) / 2 - 56px - 30px )
+        img 
+          margin-left: -3px
+      &.next 
+        right: calc((100% - 800px) / 2 - 56px - 30px )
+        img 
+          margin-right: -3px
+          transform: rotate(180deg)
+    
+    &-block
+      width: 800px
+      height: 400px
+
+    &-slide 
+      position: relative
+      padding: 50px 30px 25px 30px
+      background-color: #fff
+      height: 100% !important
+      border-radius: 12px
+
+      // display: flex
+      // flex-direction: column
+      // justify-content: space-between
+      &__title 
+        +bold 
+        font-size: 24px
+        line-height: 32px
+        margin-bottom: 15px
+        width: 455px
+      &__text 
+        width: 455px
+        height: 245px
+        display: flex
+        align-items: center
+        p 
+          font-size: 16px
+          line-height: 24px
+      &__img 
+        position: absolute
+        bottom: 0 
+        right: 0
+        width: 290px
+        display: flex
+        align-items: flex-end
+        justify-content: flex-end
+        img 
+          width: 100%
+          &.mb 
+            display: none
+
+  &-success 
+    &-block 
+      width: 380px
+      padding: 90px 30px 40px
+    &__title 
+      display: block
+      text-align: center 
+      +bold
+      font-size: 24px
+      line-height: 32px
+      margin-bottom: 15px
+    &__text 
+      display: block
+      text-align: center 
+      font-size: 18px
+      line-height: 28px
+    &__btn 
+      margin: 0 auto
+      margin-top: 24px
+
+
+@media ( min-width: 992px )
+  .modal 
+    &-profile
+      &__arrow:hover 
+        background-color: rgba(16,0,43,.15)
+        transition: 0.2s
+
+
+@media ( max-width: 1024px )
+  .modal 
+    &-profile
+      &__arrow 
+        top: calc(50% - 56px / 2)
+        height: 56px
+        width: 56px
+        &.prev 
+          left: calc((100% - 700px) / 2 - 56px - 10px )
+        &.next 
+          right: calc((100% - 700px) / 2 - 56px - 10px )
+      
+      &-block
+        width: 700px
+        height: 400px
+
+      &-slide 
+        padding: 20px
+        padding-top: 50px
+        &__title 
+          font-size: 24px
+          line-height: 32px
+          margin-bottom: 30px
+          width: 400px
+        &__text 
+          width: 400px
+          height: 245px
+          display: flex
+          align-items: flex-start
+          p 
+            font-size: 16px
+            line-height: 24px
+        &__img 
+          position: absolute
+          bottom: 0 
+          right: 0
+          width: 250px
+
+
+@media ( max-width: 860px )
+  .modal 
+    &-profile
+      &__arrow 
+        top: calc(50% - 56px / 2)
+        height: 56px
+        width: 56px
+        &.prev 
+          left: calc((100% - 620px) / 2 - 56px  )
+        &.next 
+          right: calc((100% - 620px) / 2 - 56px )
+      
+      &-block
+        width: 620px
+        height: 400px
+
+      &-slide 
+        padding: 15px
+        padding-top: 50px
+        &__title 
+          font-size: 24px
+          line-height: 32px
+          margin-bottom: 30px
+          width: 350px
+        &__text 
+          width: 350px
+          height: 245px
+          display: flex
+          align-items: flex-start
+          p 
+            font-size: 16px
+            line-height: 24px
+        &__img 
+          position: absolute
+          bottom: 0 
+          right: 0
+          width: 250px
+
+
+
+@media ( max-width: 768px )
+  .modal 
+    &-close 
+      position: absolute
+      top: 15px
+      right: 15px
+    &-profile
+      &__arrow 
+        top: auto
+        bottom: 30px
+        height: 56px
+        width: 56px
+        &.prev 
+          left: calc(50% - 80px)
+          img
+            margin: 0
+        &.next 
+          right: calc(50% - 80px)
+          img 
+            margin-right: 0
+            transform: scale(-1, 1)
+      &-block
+        width: 90%
+        height: auto
+
+      &-slide 
+        padding: 15px
+        padding-top: 50px
+        &__title 
+          font-size: 24px
+          line-height: 32px
+          margin-bottom: 30px
+          width: 330px
+        &__text 
+          width: 330px
+          height: auto
+          min-height: 245px
+          display: flex
+          align-items: flex-start
+          p 
+            font-size: 15px
+            line-height: 22px
+        &__img 
+          position: absolute
+          bottom: 0 
+          right: 0
+          width: 210px
+
+
+
+@media ( max-width: 600px )
+  .modal 
+    &-close 
+      top: 10px
+      right: 10px
+    &-profile
+      &__arrow 
+        bottom: 30px
+        height: 56px
+        width: 56px
+        &.prev 
+          left: calc(50% - 80px)
+          img
+            margin: 0
+        &.next 
+          right: calc(50% - 80px)
+          img 
+            margin-right: 0
+            transform: scale(-1, 1)
+      &-block
+        width: 90%
+        height: auto
+
+      &-slide 
+        padding: 8px
+        padding-top: 30px
+        padding-bottom: 0
+        height: auto !important
+        &__title 
+          font-size: 18px
+          line-height: 24px
+          margin-bottom: 10px
+          width: 100%
+        &__text 
+          width: 100%
+          height: auto
+          min-height: auto
+          display: flex
+          align-items: flex-start
+          margin-bottom: 10px
+          p 
+            font-size: 14px
+            line-height: 20px
+        &__img 
+          position: static
+          width: 50%
+          margin-left: auto
+          margin-right: auto
+          img 
+            display: none
+            &.mb 
+              display: block
+              margin-bottom: -2px
+
+
+@media ( max-width: 425px )
+  .modal 
+    // align-items: flex-start
+    &-close 
+      top: 10px
+      right: 10px
+    &-profile
+      &__arrow 
+        top: auto
+        bottom: 30px
+        height: 56px
+        width: 56px
+        &.prev 
+          left: calc(50% - 80px)
+          img
+            margin: 0
+        &.next 
+          right: calc(50% - 80px)
+          img 
+            margin-right: 0
+            transform: scale(-1, 1)
+      &-block
+        width: 92%
+        height: auto
+
+      &-slide 
+        &__img 
+          width: 100%
+
+    &-success 
+      &-block 
+        padding: 60px 20px 16px
+        width: 92%
+      &__btn
+        width: 100%
+      &__title 
+        font-size: 18px
+        line-height: 24px
+      &__text 
+        font-size: 16px
+        line-height: 24px 
+
+@media ( max-height: 570px )
+  .modal 
+    padding-top: 20px
+    align-items: flex-start
+    &-profile
+      &__arrow 
+        top: auto
+        bottom: 10px

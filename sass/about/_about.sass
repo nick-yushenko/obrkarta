@@ -1,0 +1,75 @@
+.about 
+  &-title 
+    margin-bottom: 60px
+
+  &-wrap
+    display: flex
+    justify-content: space-between
+
+  &-img 
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 33%
+
+  &-descr 
+    width: calc(67% - 30px)
+  &-text 
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
+    p 
+      font-size: 16px
+      line-height: 24px
+      color: $text2
+
+
+@media ( max-width: 1024px )
+  .about
+    &-img 
+      width: 25%
+      img 
+        max-width: 100%
+
+    &-descr 
+      width: calc(75% - 30px)
+
+@media ( max-width: 840px )
+  .about 
+    &-img 
+      width: 230px
+      img 
+        width: 140px
+    &-descr 
+      width: calc(100% - 245px)
+
+
+@media ( max-width: 750px )
+  .about
+    &-title 
+      margin-bottom: 40px
+    &-wrap
+      display: flex
+      flex-direction: column 
+
+    &-img 
+      width: 100%
+
+    &-descr 
+      width: 100%
+      margin-bottom: 50px
+
+@media ( max-width: 425px )
+  .about 
+    &-title 
+      margin-bottom: 30px 
+    &-text 
+      margin-bottom: 25px
+      p 
+        font-size: 14px
+        line-height: 18px
+    &-img 
+      img 
+        width: 110px
+    &-descr 
+      margin-bottom: 45px

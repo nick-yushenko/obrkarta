@@ -1,0 +1,82 @@
+.food 
+  &-wrap 
+    display: flex
+    flex-wrap: wrap 
+    justify-content: space-between
+
+  &-item 
+    width: calc(50% - 15px)
+    padding-left: 50px
+    position: relative
+    margin-bottom: 40px
+    &:nth-last-child(1),
+    &:nth-last-child(2)
+      margin-bottom: 0
+      
+    .num 
+      position: absolute
+      top: 0 
+      left: 0
+      +medium
+      color: #E1E4E7
+      font-size: 48px
+      line-height: 60px
+
+    .title 
+      +bold 
+      font-size: 24px
+      line-height: 32px
+      margin-bottom: 8px
+    .text p 
+      font-size: 16px
+      line-height: 24px
+      color: $text2
+
+
+@media ( max-width: 1024px )
+  .food 
+    &-item 
+      width: calc(50% - 10px)
+      padding-left: 50px
+      margin-bottom: 30px
+
+
+@media ( max-width: 940px )
+  .food 
+    &-item 
+      width: 100%
+      margin-bottom: 25px
+      &:nth-last-child(2)
+        margin-bottom: 25px
+
+@media ( max-width: 600px )
+  .food 
+    &-item 
+      padding-left: 40px
+      .num 
+        font-size: 48px
+        line-height: 60px
+
+      .title 
+        font-size: 20px
+        line-height: 28px
+      .text p 
+        font-size: 16px
+        line-height: 24px
+
+
+@media ( max-width: 425px )
+  .food 
+    &-item 
+      padding-left: 40px
+      .num 
+        font-size: 48px
+        line-height: 60px
+
+      .title 
+        font-size: 18px
+        line-height: 24px
+      .text p 
+        font-size: 14px
+        line-height: 20px
+

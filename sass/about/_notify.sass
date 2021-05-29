@@ -1,0 +1,98 @@
+.notify 
+  &-title 
+    font-size: 24px
+    line-height: 32px 
+    text-align: center
+    +bold
+    margin-bottom: 40px
+  &-wrap 
+    display: flex
+    justify-content: space-between
+
+  &-item 
+    width: calc(33% - 20px)
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)
+    border-radius: 10px 
+    overflow: hidden
+
+@media ( max-width: 1024px )
+  .notify 
+    &-title 
+      margin-bottom: 30px
+    &-wrap
+      width: max-content
+
+      padding: 0 calc((100% - 860px) / 2)
+
+      &__wrapper
+        overflow-x: scroll
+        width: 100%
+        margin: 0
+        padding-bottom: 10px
+        &::-webkit-scrollbar 
+          height: 0px 
+
+    &-item 
+      width: 340px
+      margin-right: 30px
+      &:last-child
+        margin-right: 0
+
+
+
+@media ( max-width: 940px )
+  .notify 
+    &-wrap
+      padding: 0 calc((100% - 768px) / 2)
+
+@media ( max-width: 840px )
+  .notify 
+    &-wrap
+      padding: 0 calc((100% - 740px) / 2)
+      &__wrapper 
+
+    &-item 
+      margin-right: 20px
+
+@media ( max-width: 780px )
+  .notify 
+    &-wrap
+      padding: 0 calc((100% - 720px) / 2)
+    &-item 
+      margin-right: 15px
+
+@media ( max-width: 750px )
+  .notify 
+    &-wrap
+      padding: 0 5%
+      &__wrapper 
+
+@media ( max-width: 600px )
+  .notify 
+    &-title 
+      font-size: 20px
+      line-height: 28px
+      margin-bottom: 20px
+
+@media ( max-width: 425px )
+  .notify 
+    &-title 
+      font-size: 18px
+      line-height: 24px
+      margin-bottom: 15px
+    &-wrap
+      padding: 0 
+      flex-direction: column
+      width: 100%
+      &__wrapper 
+        padding-bottom: 0
+        margin: 0 auto
+        width: 92%
+        overflow-x: visible
+
+    &-item 
+      margin-right: 0
+      margin-bottom: 15px
+      width: 100%
+      &:last-child
+        margin-bottom: 0

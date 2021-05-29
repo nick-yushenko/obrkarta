@@ -1,0 +1,77 @@
+.integration 
+  &-item 
+    position: relative
+    padding-left: 65px
+
+    margin-bottom: 60px
+    &:last-child
+      margin-bottom: 0
+    
+    &__img 
+      position: absolute
+      top: 0 
+      left: 0
+      width: 40px
+
+    &__title 
+      +bold 
+      font-size: 24px
+      line-height: 32px
+
+      margin-bottom: 8px
+      display: block
+
+    &__text 
+      p 
+        color: $text2 
+        margin-bottom: 10px
+        font-size: 16px
+        line-height: 24px
+        &:last-child
+          margin-bottom: 0
+
+@media ( max-width: 1100px  )
+  .integration 
+    &-item 
+      margin-bottom: 25px
+      &__title 
+        margin-bottom: 4px
+
+@media ( max-width: 1024px  )
+  .integration 
+    &-block 
+      flex-direction: column
+      .descr 
+        width: 100%
+        margin-bottom: 50px
+    &-slider 
+      margin: 0 auto
+
+@media  ( max-width: 600px )
+  .integration 
+    &-block 
+      margin-bottom: 30px
+    &-item 
+      padding-left: 45px
+      &__img 
+        width: 30px
+      &__title 
+        font-size: 20px
+        line-height: 28px
+
+
+@media  ( max-width: 425px )
+  .integration 
+    &-block 
+      margin-bottom: 25px
+
+    &-item 
+      &__title 
+        font-size: 18px
+        line-height: 24px
+        margin-bottom: 8px
+      &__text 
+        p 
+          font-size: 14px
+          line-height: 20px
+

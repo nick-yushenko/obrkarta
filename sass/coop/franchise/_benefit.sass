@@ -1,0 +1,229 @@
+.fr-benefit
+  &-block
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    position: relative
+
+  &-slider 
+    &__item 
+      img 
+        max-height: 435px !important
+  .descr 
+    width: calc(100% - 600px - 30px)
+    &-list 
+      margin-bottom: 40px
+      margin-top: 25px
+      &__item 
+        margin-bottom: 24px
+        display: flex
+        justify-content: flex-start
+        align-items: center
+
+        &:last-child
+          margin-bottom: 0
+
+        .img 
+          width: 32px !important
+          height: 32px !important
+          min-width: 32px !important
+          min-height: 32px  !important
+          margin-right: 15px
+          img  
+            width: 100% !important
+            height: 100% !important
+            min-width: 100%  !important
+            min-height: 100%  !important
+        span 
+          font-size: 16px
+          line-height: 24px
+          &.num 
+            +bold 
+            font-size: 24px
+            line-height: 32px
+            margin-right: 15px
+            color: #E1E4E7
+  &-wrap 
+    margin-top: 90px
+    display: flex
+    justify-content: space-between
+  &-item 
+    width: calc(25% - 22px)
+    display: flex
+    flex-direction: column 
+    align-items: center
+    img 
+      margin-bottom: 15px
+    span 
+      display: block
+      text-align: center 
+      font-size: 24px
+      line-height: 32px
+      +bold 
+
+@media ( max-width: 1300px )
+  .fr-benefit 
+    &-item 
+      span 
+        font-size: 22px
+        line-height: 30px
+
+
+@media ( max-width: 1200px )
+  .fr-benefit
+    .descr 
+      width: calc(100% - 550px - 30px)
+
+@media ( max-width: 1100px )
+  .fr-benefit
+    &-wrap 
+      margin-top: 80px
+
+    &-item 
+      img 
+        width: 65px
+        margin-bottom: 10px
+      span 
+        font-size: 20px
+        line-height: 28px
+    .descr 
+      width: calc(100% - 480px - 30px)
+      &-list 
+        margin-top: 0
+
+@media ( max-width: 1024px )
+  .fr-benefit
+    .descr 
+      &-list.pa 
+        margin-bottom: 0
+      &-btn.pa 
+        position: absolute
+        bottom: 0
+        right: 0
+        z-index: 30
+        width: 480px
+    &-item 
+      width: calc( 25% - 18px )
+      img 
+        width: 60px
+        margin-bottom: 8px
+      span 
+        font-size: 18px
+        line-height: 24px
+@media ( max-width: 940px )
+  .fr-benefit
+    &-slider 
+      &__item 
+        &.fixH
+          height: 320px !important
+        img 
+    &-item 
+      img 
+        width: 55px
+      span 
+        font-size: 16px
+        line-height: 24px
+    .descr 
+      width: calc(100% - 380px - 20px)
+      &-list 
+        margin-bottom: 25px
+        &__item 
+          margin-bottom: 15px
+          &:last-child
+            margin-bottom: 0
+
+
+          span 
+            font-size: 16px
+            line-height: 24px
+
+      &-btn.pa 
+        width: 380px
+@media ( max-width: 840px )
+  .fr-benefit
+    &-wrap 
+      margin-top: 60px
+    &-item 
+      img 
+        width: 50px
+        margin-bottom: 5px
+    .descr 
+      width: calc(100% - 350px)
+      &-list 
+        margin-bottom: 25px
+        &__item 
+          margin-bottom: 12px
+          &:last-child
+            margin-bottom: 0
+
+
+          span 
+            font-size: 16px
+            line-height: 24px
+      &-btn 
+        padding: 18px 20px
+      &-btn.pa 
+        width: 350px
+@media ( max-width: 750px )
+  .fr-benefit
+    .section-title 
+      margin-bottom: 50px
+    &-slider
+      margin: 0
+      margin-top: 25px
+
+      &.dn
+        display: none
+    &-block 
+      flex-wrap: wrap
+    .descr 
+      width: 100%
+      &-list.pa 
+        margin-bottom: 25px
+      &-btn 
+        padding: 18px 24px
+      &-btn.pa 
+        position: static
+
+    &-wrap 
+      flex-wrap: wrap 
+
+    &-item 
+      margin-bottom: 50px
+      width: calc(50% - 15px)
+      &:nth-last-child(1),
+      &:nth-last-child(2)
+        margin-bottom: 0
+      img 
+        margin-bottom: 15px
+      span 
+        font-size: 18px
+        line-height: 24px
+
+@media ( max-width: 600px )
+  .fr-benefit
+    &-wrap 
+      mbt: 50px
+    .section-title 
+      margin-bottom: 25px
+
+
+@media ( max-width: 425px )
+  .fr-benefit
+    &-wrap 
+      margin-top: 30px
+    &-item 
+      width: calc(50% - 8px)
+      img 
+        width: 55px
+
+    .section-title 
+      margin-bottom: 20px
+    .descr 
+      &-list 
+        &__item 
+          span 
+            font-size: 14px
+            line-height: 20px
+      &-btn 
+        width: 100% !important

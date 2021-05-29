@@ -1,0 +1,335 @@
+.header 
+  height: 105px
+  width: 100%
+  background-color: #fff
+  position: fixed
+  top: 0 
+  left: 0
+  z-index: 50
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1)
+  &.menuOpened
+    box-shadow: none
+  .wrap 
+    height: 100%
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+
+  &-logo 
+    width: 135px
+    height: 100%
+    display: flex
+    align-items: center
+    img 
+      width: 100%
+      &.mb 
+        display: none
+  &-nav 
+    width: calc(100% - 135px - 40px)
+    &__help 
+      margin-right: 90px
+      display: flex
+      align-items: center
+      img 
+        margin-right: 8px
+      span 
+        font-size: 16px
+        line-height: 24px
+    &__actions 
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      &.mb 
+        display: none
+      a 
+        display: block
+        color: #8D9AA6
+        font-size: 14px
+        line-height: 20px
+        margin-right: 25px
+        transition: 0.2s
+
+        &:hover 
+          color: $text 
+          transition: 0.2s
+        &:last-child
+          margin-right: 0
+    &__login 
+      margin-left: auto
+      display: flex
+      align-items: center
+      cursor: pointer
+      &.mb 
+        display: none
+      img 
+        margin-right: 8px 
+        &.avatar 
+          margin-right: 15px
+      span 
+        font-size: 14px
+        line-height: 20px
+  
+    &__list 
+      height: 30px
+      display: flex
+      align-items: center
+      width: 100%
+      ul 
+        height: 100%
+        width: 100%
+        list-style: none 
+        display: flex
+        align-items: center
+        justify-content: space-between
+        
+        li 
+          height: 100%
+          display: flex
+          align-items: center 
+
+          a
+            height: 100%
+            display: flex 
+            align-items: center 
+            font-size: 16px
+            line-height: 24px  
+  &-row   
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    width: 100%
+    padding: 8px 0
+    border-bottom: 1px solid #E1E4E7
+    &:last-child
+      border-bottom: none 
+    .btn 
+      margin-right: 15px
+    .btn-light 
+      margin-right: 50px
+
+  
+
+  .btn, 
+  .btn-light 
+    padding: 12px
+    font-size: 13px
+    line-height: 16px
+
+  .burger 
+    display: none
+
+.menu 
+  display: none
+
+@media ( max-width: 1250px )
+  .header 
+    &-nav
+      &__help 
+        margin-right: 60px
+
+@media ( max-width: 1200px )
+  .header 
+    &-logo 
+      width: 110px
+
+    &-row 
+      .btn-light 
+        margin-right: 30px
+    &-nav 
+      width: calc(100% - 110px - 30px)
+      &__help 
+        margin-right: 30px
+
+@media ( max-width: 1100px )
+  .header 
+    &-logo 
+      width: 110px
+
+    &-row 
+      .btn-light 
+        margin-right: 15px
+    &-nav 
+      width: calc(100% - 110px - 20px)
+      &__help 
+        margin-right: 20px
+
+@media ( max-width: 1024px )
+  .menu 
+    z-index: 40
+    display: block
+    position: fixed
+    top: -1000px 
+    left: 0 
+    width: 100%
+    background-color: #fff
+    transition: 0.5s
+    &-btns 
+      display: none
+    &.active 
+      top: 90px
+      transition: 0.4s
+    &-nav 
+      ul 
+        list-style: none 
+        li 
+          box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1) 
+          a 
+            display: block
+            width: 100%
+            height: 100%
+            padding: 15px 0
+
+        
+  .header 
+    height: 90px
+    &-logo 
+      width: 100px
+    &-nav 
+      width: calc(100% - 100px - 25px)
+
+      &__actions 
+        display: none
+        &.mb 
+          display: flex
+      &__list 
+        display: none
+      &__login 
+        display: none
+        &.mb 
+          display: flex
+      &__help 
+        margin-right: 0
+        margin-left: auto
+        span 
+          font-size: 14px
+      
+    &-row 
+      .btn-light 
+        margin-right: 0
+      .btn 
+        margin-right: 8px
+
+    .btn, 
+    .btn-light 
+      padding: 8px 12px
+
+    .burger 
+      display: block
+      width: 24px
+      // height: 14px
+      padding: 3px
+      margin-right: 15px
+      transition: 0.2s
+      &.mb 
+        display: none
+      span 
+        display: block
+        border-radius: 50px
+        background-color: #000
+        width: 100%
+        height: 2px
+        transition: 0.2s
+        opacity: 1 
+        &:nth-child(2)
+          width: 13px
+          margin-top: 5px
+          margin-bottom: 5px
+      &.active
+        transform: translateX(5px)
+        transition: 0.2s
+        span  
+          transform-origin: center
+          &:nth-child(1)
+            transform: rotate(45deg) translateY(9px)       
+          &:nth-child(2)
+            opacity: 0 
+          &:nth-child(3)
+            transform: rotate(-45deg) translateY(-10px)   
+            
+
+
+
+@media ( max-width: 768px )
+  .header 
+    height: 90px
+
+@media ( max-width: 750px )
+  .header 
+    &-nav 
+      &__actions 
+        &.mb 
+          display: none
+
+@media ( max-width: 500px )
+  .menu 
+    transition: 0.4s
+    &.active 
+      top: 50px
+      transition: 0.4s
+    &-btns 
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      margin-bottom: 8px
+      margin-top: 8px
+      .btn, 
+      .btn-light 
+        padding: 12px 20px
+        font-size: 13px
+        line-height: 16px
+      .btn 
+        margin-right: 15px
+  .header 
+    height: 50px
+    .btn, 
+    .btn-light 
+      display: none
+    .burger 
+      display: none
+      &.mb 
+        display: block
+      &.active
+        span  
+          transform-origin: center
+          &:nth-child(1)
+            transform: rotate(45deg) translateY(9.5px)       
+          &:nth-child(2)
+            opacity: 0 
+          &:nth-child(3)
+            transform: rotate(-45deg) translateY(-10px)   
+    &-logo 
+      width: 60px
+      img 
+        display: none
+        &.mb 
+          display: block
+    &-row 
+      border: none
+      height: 100%
+      &:last-child
+        display: none
+    &-nav 
+      height: 100%
+      width: calc(100% - 60px - 30px)
+      &__login 
+        display: flex
+        align-items: center 
+        justify-content: center
+        margin-left: 30px
+        &.mb 
+          display: none
+        img 
+          margin-right: 0
+        span 
+          display: none
+      &__help 
+        img 
+          margin-right: 0
+        span 
+          display: none
+      &__actions 
+        &.mb 
+          display: none
+@media ( max-width: 425px )
+  .header 
+    height: 50px

@@ -1,0 +1,192 @@
+.success 
+  padding-top: 125px
+  padding-bottom: 125px
+  &-wrap 
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 1000px
+    margin: 0 auto
+  &-title 
+    font-size: 48px
+    line-height: 60px
+    &-mb 
+      display: none
+  &-descr 
+    width: calc( 60% - 16px )
+  &-img 
+    width: calc( 40% - 16px )
+    display: flex
+    justify-content: center 
+    align-items: center 
+    img 
+      width: 100%
+
+  &-text 
+    width: 500px
+    margin-bottom: 40px
+    p 
+      margin-bottom: 10px
+      font-size: 18px
+      line-height: 28px
+      color: $text2
+      &:last-child
+        margin-bottom: 0
+
+  &-btn 
+    width: 280px
+  
+@media ( max-width: 1100px )
+    
+  .success 
+    padding-top: 80px
+    padding-bottom: 80px
+    &-wrap 
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 90%
+      margin: 0 auto
+      position: relative
+      padding-top: 60px
+    &-title 
+      position: absolute
+      top: 0 
+      left: 0
+      // display: none
+      // &-mb 
+      //   display: block
+      //   width: 90%
+      //   margin: 0 auto
+    &-descr 
+      width: calc(100% - 370px )
+    &-img 
+      width: 350px
+      display: flex
+      justify-content: center 
+      align-items: center 
+      img 
+        width: 100%
+
+    &-text 
+      width: 100%
+      margin-bottom: 40px
+      p 
+        margin-bottom: 10px
+        font-size: 18px
+        line-height: 28px
+        color: $text2
+        &:last-child
+          margin-bottom: 0
+
+    &-btn 
+      width: 280px
+    
+
+
+
+  
+@media ( max-width: 840px )
+    
+  .success 
+    padding-top: 60px
+    padding-bottom: 60px
+    &-text
+      margin-bottom: 15px
+    &-title 
+      font-family: 'Rubric New Medium', sans-serif  !important
+      font-style: normal !important
+      font-weight: 400 !important
+
+@media ( max-width: 750px )
+    
+  .success 
+    padding-top: 50px
+    padding-bottom: 50px
+    &-wrap 
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      justify-content: flex-start
+      width: 90%
+      margin: 0 auto
+      position: relative
+      padding-top: 0
+    &-title 
+      position: static
+      font-size: 36px
+      line-height: 42px
+      margin-bottom: 25px !important
+    &-descr 
+      width: 100%
+    &-img 
+      width: 350px
+      display: flex
+      justify-content: center 
+      align-items: center 
+      img 
+        width: 100%
+
+    &-text 
+      width: 100%
+      p 
+        margin-bottom: 10px
+        font-size: 18px
+        line-height: 28px
+        color: $text2
+        &:last-child
+          margin-bottom: 0
+
+    &-btn 
+      width: 280px
+    
+
+@media ( max-width: 600px )
+    
+  .success 
+    padding-top: 40px
+    padding-bottom: 40px
+    &-title 
+      position: static
+      font-size: 32px
+      line-height: 40px
+      margin-bottom: 20px !important
+    &-img 
+      width: 350px
+
+      margin: 0 auto
+    &-text 
+      p 
+        font-size: 16px
+        line-height: 24px
+     
+
+    &-btn 
+      width: 100%
+
+
+@media ( max-width: 425px )
+    
+  .success 
+    padding-top: 30px
+    padding-bottom: 30px
+    &-wrap 
+      width: 92%
+    &-title 
+      position: static
+      font-size: 28px
+      line-height: 36px
+      margin-bottom: 15px !important
+    &-img 
+      width: 220px
+
+      margin: 0 auto
+    &-text 
+      p 
+        font-size: 16px
+        line-height: 24px
+     
+
+    &-btn 
+      width: 100%
+

@@ -1,16 +1,21 @@
 .news
   // главная страница. Блок новостей 
   &-main
+
     &-wrap 
       display: flex
       justify-content: space-between
 
     &-item 
       width: calc(25% - 24px)
+      display: block
+      cursor: pointer
       &__img 
         width: 100%
         height: 160px
         margin-bottom: 10px
+        border-radius: 5px
+        overflow: hidden
         img 
           width: 100%
           height: 100%
@@ -32,4 +37,159 @@
         font-size: 14px
         line-height: 20px
         font-weight: 400
+
+
+
+@media ( min-width: 992px )
+  .news
+    &-main
+      &-item:hover 
+        .news-main-item__title 
+          text-decoration: underline
+          transition: 5s
+        
+
+@media ( max-width: 1200px )
+  .news
+    &-main
+     
+      &-item 
+        width: calc(25% - 20px)
+        &__img 
+          width: 100%
+          height: 155px
+          margin-bottom: 8px
+        &__title 
+          font-size: 16px
+          line-height: 24px
+          margin-bottom: 10px
+        &__text 
+          font-size: 14px
+          line-height: 20px
+          margin-bottom: 13px
+        &__date 
+          font-size: 14px
+          line-height: 20px
+
+
+@media ( max-width: 1024px )
+  .news
+    &-main
+     
+      &-item 
+        width: calc(25% - 12px)
+        &__img 
+          width: 100%
+          height: 140px
+          margin-bottom: 8px
+        &__title 
+          font-size: 15px
+          line-height: 20px
+          margin-bottom: 8px
+        &__text 
+          font-size: 14px
+          line-height: 20px
+          margin-bottom: 13px
+        &__date 
+          font-size: 14px
+          line-height: 20px
+
+
+@media ( max-width: 768px )
+  .news
+    &-main
+      &-wrap
+        width: max-content
+
+        padding: 0 calc((100% - 720px) / 2)
+
+        &__wrapper
+          overflow-x: scroll
+          width: 100%
+          // padding-left: 100px
+          &::-webkit-scrollbar-thumb 
+            background-color: #fff
+          &::-webkit-scrollbar
+            background-color: #fff
+
+      &-item 
+        width: 280px
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
+        &__img 
+          height: 160px
+          margin-bottom: 10px
+          border-radius: 5px
+        &__title 
+          font-size: 16px
+          line-height: 24px
+          margin-bottom: 8px
+        &__text 
+          font-size: 14px
+          line-height: 20px
+          margin-bottom: 13px
+        &__date 
+          font-size: 14px
+          line-height: 20px
+
+@media ( max-width: 750px )
+  .news
+    &-main
+      &-wrap
+
+        padding: 0 5%
+
+@media ( max-width: 425px )
+  .news
+    &-main
+      &-wrap
+
+        padding: 0 4%
+        &__wrapper 
+      &-item 
+        width: 320px
+        margin-right: 10px
+        &:last-child
+          margin-right: 0
+        &__img 
+          height: 180px
+          margin-bottom: 10px
+          border-radius: 4px
+        &__title 
+          font-size: 14px
+          line-height: 20px
+          margin-bottom: 8px
+        &__text 
+          font-size: 13px
+          line-height: 16px
+          margin-bottom: 13px
+        &__date 
+          font-size: 13px
+          line-height: 16px
+
+
+@media ( max-width: 360px )
+  .news
+    &-main
+      &-item 
+        width: 300px
+        margin-right: 10px
+        &:last-child
+          margin-right: 0
+        &__img 
+          height: 170px
+          margin-bottom: 10px
+          border-radius: 4px
+        &__title 
+          font-size: 14px
+          line-height: 20px
+          margin-bottom: 8px
+        &__text 
+          font-size: 13px
+          line-height: 16px
+          margin-bottom: 13px
+        &__date 
+          font-size: 13px
+          line-height: 16px
 

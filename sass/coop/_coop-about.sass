@@ -1,0 +1,71 @@
+.coop-about 
+  margin-bottom: 100px
+  &-text
+    max-width: 800px
+
+  &-text 
+    p
+      font-size: 16px
+      line-height: 24px
+      margin-bottom: 20px
+      color: $text2
+      span.br 
+        display: none
+      &:last-child
+        margin-bottom: 0
+
+  &-subtitle 
+    +bold 
+    margin-bottom: 15px
+    font-size: 24px
+    line-height: 32px
+    margin-top: 25px
+
+  &-list 
+    list-style: none
+    li
+      position: relative 
+      padding-left: 40px
+      font-size: 16px
+      line-height: 24px
+      color: $text2
+      margin-bottom: 8px
+      &:last-child
+        margin-bottom: 0
+      &::before 
+        content: ''
+        position: absolute
+        top: 8px
+        left: 8px
+        width: 8px
+        height: 8px
+        background-color: $text2
+        border-radius: 50%
+
+
+@media  ( max-width: 840px )
+  .coop-about 
+    margin-bottom: 80px
+    &-text
+      max-width: 100%
+@media  ( max-width: 600px )
+  .coop-about 
+    margin-bottom: 70px
+    &-text 
+@media  ( max-width: 425px )
+  .coop-about 
+    margin-bottom: 60px
+    &-text 
+      p
+        font-size: 14px
+        line-height: 20px
+    &-subtitle 
+      margin-top: 15px
+      margin-bottom: 10px
+      font-size: 18px
+      line-height: 24px
+    &-list 
+      li 
+        font-size: 14px
+        line-height: 20px
+        padding-left: 30px

@@ -1,0 +1,89 @@
+.eq 
+  &-text
+    width: 830px
+    margin-bottom: 40px
+    p 
+      color: $text2
+      font-size: 18px
+      line-height: 28px
+  &-wrap 
+    display: flex
+    justify-content: space-between
+
+  &-item 
+    width: calc( 33%  - 20px )
+    display: flex
+    align-items: center
+    img 
+      width: 120px
+      margin-right: 25px
+    span 
+      font-weight: 500
+      font-size: 18px
+      line-height: 28px
+
+@media ( max-width: 1200px )
+  .eq 
+    &-item 
+      img 
+        width: 100px
+
+@media ( max-width: 1100px )
+  .eq 
+    &-item 
+      img 
+        margin-right: 20px
+        width: 90px
+@media ( max-width: 1024px )
+  .eq 
+    &-text 
+      width: 100%
+
+    &-item 
+      width: calc( 30% - 20px )
+      display: flex
+      flex-direction: column 
+      img 
+        margin-right: 0
+        margin-bottom: 15px
+        width: 80px
+      span 
+        display: block
+        text-align: center
+
+@media ( max-width: 840px )
+  .eq 
+    &-text 
+      width: 100%
+
+    &-item 
+      width: calc( 33% - 10px )
+
+@media ( max-width: 650px )
+  .eq 
+    &-wrap 
+      flex-wrap: wrap
+      
+    &-item 
+      width: 100%
+      flex-direction: row
+      margin-bottom: 25px
+      &:last-child
+        margin-bottom: 0
+      img 
+        margin-bottom: 0
+        margin-right: 15px
+
+      span 
+        text-align: left
+
+
+
+
+@media ( max-width: 600px )
+  .eq 
+    &-text 
+      margin-bottom: 25px
+      p
+        font-size: 16px
+        line-height: 24px

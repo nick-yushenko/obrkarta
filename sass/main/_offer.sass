@@ -1,9 +1,74 @@
 .offer 
 
+
+  // Верхний ряд
+  &-wrap 
+    display: flex
+    justify-content: space-between
+    margin-bottom: 30px
+    &.c-3
+      .offer-block.offer-1
+        width: calc(50% - 23px)
+      .offer-block.offer-2
+        width: calc(25% - 23px)
+      .offer-block.offer-3
+        width: calc(25% - 23px)
+    &.c-2
+      .offer-block.offer-1
+        width: calc(70% - 15px)
+        .br 
+          display: block
+      .offer-block.offer-2
+        width: calc(30% - 15px)
+        .offer-block__img 
+          left: auto
+          right: 50% 
+          transform: translateX(50%)
+          // width: 100%
+
+
+
+  &-block 
+    border-radius: 15px
+    height: 390px
+    padding: 25px 30px
+    position: relative
+    overflow: hidden
+
+    &.offer-1 
+      background-color: #FFF3A2
+      .br 
+        display: none
+      .offer-block__img 
+        bottom: 0 
+        right: 0
+    &.offer-2 
+      background-color: #DEF8E0
+      overflow: visible
+      .offer-block__img 
+        bottom: 0 
+        left: 0px
+    &.offer-3
+      background-color: #D7DEFF
+      .offer-block__img 
+        bottom: 0 
+        left: 0 
+        width: 100%
+    &__title 
+      +bold
+      font-size: 32px
+      line-height: 40px
+    &__img 
+      position: absolute
+  
+  
   // Нижний ряд 
   &-row 
     display: flex
     justify-content: space-between
+    &.c-5
+      .offer-item 
+        width: calc(20% - 20px)
     &.c-4
       .offer-item 
         width: calc(25% - 24px)
@@ -61,3 +126,493 @@
         opacity: 1 !important
       .offer-item__text 
         color: #fff
+
+@media ( max-width: 1300px )
+  .offer 
+    &-wrap 
+    &-block 
+      height: 370px
+
+@media ( max-width: 1250px )
+  .offer 
+    &-wrap 
+      &.c-2
+        .offer-block.offer-1 
+          .offer-block__img
+            width: 500px
+        .offer-block.offer-2
+          .offer-block__img
+            width: 280px
+    &-block 
+      padding: 20px
+
+      height: 350px
+      &__title 
+        font-size: 28px
+        line-height: 36px
+      &.offer-1 
+        .offer-block__img
+          width: 90%  
+      &.offer-2 
+        .offer-block__img 
+          width: 105%
+
+@media ( max-width: 1200px )
+  .offer 
+    &-block 
+      height: 320px
+      padding: 20px
+      
+@media ( max-width: 1024px )
+  .offer 
+    &-wrap 
+      flex-wrap: wrap
+      margin-bottom: 24px
+      &.c-2 
+        .offer-block.offer-1
+          width: calc(60% - 12px) 
+          margin-bottom: 0
+          .offer-block__img
+            width: 80%
+
+        .offer-block.offer-2
+          width: calc(40% - 12px) 
+          margin-bottom: 0
+      &.c-3
+        .offer-block.offer-1
+          width: 100%
+          margin-bottom: 24px
+          .br 
+            display: block
+          .offer-block__img
+            width: 500px
+
+        .offer-block.offer-2
+          width: calc(50% - 12px) 
+          margin-bottom: 0
+          .offer-block__img
+            width: 300px
+            right: 0 
+            left: auto
+        .offer-block.offer-3
+          width: calc(50% - 12px) 
+          margin-bottom: 0
+          .offer-block__img
+            width: 300px
+            left: auto 
+            right: 0
+    &-block 
+      height: 320px
+      padding: 20px
+     
+
+      &.offer-2
+        width: calc(50% - 12px) 
+        
+
+      &.offer-3
+        width: calc(50% - 12px) 
+        
+    &-row 
+      width: max-content
+      padding: 0 calc((100% - 860px) / 2)
+
+      &__wrap 
+        overflow-y: scroll
+        width: 100%
+        padding-bottom: 5px
+        &::-webkit-scrollbar-thumb 
+          background-color: #fff
+        &::-webkit-scrollbar
+          background-color: #fff
+        
+     
+    &-item 
+      width: max-content !important
+      margin-right: 15px
+      &:last-child
+        margin-right: 0
+          
+@media ( max-width: 940px )
+  .offer 
+    &-row 
+      padding: 0 calc((100% - 768px) / 2)
+
+    &-wrap 
+      flex-wrap: wrap
+      margin-bottom: 24px
+      &.c-2 
+        .offer-block.offer-1
+          width: 100%
+          margin-bottom: 24px
+          height: 210px
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+          .offer-block__img
+            width: 50%
+            left: auto 
+            right: 0
+        .offer-block.offer-2
+          width: 100%
+          margin-bottom: 0
+          height: 190px
+          .br 
+            display: none
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+            
+          .offer-block__img
+            max-height: 80%
+            right: 5%
+            transform: none
+      &.c-3
+        .offer-block.offer-1
+          width: 100%
+          margin-bottom: 24px
+          height: 240px
+          .br 
+            display: block
+          .offer-block__img
+            width: 60%
+            max-height: 100%
+          .offer-block__title 
+            width: 40%
+
+        .offer-block.offer-2
+          width: calc(50% - 12px) 
+          margin-bottom: 0
+          height: 190px
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 40%
+          .offer-block__img
+            width: 56%
+            right: 10px
+            left: auto
+        .offer-block.offer-3
+          width: calc(50% - 12px) 
+          margin-bottom: 0
+          height: 190px
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+          .offer-block__img
+            width: 50%
+            left: auto 
+            right: 0
+    &-block 
+      padding: 15px
+      display: flex
+      flex-direction: column 
+      justify-content: center       
+
+@media ( max-width: 840px )
+  .offer 
+    &-row 
+      padding: 0 calc((100% - 740px) / 2)
+
+@media ( max-width: 780px )
+  .offer 
+    &-row 
+      padding: 0 calc((100% - 720px) / 2)
+    &-wrap 
+      flex-wrap: wrap
+      margin-bottom: 24px
+      &.c-2 
+        .offer-block.offer-1
+          width: 100%
+          margin-bottom: 24px
+          height: 210px
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+          .offer-block__img
+            width: 50%
+            left: auto 
+            right: 0
+        .offer-block.offer-2
+          width: 100%
+          margin-bottom: 0
+          height: 160px
+          .br 
+            display: none
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+            
+          .offer-block__img
+            max-height: 80%
+            right: 5%
+            transform: none
+      &.c-3
+        .offer-block.offer-1
+          width: 100%
+          margin-bottom: 24px
+          height: 210px
+          .br 
+            display: block
+          .offer-block__img
+            width: 50%
+          .offer-block__title 
+            width: 40%
+
+        .offer-block.offer-2
+          width: calc(50% - 12px) 
+          margin-bottom: 0
+          height: 160px
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 40%
+          .offer-block__img
+            width: 56%
+            right: 10px
+            left: auto
+        .offer-block.offer-3
+          width: calc(50% - 12px) 
+          margin-bottom: 0
+          height: 160px
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+          .offer-block__img
+            width: 50%
+            left: auto 
+            right: 0
+    
+   
+
+@media ( max-width: 750px )
+  .offer 
+    &-row 
+      padding: 0 5%
+    &-wrap 
+      flex-wrap: wrap
+      margin-bottom: 24px
+      &.c-2 
+        .offer-block.offer-1
+          width: 100%
+          margin-bottom: 24px
+          height: 210px
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+          .offer-block__img
+            width: 320px
+
+            left: auto 
+            right: 0
+        .offer-block.offer-2
+          width: 100%
+          margin-bottom: 0
+          height: 160px
+          .br 
+            display: none
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+            
+          .offer-block__img
+            width: 220px
+
+            right: 7%
+            transform: none
+      &.c-3
+        .offer-block.offer-1
+          width: 100%
+          margin-bottom: 15px
+
+          height: 210px
+          .br 
+            display: block
+          .offer-block__img
+            width: 320px
+          .offer-block__title 
+            width: 40%
+
+        .offer-block.offer-2
+          width: 100%
+          margin-bottom: 15px
+          height: 160px
+          .br 
+            display: none
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 45%
+          .offer-block__img
+            width: 220px
+            right: 7%
+            // left: auto
+        .offer-block.offer-3
+          width: 100% 
+          margin-bottom: 0
+          height: 160px
+          .br 
+            display: none
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 65%
+          .offer-block__img
+            width: 200px
+            right: 7%
+            bottom: -30px
+    &-block 
+      padding: 12px
+      display: flex
+      flex-direction: column 
+      justify-content: center
+      &__title 
+        font-size: 24px !important
+        line-height: 32px !important
+
+@media ( max-width: 600px )
+  .offer 
+    &-wrap 
+      flex-wrap: wrap
+      margin-bottom: 24px
+      &.c-2 
+        .offer-block.offer-1
+          width: 100%
+          margin-bottom: 15px
+          padding-top: 30px
+          height: 230px
+          justify-content: flex-start
+          .br 
+            display: none
+          .offer-block__img
+            width: 320px
+            right: 0
+            bottom: -10px
+          .offer-block__title 
+            width: 100%
+
+        .offer-block.offer-2
+          width: 100%
+          margin-bottom: 15px
+          height: 120px
+          .br 
+            display: none
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+          .offer-block__img
+            width: 170px
+            right: 7%
+        .offer-block.offer-3
+          width: 100% 
+          margin-bottom: 0
+          height: 120px
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+          .offer-block__img
+            width: 160px
+            right: 7%
+            bottom: -30px
+      &.c-3
+        .offer-block.offer-1
+          width: 100%
+          margin-bottom: 15px
+          padding-top: 30px
+          height: 230px
+          justify-content: flex-start
+          .br 
+            display: none
+          .offer-block__img
+            width: 320px
+            right: 0
+            bottom: -10px
+          .offer-block__title 
+            width: 100%
+        .offer-block.offer-2
+          width: 100%
+          margin-bottom: 15px
+          height: 120px
+          .br 
+            display: none
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+          .offer-block__img
+            width: 170px
+            right: 7%
+        .offer-block.offer-3
+          width: 100% 
+          margin-bottom: 0
+          height: 120px
+          .offer-block__title 
+            font-size: 24px
+            line-height: 32px
+            width: 50%
+          .offer-block__img
+            width: 160px
+            right: 7%
+            bottom: -30px
+    
+    &-block 
+      padding: 12px
+      display: flex
+      flex-direction: column 
+      justify-content: center
+      &__title 
+        font-size: 21px !important
+        line-height: 24px !important
+
+@media ( max-width: 425px )
+  .offer 
+    &-row 
+      padding: 0 4%
+
+    &-wrap 
+      margin-bottom: 40px
+
+      .offer-block.offer-1
+        padding-top: 25px !important
+        height: 210px !important
+        .offer-block__img
+          width: 300px !important 
+      .offer-block.offer-2
+        height: 100px !important
+        .offer-block__title 
+          width: 50%
+        .offer-block__img
+          width: 140px !important
+          right: 7%
+      .offer-block.offer-3
+        height: 100px !important
+        .offer-block__title 
+          width: 50%
+        .offer-block__img
+          width: 140px !important
+          right: 7%
+          bottom: -30px
+  
+
+@media ( max-width: 340px )
+  .offer 
+    &-wrap 
+      .offer-block.offer-1
+        padding-top: 25px !important
+        height: 210px !important
+        .offer-block__img
+          width: 280px !important 
+
+
+
+
