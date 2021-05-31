@@ -1,6 +1,5 @@
 // Шаблоны для динамической вставки 
-const templates = (document.querySelector('templates')) ? document.querySelector('templates') : document.body
-
+const templates = (document.querySelector('.templates')) ? document.querySelector('.templates') : document.body
 
 // якорные ссылки 
 let headerHeight = 0
@@ -849,4 +848,39 @@ function initOrder() {
       }
     })
 
+}
+
+
+
+
+
+// FAQ 
+const faqItems = document.querySelectorAll('.faq-item')
+console.log(templates)
+if (faqItems.length > 0) {
+  faqItems.forEach(function (item) {
+    let itemBody = item.querySelector('.faq-body')
+
+    let clone = itemBody.cloneNode(true);
+    clone.classList.add('template')
+    clone.classList.add('template')
+    templates.appendChild(clone);
+
+
+    item.querySelector('.faq-head').addEventListener('click', function (e) {
+      item.classList.toggle('opened')
+      if (item.classList.contains('opened')) {
+        try {
+          item.querySelector('.faq-body').style.height = clone.clientHeight + 'px'
+        } catch (e){
+          item.querySelector('.faq-body').style.height = 'max-content'
+
+        }
+      }
+      else
+        item.querySelector('.faq-body').style.height = 0
+
+    })
+
+  })
 }
