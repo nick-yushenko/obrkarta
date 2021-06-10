@@ -409,6 +409,10 @@ $.validator.addMethod("pwcheckallowedchars", function (value) {
   return /^[a-zA-Zа-яА-я-() ]+$/.test(value) // has only allowed chars letter
 }, "Недопустимое значение");
 
+$.validator.addMethod("emailMask", function (value) {
+  return /^[a-zA-Z@.-_]+$/.test(value) // has only allowed chars letter
+}, "Недопустимое значение");
+
 $('#brifForm').validate({
   rules: {
     obrmail: {
@@ -549,6 +553,91 @@ $('#orderForm').validate({
 
 
 });
+
+$('#supportForm').validate({
+  rules: {
+
+    title: {
+      required: true,
+    },
+
+    message: {
+      required: true,
+    },
+    student: {
+      required: true,
+    },
+    supportmail: {
+      email: true,
+      required: true,
+      emailMask: true
+    },
+    supporttel:
+    {
+      // required: true
+    }
+
+  },
+  messages: {
+
+    title: {
+      required: jQuery.validator.format("Поле не заполнено"),
+      maxlength: jQuery.validator.format("Максимум 100 символов"),
+    },
+    message: {
+      required: jQuery.validator.format("Поле не заполнено"),
+      minlength: jQuery.validator.format("Минимум 10 символов"),
+      maxlength: jQuery.validator.format("Минимум 2000 символов"),
+
+    },
+    supportmail: {
+      required: jQuery.validator.format("Поле не заполнено"),
+      email: jQuery.validator.format('Введен некорректный e-mail')
+
+    },
+    supporttel:
+    {
+      minlength: jQuery.validator.format("Номер указан не полностью"),
+      // required: true
+    }
+
+
+  },
+  errorElement: "span",
+  errorClass: "invalid",
+  highlight: function (element) {
+    $(element).parent().addClass("invalid");
+  },
+  unhighlight: function (element) {
+    $(element).parent().removeClass("invalid");
+  },
+  focusInvalid: false,
+  onkeyup: function (element) {
+    let submit = document.querySelector(' #supportForm .form-submit')
+
+    if ($('#supportForm').validate().checkForm()) {
+      submit.classList.remove('disabled')
+    } else {
+      submit.classList.add('disabled')
+    }
+
+    // этот код взят из события onkeyup по умолчанию. Нужен чтобы скрывать/показывать ошибку после каждого введенного символа 
+    var excludedKeys = [
+      16, 17, 18, 20, 35, 36, 37,
+      38, 39, 40, 45, 144, 225
+    ];
+    if (event.which === 9 && this.elementValue(element) === "" || $.inArray(event.keyCode, excludedKeys) !== -1) {
+      return;
+    } else if (element.name in this.submitted || element.name in this.invalid) {
+      this.element(element);
+    }
+  },
+
+
+});
+
+
+
 
 //  Страница  локкеров. Эффект при наведении 
 
@@ -856,7 +945,6 @@ function initOrder() {
 
 // FAQ 
 const faqItems = document.querySelectorAll('.faq-item')
-console.log(templates)
 if (faqItems.length > 0) {
   faqItems.forEach(function (item) {
     let itemBody = item.querySelector('.faq-body')
@@ -872,7 +960,7 @@ if (faqItems.length > 0) {
       if (item.classList.contains('opened')) {
         try {
           item.querySelector('.faq-body').style.height = clone.clientHeight + 'px'
-        } catch (e){
+        } catch (e) {
           item.querySelector('.faq-body').style.height = 'max-content'
 
         }
