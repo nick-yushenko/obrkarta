@@ -225,7 +225,15 @@ if (modalCloseBtns.length > 0) {
   })
 }
 
-
+const closeSupportModal = document.querySelector('#closeSupportModal')
+if (closeSupportModal)
+  closeSupportModal.addEventListener('click', function (e) {
+    let modal = closeSupportModal.parentElement.parentElement
+    if (modal.classList.contains('modal')) {
+      modal.classList.remove('active')
+      document.querySelector('body').style.overflow = 'auto'
+    }
+  })
 
 // слайдер на странице О проекте (слайдер сервисов). имеет сложенный слайдер 
 
