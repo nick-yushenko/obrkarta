@@ -980,3 +980,53 @@ if (faqItems.length > 0) {
 
   })
 }
+
+
+// показ новостей (кнопка ЕЩЕ)
+
+const newsList = document.querySelectorAll('.newslist-item')
+const newsListBtn = document.querySelector('.js-newslist-more')
+let newsListStep = 7 // число новостей, которые показываются по умолчанию (а также число новостей, которые показываются при клике на кнопку)
+if (newsListBtn) {
+  // проверка количества новостей и скрытие лишних 
+  if (newsList.length > newsListStep) { // скрытие и показ кнопки 
+    newsListBtn.style.display = 'block'
+    let c = 0
+    newsList.forEach(function (item) {
+      c++
+      if (c <= newsListStep) {
+        item.classList.add('opened')
+      } else {
+        item.classList.remove('opened')
+
+      }
+    })
+  } else {
+    newsListBtn.style.display = 'none'
+
+  }
+  newsListBtn.addEventListener('click', function (e) {
+    let count = 0
+    let openedCount = 0
+    newsList.forEach(function (item) {
+      if (!item.classList.contains('opened')) {
+        count++
+        if (count <= newsListStep) {
+          item.classList.add('opened')
+        }
+      }
+
+    })
+
+    newsList.forEach(function (item) {
+      if (item.classList.contains('opened')) {
+        openedCount++
+      }
+    })
+    console.log('total ' + newsList.length)
+    console.log('opened ' + openedCount)
+    if (newsList.length <= openedCount)
+      newsListBtn.style.display = 'none'
+
+  })
+}
