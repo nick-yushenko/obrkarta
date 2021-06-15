@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/style.min.css">
 
 
-  <title>Образовательная карта - О проекте</title>
+  <title>Образовательная карта - Способы пополнения</title>
 </head>
 
 <body>
@@ -40,6 +40,7 @@
             <img src="img/icons/faq-icon.svg" alt="">
             <span>Помощь</span>
           </a>
+
           <div class="header-nav__actions">
             <a href="#">
               Пополнить Обркарту
@@ -90,7 +91,7 @@
     </div>
   </header>
 
-   <div class="menu" id="menu">
+  <div class="menu" id="menu">
     <div class="wrap menu-btns">
       <a href="order.html" class="btn">Заказать карту</a>
       <a href="insurance.html" class="btn-light">Страхование</a>
@@ -141,27 +142,171 @@
     </nav>
   </div>
 
+  <main class="main ">
 
-  <main class="main">
-    <section class="success">
-      <div class="success-wrap">
-        <div class="success-descr">
-          <h1 class=" section-title success-title mb-1 h1">Оплата прошла успешно</h1>
-          <div class="success-text">
+    <section class="section addschool  mb-1">
+      <div class="wrap">
+        <h2 class="section-title  mb-1 h1 mt-1">Подключить школу</h2>
+        <h2 class="section-title mb-1">Как подключить школу</h2>
+
+        <div class="addschool-item">
+          <span class="addschool-item__num">1</span>
+          <div class="addschool-item__descr">
             <p>
-              Оплата заказа &#8470;&nbsp;12345 произведена успешно. Спасибо!
-              Карта доставляется до&nbsp;секретаря школы на&nbsp;следующий рабочий день после заказа.
+              Запонить анкету-заявку. Для этого ее можно скачать ниже. <span class="br"></span>
+              <a href="#" target="_blank" rel="noopener noreferrer">Скачать анкету-заявку</a>
             </p>
           </div>
-          <a href="order.html" class="btn success-btn"> Отлично</a>
         </div>
-        <div class="success-img">
-          <img src="img/pages/success/success-img.jpg" alt="">
+
+        <div class="addschool-item ">
+          <span class="addschool-item__num">2</span>
+          <div class="addschool-item__descr">
+            <p>
+              Отправить на электронную почту <a href="mailto:admin@obrkarta.ru"> admin@obrkarta.ru</a> заполненную
+              анкету-заявку
+
+            </p>
+          </div>
+        </div>
+
+        <div class="addschool-item">
+          <span class="addschool-item__num">3</span>
+          <div class="addschool-item__descr">
+            <p>
+              Определиться с тем, кто будет плательщиком комиссии за обслуживание и заполнить договор:
+            </p>
+          </div>
+          <div class="addschool-item__text">
+            <ul>
+              <li>
+                Плательщик — школа <br>
+                <a href="#" target="_blank" rel="noopener noreferrer">Скачать договор</a> <br>
+                <a href="#" target="_blank" rel="noopener noreferrer">Скачать договор упрощенной схемы</a>
+              </li>
+              <li>
+                Плательщик — поставщик питания <br>
+                <a href="#" target="_blank" rel="noopener noreferrer">Скачать договор</a> <br>
+                <a href="#" target="_blank" rel="noopener noreferrer">Скачать договор упрощенной схемы</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="addschool-item ">
+          <span class="addschool-item__num">4</span>
+          <div class="addschool-item__descr">
+            <p>
+
+              Выслать копию подписанного договора на почту <a href="mailto:admin@obrkarta.ru"> admin@obrkarta.ru</a>
+            </p>
+          </div>
+        </div>
+        <div class="addschool-item ">
+          <span class="addschool-item__num">5</span>
+          <div class="addschool-item__descr">
+            <p>
+
+              Получить скан подписанного договора по электронной почте
+            </p>
+          </div>
+        </div>
+        <div class="addschool-item ">
+          <span class="addschool-item__num">6</span>
+          <div class="addschool-item__descr">
+            <p>
+
+              Согласовать дату подключения учреждения(ий) к системе по электронной почте
+              <a href="mailto:admin@obrkarta.ru"> admin@obrkarta.ru</a>
+            </p>
+          </div>
+        </div>
+        <div class="addschool-item ">
+          <span class="addschool-item__num">7</span>
+          <div class="addschool-item__descr">
+            <p>
+              Отправить оригиналы подписанного договора по адресу 420032, РТ, г. Казань, ул.Табейкина, д. 19А, оф. 303
+            </p>
+          </div>
+        </div>
+        <div class="addschool-item ">
+          <span class="addschool-item__num">8</span>
+          <div class="addschool-item__descr">
+            <p>
+              Следовать указаниям специалистов в процессе работы.
+            </p>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
 
+
+    </section>
+
+
+    <!-- 
+      класс js-hint добавляет анимацию в подсказку для поля ввода.
+      autocomplete="off" - это нужно прописать для input, если используется динамическая подсказка 
+      Если она не нужна, то убрать этот класс и вместо div.hint писать подсказку в placeholder
+    -->
+    <!-- 
+      Аттрибут name у полей должен быть уникальным, чтобы браузер Chrome не пытался подсказать свои значения 
+    -->
+
+    <section class="section brif bg " id="brif">
+      <div class="wrap">
+        <form action="#" class="brif-form" id="brifForm">
+          <h3 class="brif-title">
+            Заказать звонок
+          </h3>
+          <div class="brif-wrap">
+
+            <div class="brif-block">
+              <div class="input-block js-hint">
+                <input type="text" class="" autocomplete="off" name="obrname" minlength="2" maxlength="80">
+
+                <div class="hint">
+                  Как к Вам обращаться
+                </div>
+              </div>
+              <div class="input-block js-hint">
+                <input type="tel" class="phone " data-tel-input autocomplete="off" name="obrtel" minlength="17"
+                  maxlength="18">
+
+                <div class="hint">
+                  Контактный телефон
+                </div>
+              </div>
+              <div class="input-block js-hint">
+                <input type="email" autocomplete="off" name="obrmail">
+
+                <div class="hint">
+                  E-mail
+                </div>
+              </div>
+            </div>
+
+            <div class="brif-block">
+              <div class="textarea-block js-hint">
+                <textarea name="message" class="" id="" autocomplete="off" minlength="10" maxlength="1000"></textarea>
+                <div class="hint">
+                  Комментарий
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <input type="submit" value="Заказать звонок" class="btn brif-submit form-submit disabled">
+          <span class="brif-privacy">
+            Нажимая на кнопку “Заказать звонок”, вы даете согласие на обработку персональных данных
+          </span>
+        </form>
+      </div>
+    </section>
+
+
+
+  </main>
   <footer>
     <section class="download">
       <div class="wrap">
@@ -239,11 +384,10 @@
     </section>
   </footer>
 
-
   <script src="js/swiper.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.validate.min.js"></script>
-  <script src="js/jquery.mask.min.js"></script>
+  <script src="js/phoneMask.js"></script>
   <script src="js/index.js"></script>
 </body>
 
