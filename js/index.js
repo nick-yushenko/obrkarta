@@ -965,7 +965,8 @@ if (faqItems.length > 0) {
     let clone = itemBody.cloneNode(true);
     clone.classList.add('template')
     clone.classList.add('template')
-    clone.classList.add('wrap')
+    if (window.innerWidth >= 425)
+      clone.classList.add('wrap')
     templates.appendChild(clone);
 
 
