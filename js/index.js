@@ -795,88 +795,139 @@ let order = {
   student: 'Не выбрано',
   bankBook: 'Не выбрано'
 }
+
 if (orderItems) {
   orderItems.forEach(function (item) {
     item.addEventListener('click', function (e) {
-      orderItems.forEach(function (i) {
-        i.classList.remove('current')
-      })
-      item.classList.add('current')
 
-      let target = item.getAttribute('data-target')
+      if (e.target.tagName === "INPUT") {
+      } else {
 
-      if (target == 'color') { // Выбран браслет
-        orderColors.forEach(function (color) {
-          if (color.classList.contains('current')) {
-            order.type = color.getAttribute('data-order-item-name')
-            order.imgUrl = color.getAttribute('data-order-url')
-          }
-        })
-        order.price = item.getAttribute('data-order-price')
-        setOrder()
-        orderOptions.forEach(function (opt) {
-          opt.classList.remove('opened')
-        })
-        orderOptionColor.classList.add('opened')
-      }
-      if (target == 'null') { // Выбран брелок
-        order.price = item.getAttribute('data-order-price')
-        order.type = item.getAttribute('data-order-type')
-        order.imgUrl = item.getAttribute('data-order-url')
-        setOrder()
-        orderOptions.forEach(function (opt) {
-          opt.classList.remove('opened')
-        })
-      }
-      if (target == 'type') { // выбрана карта
-        orderTypes.forEach(function (type) {
-          if (type.classList.contains('current')) {
-            order.price = type.getAttribute('data-order-price')
-            order.imgUrl = type.getAttribute('data-order-url')
-            order.type = type.getAttribute('data-order-item-name')
-            setOrder()
-          }
 
+
+        orderItems.forEach(function (i) {
+          i.classList.remove('current')
         })
-        orderOptions.forEach(function (opt) {
-          opt.classList.remove('opened')
-        })
-        orderOptionType.classList.add('opened')
+        item.classList.add('current')
+
+        let target = item.getAttribute('data-target')
+
+        if (target == 'color') { // Выбран браслет
+
+
+          orderColors.forEach(function (color) {
+            if (color.classList.contains('current')) {
+              order.type = color.getAttribute('data-order-item-name')
+              order.imgUrl = color.getAttribute('data-order-url')
+            }
+          })
+          order.price = item.getAttribute('data-order-price')
+          setOrder()
+          orderOptions.forEach(function (opt) {
+            opt.classList.remove('opened')
+          })
+          orderOptionColor.classList.add('opened')
+          $("html, body").animate({
+            scrollTop: $('#orderColor').offset().top - 10 - headerHeight + "px"
+          }, {
+            duration: 500,
+            easing: "swing"
+          });
+        }
+        if (target == 'null') { // Выбран брелок
+          order.price = item.getAttribute('data-order-price')
+          order.type = item.getAttribute('data-order-type')
+          order.imgUrl = item.getAttribute('data-order-url')
+          setOrder()
+          orderOptions.forEach(function (opt) {
+            opt.classList.remove('opened')
+          })
+          $("html, body").animate({
+            scrollTop: $('#orderData').offset().top - 10 - headerHeight + "px"
+          }, {
+            duration: 500,
+            easing: "swing"
+          });
+        }
+        if (target == 'type') { // выбрана карта
+
+
+          orderTypes.forEach(function (type) {
+            if (type.classList.contains('current')) {
+              order.price = type.getAttribute('data-order-price')
+              order.imgUrl = type.getAttribute('data-order-url')
+              order.type = type.getAttribute('data-order-item-name')
+              setOrder()
+            }
+
+          })
+          orderOptions.forEach(function (opt) {
+            opt.classList.remove('opened')
+          })
+          orderOptionType.classList.add('opened')
+          $("html, body").animate({
+            scrollTop: $('#orderType').offset().top - 10 - headerHeight + "px"
+          }, {
+            duration: 500,
+            easing: "swing"
+          });
+        }
       }
 
 
     })
   })
 }
+
 if (orderColors) {
+
   orderColors.forEach(function (item) {
     item.addEventListener('click', function (e) {
-      order.type = item.getAttribute('data-order-item-name')
-      order.imgUrl = item.getAttribute('data-order-url')
+      if (e.target.tagName === "INPUT") {
+      } else {
+        order.type = item.getAttribute('data-order-item-name')
+        order.imgUrl = item.getAttribute('data-order-url')
 
-      setOrder()
+        setOrder()
 
 
-      orderColors.forEach(function (i) {
-        i.classList.remove('current')
-      })
-      item.classList.add('current')
+        orderColors.forEach(function (i) {
+          i.classList.remove('current')
+        })
+        item.classList.add('current')
+        $("html, body").animate({
+          scrollTop: $('#orderData').offset().top - 10 - headerHeight + "px"
+        }, {
+          duration: 500,
+          easing: "swing"
+        });
+
+      }
     })
   })
 }
 if (orderTypes) {
   orderTypes.forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener('click', function (e) {
+      if (e.target.tagName === "INPUT") {
+      } else {
+        order.price = item.getAttribute('data-order-price')
+        order.imgUrl = item.getAttribute('data-order-url')
+        order.type = item.getAttribute('data-order-item-name')
+        setOrder()
 
-      order.price = item.getAttribute('data-order-price')
-      order.imgUrl = item.getAttribute('data-order-url')
-      order.type = item.getAttribute('data-order-item-name')
-      setOrder()
+        orderTypes.forEach(function (t) {
+          t.classList.remove('current')
+        })
+        item.classList.add('current')
+        $("html, body").animate({
+          scrollTop: $('#orderData').offset().top - 10 - headerHeight + "px"
+        }, {
+          duration: 500,
+          easing: "swing"
+        });
 
-      orderTypes.forEach(function (t) {
-        t.classList.remove('current')
-      })
-      item.classList.add('current')
+      }
     })
   })
 }
@@ -901,7 +952,10 @@ function setOrder() {
     orderPhoto.setAttribute('src', order.imgUrl)
     orderItemName.textContent = order.type
     orderAddress.textContent = order.address
-    orderPrice.textContent = order.price + ' руб.'
+    if (order.price == 'Не выбрано')
+      orderPrice.textContent = order.price
+    else
+      orderPrice.textContent = order.price + ' руб.'
     orderUserName.textContent = order.student
 
     orderItemNameInput.value = order.type
@@ -957,6 +1011,8 @@ function initOrder() {
 
 
 // FAQ 
+
+
 const faqItems = document.querySelectorAll('.faq-item')
 if (faqItems.length > 0) {
   faqItems.forEach(function (item) {
