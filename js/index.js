@@ -409,12 +409,17 @@ if (textareas.length > 0) {
 // ---------
 
 // Маска ввода номера телефона
-// $('input.phone').mask('+7 (000) 000-00-00')
-
+$('input.phone').mask('+0 (000) 000 00 00');
+$('input.phone').on('input', function () {
+  let val = $(this).val();
+  if (val[1] == 8) {
+    $(this).val(7 + val.slice(2));
+  }
+});
 // Валидация формы обратной связи (сотрудничество, франшиза и тд)
 
 $.validator.addMethod("pwcheckallowedchars", function (value) {
-  return /^[a-zA-Zа-яА-я-() ]+$/.test(value) // has only allowed chars letter
+  return /^[a-zA-Zа-яА-я-()ёЁ ]+$/.test(value) // has only allowed chars letter
 }, "Недопустимое значение");
 
 $.validator.addMethod("emailMask", function (value) {
