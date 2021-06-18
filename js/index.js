@@ -292,6 +292,15 @@ const servicePhotoSlider = new Swiper('#servicePhotos', {
   spaceBetween: 15,
   loop: true,
   effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+  autoplay: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+
+  },
   // Navigation arrows
 
   navigation: {
