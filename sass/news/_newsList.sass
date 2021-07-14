@@ -1,0 +1,138 @@
+.newslist 
+  padding-bottom: 10px
+  &-item 
+    display: none
+    align-items: flex-start
+    justify-content: space-between
+    cursor: pointer
+    &.opened 
+      display: flex
+      flex-direction: row
+      width: 100% 
+      margin-top: 40px
+      &:first-of-type
+        
+        margin-top: 0
+
+
+    &__title 
+      font-weight: 500
+      margin-bottom: 8px
+      font-size: 18px
+      line-height: 28px
+      opacity: 0.79
+    &__text 
+      opacity: 0.79
+      font-size: 16px
+      line-height: 24px
+      color: #5C646D
+      margin-bottom: 12px
+
+    &__date 
+      font-size: 14px
+      line-height: 20px
+      color: #8D9AA6
+      display: block
+      margin-bottom: 8px
+
+    &__link 
+      display: block 
+      margin-top: auto
+      color: #FFC100
+      font-weight: 500
+      font-size: 18px
+      line-height: 28px
+  &-img 
+    width: 360px
+    img 
+      width: 100% 
+      object-fit: cover 
+      border-radius: 4px
+  &-descr 
+    width: calc(100% - 360px - 40px)
+    display: flex
+    flex-direction: column 
+    
+
+  &-more 
+    width: 180px 
+    margin: 0 auto  
+    margin-top: 50px
+
+
+.test-block 
+  display: flex
+
+@media ( max-width: 1024px )
+  .newslist
+    &-item
+
+    &-img 
+      width: 300px 
+    &-descr 
+      width: calc(100% - 300px - 25px)
+
+
+@media ( max-width: 840px )
+  .newslist
+    &-item
+
+    &-img 
+      width: 230px 
+    &-descr 
+      width: calc(100% - 230px - 15px)
+
+    &-more 
+      margin-top: 30px
+
+
+@media ( max-width: 600px )
+  .newslist
+    &-item 
+      flex-direction: column
+      &.opened 
+        display: flex
+        flex-direction: column
+        margin-top: 30px
+      &__date 
+        margin-bottom: 0
+      &__link 
+        display: none
+    &-img 
+      width: 100%
+      margin-bottom: 8px
+
+    &-descr 
+      width: 100%
+
+    &-more 
+      margin-top: 50px
+
+
+@media ( max-width: 425px )
+  .newslist
+    &-item 
+      flex-direction: column 
+      &.opened 
+        margin-top: 30px
+      &__title 
+        font-size: 16px
+        line-height: 24px
+      &__text
+        font-size: 14px 
+        line-height: 20px
+      &__date 
+        font-size: 13px
+        line-height: 16px
+      
+       
+    &-img 
+      width: 100%
+      margin-bottom: 8px
+
+    &-descr 
+      width: 100%
+
+    &-more 
+      margin-top: 50px
+      width: 100%

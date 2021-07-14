@@ -1,0 +1,244 @@
+.website 
+  padding-top: 40px !important  
+  &-item 
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    border-radius: 16px
+    background-color: #fff
+    padding: 16px 0
+
+    margin-bottom: 25px
+    &:last-child
+      margin-bottom: 0
+
+    &__img 
+      width: 490px
+      img 
+        width: 100%
+        object-fit: cover
+
+    &__descr 
+      width: calc(100% - 490px - 30px)
+      padding: 8px 0 
+      padding-right: 50px
+
+    &__title
+      +bold 
+      font-size: 40px
+      line-height: 56px 
+      margin-bottom: 15px
+      &.mb 
+        display: none
+
+    &__text 
+      color: #5C646D
+      font-size: 16px
+      line-height: 24px
+      margin-bottom: 15px
+
+    &__info 
+      margin-bottom: 8px
+      span 
+        font-size: 16px
+        line-height: 24px
+        color: #5C646D
+        &.hint 
+          color: $text
+          font-size: 18px
+          line-height: 28px
+          margin-right: 8px
+          font-weight: 500
+
+    &__buttons 
+      display: flex
+      align-items: center 
+      justify-content: flex-start
+      margin-top: 24px
+      .btn 
+        margin-right: 35px
+        font-size: 16px
+        line-height: 24px
+        padding: 18px 20px
+
+      .link 
+        font-size: 16px
+        line-height: 24px
+        color: #1E60BE
+
+
+
+
+@media ( max-width: 1200px )
+  .website 
+    padding-top: 40px !important  
+    &-item 
+      border-radius: 16px
+      padding: 16px 0
+
+      margin-bottom: 25px
+      &__img 
+        width: 400px
+        img 
+          width: 100%
+          object-fit: cover
+
+      &__descr 
+        width: calc(100% - 400px - 15px)
+        padding: 8px 0 
+        padding-right: 30px
+
+@media ( max-width: 1024px )
+  .website 
+    padding-top: 30px !important  
+    &-item 
+      border-radius: 16px
+      padding: 16px 0
+
+      margin-bottom: 25px
+      &__img 
+        width: 350px
+        img 
+          width: 100%
+          object-fit: cover
+
+      &__descr 
+        width: calc(100% - 350px - 15px)
+        padding: 0
+        padding-right: 20px
+
+      &__title 
+        font-size: 32px
+        line-height: 40px
+        margin-bottom: 10px
+
+      &__info 
+        span 
+          font-size: 16px
+          line-height: 24px
+          &.hint 
+            font-size: 16px
+            line-height: 24px
+
+@media ( max-width: 940px )
+  .website 
+    padding-top: 25px !important  
+    &-item 
+      border-radius: 12px
+      padding: 16px 0
+
+      margin-bottom: 20px
+      &__img 
+        width: 280px
+        img 
+          width: 100%
+          object-fit: cover
+
+      &__descr 
+        width: calc(100% - 280px - 10px)
+
+      &__title 
+        font-size: 28px
+        line-height: 36px
+
+@media ( max-width: 840px )
+  .website 
+    padding-top: 25px !important  
+    &-item 
+      border-radius: 8px
+      padding: 16px 0
+
+      margin-bottom: 15px
+      &__img 
+        width: 260px
+        img 
+          width: 100%
+          object-fit: cover
+
+      &__descr 
+        width: calc(100% - 260px - 5px)
+
+      &__title 
+        font-size: 24px
+        line-height: 32px
+        margin-bottom: 5px
+
+      &__text 
+        font-size: 14px
+        line-height: 20px
+
+      &__info 
+        span 
+          font-size: 14px
+          line-height: 20px
+          &.hint 
+            font-size: 14px
+            line-height: 20px
+      &__buttons 
+        .btn 
+          padding: 15px 20px
+
+@media ( max-width: 750px )
+  .website 
+    padding-top: 25px !important  
+    &-item 
+      border-radius: 8px
+      padding: 16px
+      padding-bottom: 32px
+
+      flex-direction: column 
+      position: relative
+      &__img
+        width: 360px
+        height: 250px
+        margin: 0 auto
+        img
+          height: 100%
+          object-fit: cover
+      &__descr 
+        width: 100%
+        padding-right: 0
+      &__title 
+        display: none 
+        margin-bottom: 0
+        &.mb 
+          display: block
+
+@media ( max-width: 600px )
+  .website 
+    padding-top: 20px !important 
+    &-item 
+      &__buttons 
+        display: block
+        .btn 
+          margin-right: 0
+          margin-bottom: 15px
+
+
+@media ( max-width: 425px )
+  .website 
+    padding-top: 15px !important 
+    &-item 
+      padding: 16px 8px 
+      padding-bottom: 32px
+      &__buttons 
+        display: block
+        .btn 
+          margin-right: 0
+          margin-bottom: 15px
+          width: 100%
+        
+        .link 
+          width: 100%
+          text-align: center
+          display: block
+      &__img 
+        width: 260px
+        height: 170px
+
+
+
+
+
+
+

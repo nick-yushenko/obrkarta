@@ -11,6 +11,10 @@
   opacity: 1
   font-family: 'Roboto', sans-serif
   font-weight: 400
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-synthesis: none
+  -webkit-text-size-adjust: 100%
 
 
 @media screen and ( min-width: 768px  )
@@ -57,6 +61,8 @@ body
     font-size: 40px
     line-height: 56px
     display: inline-block
+    &.map-title 
+      margin-bottom: 15px
     &.h1
       +medium
     span 
@@ -64,6 +70,7 @@ body
     &.title-img-left 
       img 
         margin-right: 15px
+        height: 32px
     &.title-img-right
      
       display: flex
@@ -87,6 +94,8 @@ body
       margin-bottom: 70px
     &.mt-1
       margin-top: 30px
+    &.mt-2 
+      margin-top: 30px
   &-subtitle 
     +bold 
     font-size: 24px
@@ -96,6 +105,8 @@ body
 .wrap 
   width: 1220px
   margin: 0 auto  
+  &.mini 
+    width: 900px
 
 @media ( max-width: 1400px )
   .wrap 
@@ -122,6 +133,8 @@ body
 @media ( max-width: 1024px )
   .wrap 
     width: 860px
+    &.mini 
+      width: 860px
 
 @media ( max-width: 940px )
   .section 
@@ -135,14 +148,16 @@ body
       margin-bottom: 140px
   .wrap 
     width: 768px
+    &.mini 
+      width: 768px
 
 @media ( max-width: 840px )
   .wrap 
     width: 740px
-
+    &.mini 
+      width: 740px
   .section 
     &-title.h1 
-      +bold
 
 
 @media ( max-width: 780px )
@@ -155,12 +170,18 @@ body
     &-title 
       &.mt-1
         margin-top: 5px
+      &.mt-2 
+        margin-top: 40px
   .wrap 
     width: 720px
+    &.mini 
+      width: 720px
 
 @media ( max-width: 750px )
   .wrap 
     width: 90%
+    &.mini 
+      width: 90%
   .section 
     &-title 
       font-size: 36px
@@ -207,6 +228,8 @@ body
 @media ( max-width: 425px )
   .wrap 
     width: 92%
+    &.mini 
+      width: 92%
   .section 
     &.bg 
       padding-top: 30px
@@ -218,6 +241,9 @@ body
     &-title 
       font-size: 24px
       line-height: 32px
+      &.h1 
+        font-size: 28px
+        line-height: 36px
       &.mb-1 
         margin-bottom: 20px
       &.mb-2 
@@ -227,6 +253,10 @@ body
         img 
           height: 24px
           margin-top: 3px
+      &.mt-1 
+        margin-top: 20px
+      &-mt-2 
+        margin-top: 5px
 // Активация кнопок слайдера
 .swiper-button
   visibility: visible
@@ -282,12 +312,13 @@ body
 @media ( max-width: 840px )
   .btn 
     font-size: 16px
+    line-height: 24px
 @media ( max-width: 425px )
   .btn 
-    padding: 16px
-
-@media ( max-width: 380px )
-  .btn 
+    padding: 16px 
+@media ( max-width: 360px )
+  .btn, 
+  .btn-light
     padding: 10px !important
     font-size: 15px !important
 
@@ -297,14 +328,14 @@ body
   min-width: 270px
   background: #FAFAFB
   border-radius: 4px
-  min-height: 65px
+  min-height: 56px
   &.invalid 
     background: #FFF7F5
     input 
       border: 1px solid #FF4733
     .invalid 
       position: absolute
-      top: calc(65px + 5px) 
+      top: calc(56px + 5px) 
       left: 24px
 
       color: #FF4733
@@ -315,7 +346,7 @@ body
     position: absolute
     top: 0 
     left: 0 
-    height: 65px
+    height: 56px
 
     width: 100%
     height: 100%
@@ -352,7 +383,7 @@ body
   .hint
     z-index: 1
     position: absolute
-    top: calc(65px / 2)
+    top: calc(56px / 2)
     transform: translateY(-50%)
     left: 0  
     display: block
@@ -429,7 +460,7 @@ body
   .hint
     z-index: 1
     position: absolute
-    top: calc(64px / 2)
+    top: calc(56px / 2)
     transform: translateY(-50%)
     left: 0  
     display: block
@@ -446,6 +477,39 @@ body
     white-space: nowrap
     overflow: hidden
     
+.file-block 
+  &__hint 
+    margin-bottom: 12px
+    display: block
+    color: #747E89
+    font-size: 13px
+    line-height: 16px
+  &__input 
+    opacity: 0
+    position: absolute
+    z-index: -1
+    overflow: hidden
+    width: 0.4px
+    height: 0.4px
+  &__label 
+    font-size: 13px
+    line-height: 16px
+    padding: 12px
+  &__list
+    .item 
+      display: flex
+      align-content: center
+      margin-bottom: 12px
+      margin-top: 12px
+      &-name 
+        font-size: 16px
+        line-height: 24px
+      &-img 
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center 
+        margin-left: 15px
 
 
 .radio

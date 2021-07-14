@@ -1,0 +1,96 @@
+.insurance-about
+  .wrap 
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+  &-text
+    width: calc(50% - 16px)
+    p 
+      margin-bottom: 24px
+      font-size: 16px
+      line-height: 24px
+      color: #5C646D
+      &:last-child
+        margin-bottom: 0
+      span 
+        font-weight: 500
+        color: $text
+  &-block 
+    width: calc(50% - 16px)
+    background: #FAFAFB
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08)
+    border-radius: 16px
+
+    padding: 65px 50px
+
+    display: flex
+    flex-direction: column 
+    align-items: center
+    span 
+      +bold 
+      font-size: 24px
+      line-height: 32px
+      display: block
+      text-align: center
+      margin-bottom: 30px
+
+@media ( max-width: 1024px )
+  .insurance-about
+    .wrap 
+      flex-wrap: wrap
+    &-text 
+      width: 100%
+    &-block 
+      width: 100%
+      margin-top: 40px
+      padding: 25px
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      span 
+        text-align: left
+        width: calc(100% - 250px - 24px) 
+        margin-bottom: 0
+      .btn 
+        width: 250px
+
+@media ( max-width: 840px )
+  .insurance-about
+    .wrap 
+    &-block 
+      span 
+        width: calc(100% - 240px - 24px) 
+      .btn 
+        width: 240px
+
+
+@media ( max-width: 750px )
+  .insurance-about
+    .wrap 
+    &-block 
+      display: flex
+      flex-direction: column
+      span 
+        width: 100%
+        text-align: center
+        margin-bottom: 25px
+        font-size: 20px
+        line-height: 26px
+      .btn 
+        width: 240px
+
+@media ( max-width: 425px )
+  .insurance-about
+    .wrap 
+    &-block 
+      display: flex
+      flex-direction: column
+      padding: 16px
+      span 
+        width: 100%
+        text-align: center
+        margin-bottom: 25px
+        font-size: 18px
+        line-height: 24px
+      .btn 
+        width: 100%

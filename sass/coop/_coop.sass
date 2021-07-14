@@ -1,4 +1,6 @@
 .coop 
+  &.projectad
+    padding-top: 50px
   .section-title 
     +medium
     margin-top: 30px
@@ -9,6 +11,8 @@
 
   &-wrap 
     margin-top: 25px
+    &.projectad-wrap 
+      margin-top: 0 
 
   &-item 
     position: relative
@@ -19,7 +23,8 @@
 
     background-color: #fff
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.03)
-    border-radius: 10px
+    
+    border-radius: 8px
 
     margin-bottom: 25px
 
@@ -75,6 +80,15 @@
       margin-top: auto
       justify-self: flex-end
 
+    &__buttons 
+      margin-top: auto
+      justify-self: flex-end 
+      display: flex 
+      align-items: flex-start
+      justify-content: flex-start
+      .btn 
+        margin-right: 15px
+
 
 @media ( max-width: 1200px )
   .coop 
@@ -116,12 +130,18 @@
         width: 360px
         right: -20px
 
+      &__btn 
+        font-size: 16px
+        padding: 16px
+
 @media ( max-width: 940px )
   .coop 
     &-text 
       margin-top: 30px
     &-wrap 
       margin-top: 65px
+      &.projectad-wrap 
+        margin-top: 0
     &-item 
       padding: 25px 15px
       margin-bottom: 20px
@@ -144,6 +164,9 @@
 
 @media ( max-width: 840px )
   .coop 
+    &.projectad
+      padding-top: 40px
+      padding-bottom: 40px
     .section-title 
       margin-top: 5px
     &-item 
@@ -163,6 +186,10 @@
       &__img 
         width: 260px
         right: 10px
+      &__btn 
+        font-size: 14px
+        line-height: 24px
+        padding: 16px 12px
 
 @media ( max-width: 750px )
   .coop 
@@ -183,9 +210,12 @@
           font-size: 15px
           line-height: 22px
 
+      &__buttons 
+        order: 4
       &__btn 
         order: 4
-
+        font-size: 16px
+        line-height: 24px
 
 @media ( max-width: 650px )
   .coop 
@@ -194,6 +224,17 @@
     &-wrap 
       margin-top: 20px
 
+@media ( max-width: 550px)
+  .coop 
+    &-item 
+      .btn 
+        min-width: 250px
+      &__buttons 
+        flex-direction: column
+        .btn 
+          margin-right: 0 
+          margin-bottom: 15px
+          
 @media ( max-width: 500px )
   .coop 
     .section-title 
@@ -207,12 +248,17 @@
         line-height: 28px
       &__img 
         width: 220px
+      &__buttons 
+        width: 100%
       &__btn 
         width: 100%
         text-align: center 
 
+
 @media ( max-width: 425px )
   .coop 
+    &.projectad
+      padding-top: 25px
     &-item 
       padding: 15px
       &__title

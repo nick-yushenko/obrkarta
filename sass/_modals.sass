@@ -118,7 +118,17 @@
       margin: 0 auto
       margin-top: 24px
 
-
+  &-support
+    &-block 
+      width: 580px
+      padding: 30px 
+      padding-top: 70px
+    &__text
+      font-size: 18px
+      line-height: 28px
+      span 
+        font-weight: 500
+        word-wrap:  break-word
 @media ( min-width: 992px )
   .modal 
     &-profile
@@ -208,6 +218,9 @@
 
 @media ( max-width: 768px )
   .modal 
+    &-support 
+      &-block 
+       width: 90% 
     &-close 
       position: absolute
       top: 15px
@@ -317,6 +330,10 @@
     &-close 
       top: 10px
       right: 10px
+    &-support 
+      &-block 
+        padding: 24px
+        padding-top: 60px
     &-profile
       &__arrow 
         top: auto

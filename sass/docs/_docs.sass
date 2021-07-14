@@ -1,0 +1,31 @@
+.docs 
+  &-title 
+    margin-bottom: 10px
+  &-wrap 
+    margin-bottom: 40px
+    &:last-of-type
+      margin-bottom: 0
+  &-item
+    display: flex
+    align-items: center
+    justify-content: flex-start 
+    padding: 16px 0
+
+    &__icon
+      margin-right: 25px
+    &__name
+      font-weight: 500
+      font-size: 18px
+      line-height: 28px
+
+@media ( max-width: 425px  )
+  .docs
+
+    &-item 
+      &__icon 
+        width: 24px
+        margin-right: 12px
+      &__name 
+        font-size: 16px
+        line-height: 24px
+   

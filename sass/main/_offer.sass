@@ -26,8 +26,6 @@
           transform: translateX(50%)
           // width: 100%
 
-
-
   &-block 
     border-radius: 15px
     height: 390px
@@ -60,7 +58,6 @@
       line-height: 40px
     &__img 
       position: absolute
-  
   
   // Нижний ряд 
   &-row 
@@ -98,6 +95,7 @@
       width: 32px
       img 
         opacity: 1
+        width: 100%
       .img-hover 
         position: absolute
         top: 0 
@@ -574,7 +572,7 @@
         font-size: 21px !important
         line-height: 24px !important
 
-@media ( max-width: 425px )
+@media ( max-width: 450px )
   .offer 
     &-row 
       padding: 0 4%
@@ -585,24 +583,48 @@
       .offer-block.offer-1
         padding-top: 25px !important
         height: 210px !important
+        
+        padding-bottom: 0
+        padding-right: 0
+        margin-top: auto
+        display: flex
+        flex-direction: column
+        justify-content: space-between     
+        align-items: flex-end
+        .offer-block__title 
+          padding-right: 12px
         .offer-block__img
-          width: 300px !important 
+          position: static
       .offer-block.offer-2
         height: 100px !important
+        
+        display: flex
+        align-items: flex-end
+        flex-direction: row
+        padding-bottom: 0
+        padding-top: 0
+
+        justify-content: space-between
         .offer-block__title 
           width: 50%
+          margin-top: auto
+          margin-bottom: auto
         .offer-block__img
+          position: static
           width: 140px !important
-          right: 7%
       .offer-block.offer-3
         height: 100px !important
+        display: flex
+        align-items: center
+        flex-direction: row
+        justify-content: space-between
         .offer-block__title 
           width: 50%
         .offer-block__img
+          position: static
+
           width: 140px !important
-          right: 7%
-          bottom: -30px
-  
+          margin-bottom: -30px  
 
 @media ( max-width: 340px )
   .offer 
@@ -612,6 +634,7 @@
         height: 210px !important
         .offer-block__img
           width: 280px !important 
+          margin-top: auto
 
 
 

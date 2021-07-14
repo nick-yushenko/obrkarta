@@ -1,0 +1,82 @@
+.privacy 
+  .section-title 
+    +medium 
+    margin-top: 30px
+  &-text 
+    width: 800px
+    a
+      font-size: 16px
+      line-height: 24px
+      color: $link
+      &:hover 
+        text-decoration: underline
+        cursor: pointer
+    p
+      font-size: 16px
+      line-height: 24px
+      margin-bottom: 20px
+      color: #5C646D
+      &:last-child
+        margin-bottom: 0
+    ul 
+      list-style: none 
+      margin-bottom: 20px
+      li 
+        margin-bottom: 20px
+        color: #5C646D
+        padding-left: 40px
+        font-size: 16px
+        line-height: 24px
+        position: relative
+        &::before 
+          content: ''
+          position: absolute
+          top: 8px 
+          left: 16px 
+          width: 8px
+          height: 8px
+          border-radius: 50% 
+          background-color: #5C646D
+
+        &:last-child
+          margin-bottom: 0
+
+
+@media ( max-width: 1024px  )
+  .privacy
+    &-text 
+      width: 100%
+@media ( max-width: 840px  )
+  .privacy
+    .section-title 
+      margin-top: 5px
+
+@media ( max-width: 600px  )
+  .privacy
+    &-text 
+      p 
+        margin-bottom: 15px
+      ul 
+        margin-bottom: 15px
+        li 
+          margin-bottom: 15px
+          padding-left: 30px
+          &:before 
+            left: 8px
+
+
+@media ( max-width: 425px  )
+  .privacy
+    .section-title 
+      margin-top: 20px
+    &-text 
+      p, 
+      a 
+        font-size: 14px
+        line-height: 20px
+      ul 
+        li 
+          font-size: 14px
+          line-height: 20px
+          &:before 
+            top: 6px 

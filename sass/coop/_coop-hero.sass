@@ -1,3 +1,4 @@
+
 .coop-hero 
   height: 540px
   box-sizing: content-box
@@ -39,6 +40,9 @@
   &-title 
     margin-top: 55px
     margin-bottom: 50px
+    font-family: 'Rubric New Bold', sans-serif !important
+    font-style: normal !important
+    font-weight: 700 !important
 
   &-text 
     margin-bottom: 15px
@@ -46,6 +50,7 @@
       font-size: 18px
       line-height: 28px 
       margin-bottom: 10px 
+      font-weight: 500
       &:last-child
         margin-bottom: 0  
       span.br 
@@ -60,6 +65,7 @@
       line-height: 28px 
       margin-bottom: 15px
       position: relative
+      font-weight: 500
       &:last-child
         margin-bottom: 0
 
@@ -77,9 +83,60 @@
     margin-top: auto
     margin-bottom: 50px
 
+.insurance-hero 
+  .coop-hero
+    &-title 
+      margin-top: 45px
+      font-size: 48px
+      line-height: 60px
+    &-btn 
+      margin-bottom: 40px
+    &-text 
+      p 
+        font-weight: 400
 
+    &-list 
+      li 
+        font-weight: 400
+.fr-hero 
+  .coop-hero 
+    &-text 
+      p 
+        font-weight: 400
 
+    &-list 
+      li 
+        font-weight: 400
 
+.food-hero 
+  .coop-hero 
+    &-img 
+      right: 0
+
+@media ( max-width: 1350px )
+  .food-hero 
+    .coop-hero 
+      &-img 
+        right: -50px
+@media ( max-width: 1200px )
+  .food-hero 
+    .coop-hero 
+      &-img 
+        right: -100px
+  .insurance-hero 
+  
+    .coop-hero 
+      &-title
+        font-size: 40px
+        line-height: 56px
+  .projectad-hero 
+    .coop-hero 
+      &-title 
+        margin-bottom: 40px
+      &-img 
+        right: -100px
+      &-descr 
+        width: 60%
 
 @media ( max-width: 1100px )
   .coop-hero 
@@ -96,13 +153,47 @@
     
 
 @media ( max-width: 1024px )
+  .food-hero 
+    .coop-hero 
+      &-img 
+        right: -150px
+  .projectad-hero 
+    .coop-hero 
+      &-title 
+        margin-bottom: 40px
+        margin-top: 40px
+      &-img 
+        right: -200px
+      &-descr 
+        width: 65%
   .coop-hero 
     height: 500px
     &-img 
       height: 500px
       right: -90px
+  .insurance-hero 
+    .coop-hero 
+      &-title
+        font-size: 36px
+        line-height: 44px
+
 
 @media ( max-width: 950px )
+  .food-hero 
+    .coop-hero 
+      &-img 
+        right: -250px
+      &-text 
+        width: 400px
+  .projectad-hero 
+    .coop-hero 
+      &-title 
+        margin-bottom: 40px
+        margin-top: 40px
+      &-img 
+        right: -250px
+      &-descr 
+        width: 70%
   .coop-hero 
     height: 440px
     &-img 
@@ -126,11 +217,80 @@
       width: 500px
 
 @media ( max-width: 840px )
+  .website-hero 
+    .coop-hero 
+      &-img 
+        right: -200px
+        width: 550px
+  .projectad-hero 
+    .coop-hero 
+      &-title 
+        margin-bottom: 30px
+        margin-top: 25px
+      &-img 
+        right: -210px
+      &-descr 
+        width: 70%
   .coop-hero 
+    &-descr 
+      width: 480px
     &-img 
       right: -250px
+    &-title 
+      font-size: 32px
+      line-height: 40px
+      margin-top: 25px
+      margin-bottom: 30px
+    &-text 
+      p 
+        font-size: 16px
+        line-height: 24px
+    &-list 
+      li 
+        font-size: 16px
+        line-height: 24px
+  .insurance-hero 
+    .coop-hero 
+      &-img 
+        right: -220px
+      &-title
+        font-size: 32px
+        line-height: 40px
+      &-list li 
+        font-size: 16px
+        line-height: 24px
+        margin-bottom: 12px
+         
+
+        &::before 
+          top: 7px 
+          left: -20px 
+          width: 10px
+          height: 10px
 
 @media ( max-width: 750px )
+  .food-hero 
+    .coop-hero 
+      &-img 
+        right: -350px
+      &-text 
+        width: 300px
+  .website-hero 
+    .coop-hero 
+      &-img 
+        right: -230px
+        width: 500px
+        
+  .projectad-hero 
+    .coop-hero 
+      &-title 
+        margin-bottom: 30px
+        margin-top: 25px
+      &-img 
+        right: -270px
+        img 
+          height: 390px
+          object-position: top left
   .coop-hero 
     height: 400px !important
     &.h-2 
@@ -140,6 +300,8 @@
       width: 450px
     &-title 
       margin-bottom: 20px
+      font-size: 28px
+      line-height: 36px
     &-img 
       height: 400px 
       right: -300px
@@ -162,6 +324,12 @@
 
 
 @media ( max-width: 650px )
+  .website-hero 
+    .coop-hero 
+      &-img 
+        right: -230px
+        width: 460px
+        
   .coop-hero 
     height: 380px !important
     &-descr 
@@ -170,7 +338,33 @@
       height: 380px !important
       right: -350px
 
+  .insurance-hero 
+    .coop-hero 
+      &-title 
+        font-size: 24px
+        line-height: 32px
+        margin-top: 30px
+      &-img 
+        right: -320px
+
 @media ( max-width: 600px )
+  .food-hero 
+    .coop-hero 
+      &-img 
+        right: -400px
+      &-text 
+        width: 280px
+
+  .projectad-hero 
+    .coop-hero 
+      &-title 
+        margin-bottom: 30px
+        margin-top: 25px
+      &-img 
+        right: -300px
+        img 
+          height: 390px
+          object-position: top left
   .coop-hero 
 
 
@@ -182,37 +376,142 @@
       width: 80%
     &-list 
       width: 80%
+    &-title 
+      font-size: 24px
+      line-height: 32px
+
+@media ( max-width: 550px )
+  .website-hero 
+    .coop-hero 
+      &-img 
+        right: -250px
+        width: 430px
+@media ( max-width: 500px )
+  .food-hero 
+    .coop-hero 
+      &-text 
+        width: 240px
 @media ( max-width: 425px )
-  .fr-hero 
-    .coop-hero-img
-      right: -320px
+  .food-hero 
+    .coop-hero 
+      &-img
+        display: flex
+        align-items: flex-start
+        width: 165px
+        right: 0
+        img 
+          height: 300px 
+      &-text 
+        width: 180px
+  .control-hero 
+    .coop-hero 
+      &-img
+        display: flex
+        align-items: center
+        width: 240px
+  .website-hero 
+    .coop-hero 
+      &-img 
+        width: 255px
+  .lockers-hero 
+    .coop-hero 
+      &-img 
+        width: 200px
+  .projectad-hero 
+    .coop-hero 
+      &-descr 
+        width: 100%
+      &-img 
+        width: 235px
+        img 
+          height: 360px !important
+          object-position: top left
+  .insurance-hero 
+    .coop-hero
+      &-img 
+        width: 240px
+        // right: auto
+        // left:  
+      &-btn
+        width: auto 
+        max-width: max-content
+      &-title
+        font-size: 18px
+        line-height: 24px
+        margin-top: 25px
+      
+      &-list li 
+        font-size: 14px
+        line-height: 20px
+        margin-bottom: 8px
+         
+        &::before 
+          top: 5px 
+          left: -20px 
+          width: 10px
+          height: 10px
+
+  // .fr-hero 
+  //   .coop-hero-img
+  //     right: -320px
+  //   .coop-hero-text, 
+  //   .coop-hero-list 
+  //     width: 65%
+  
   .coop-hero 
     height: 360px !important
+    overflow: hidden
+    .wrap 
+      width: 100%
     &.h-2 
       .coop-hero-img 
         right: -360px
     &-title 
       margin-bottom: 15px
-      font-size: 18px
-      line-height: 24px
+      font-size: 18px !important
+      line-height: 24px !important
+      width: 244px
+    &-descr 
+      position: absolute
+      top: 0 
+      left: 0
+      padding-left: 4%
+      padding-right: 4%
+      height: 100%
+
     &-img 
-      height: 360px
-      right: -395px
-      max-width: max-content
+      position: static !important
+      height: 360px !important
+      right: 0 !important
+      width: 220px 
+      margin-right: 0
+      margin-left: auto
       img 
-        object-fit: contain
+        object-fit: cover
+        object-position: left
     &-btn 
       width: 100%
 
     &-text 
+      width: 244px
       p 
         font-size: 14px
         line-height: 20px
         color: #000
+        font-weight: 40
         span.br 
           // display: block
     &-list 
+      width: 244px
       li 
+        font-weight: 400
         font-size: 14px
         line-height: 20px 
         color: #000
+
+
+@media ( max-width: 360px )
+  .website-hero 
+    .coop-hero 
+      &-img 
+        width: 220px

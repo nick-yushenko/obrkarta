@@ -3,7 +3,12 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%
 }
-
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+}
 body {
   margin: 0
 }
@@ -85,7 +90,8 @@ textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
-  margin: 0
+  margin: 0;
+  -webkit-appearance: none;
 }
 
 button,

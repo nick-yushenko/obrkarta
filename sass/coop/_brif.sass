@@ -19,7 +19,9 @@
     margin-bottom: 45px
   &-block 
     width: calc(50% - 16px)
-
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     .input-block
       width: 100%
       margin-bottom: 30px
@@ -43,6 +45,63 @@
     color: #8D9AA6
     text-align: center
 
+.brif-mini 
+  .wrap 
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+  &-text 
+    width: calc(45% - 16px)
+    .section-title 
+      margin-top: 15px
+  &-contact 
+    margin-bottom: 30px
+    .hint 
+      display: block
+      margin-bottom: 8px
+      color: $text
+      font-size: 18px
+      line-height: 28px
+    .phone 
+      +bold 
+      font-size: 24px
+      line-height: 32px
+  &-days 
+    span 
+      display: block
+      font-size: 16px
+      line-height: 24px
+      color: $text2
+    .hint 
+      font-weight: 500
+  .brif 
+    &-form 
+      width: calc(55% - 16px)
+      padding: 48px
+      padding-bottom: 32px
+    &-title 
+      text-align: left
+    &-block 
+      width: 100%
+      margin-bottom: 25px
+      &:last-child
+        margin-bottom: 0
+      .textarea-block 
+        height: 140px
+      .input-block 
+        margin-bottom: 25px
+        &:last-child
+          margin-bottom: 0
+    &-submit 
+      margin: 0
+      margin-bottom: 25px
+      width: max-content
+    &-privacy 
+      text-align: left
+      width: 100%
+    &-wrap 
+      flex-wrap: wrap
+      margin-bottom: 30px
 
 @media ( max-width: 1200px )
   .brif 
@@ -53,7 +112,68 @@
   .brif 
     &-form 
       padding: 35px 50px 30px 50px
+  .brif-mini 
+    .wrap 
+      flex-wrap: wrap 
+    &-contact 
+      margin-bottom: 30px
+      .hint 
+        display: block
+        margin-bottom: 8px
+        color: $text
+        font-size: 18px
+        line-height: 28px
+        width: 100%
+        text-align: center
+      .phone 
+        +bold 
+        font-size: 24px
+        line-height: 32px
+        margin: 0 auto
+        display: block
+        width: 100% 
+        text-align: center
 
+    &-days 
+      span 
+        display: block
+        text-align: center
+        font-size: 16px
+        line-height: 24px
+        color: $text2
+      .hint 
+        font-weight: 500
+ 
+    &-text 
+      width: 100% 
+      margin-bottom: 70px
+      .section-title 
+        margin-top: 0
+        margin-bottom: 0
+        text-align: center  !important
+        width: 100%
+        .br
+          display: none
+    
+    .brif 
+      &-wrap 
+        display: flex
+
+      &-block 
+        width: calc( 50% - 8px )
+        margin-bottom: 0
+
+        .textarea-block 
+          height: 100%
+      &-submit 
+        margin: 0 auto
+        margin-bottom: 25px
+      &-privacy 
+        text-align: center
+      &-form 
+        width: 100%
+      &-title 
+        text-align: center
 @media ( max-width: 940px )
   .brif 
     &-form 
@@ -66,8 +186,22 @@
 
     &-block
       width: calc(50% - 8px)
+  
+  .brif-mini 
+    .brif 
+      &-form 
+        padding: 16px 24px 32px 24px
 
 @media ( max-width: 750px )
+  .brif-mini 
+    .brif 
+      &-block 
+        width: 100%
+        margin-bottom: 25px
+        &:last-child
+          margin-bottom: 0
+        .textarea-block 
+          height: 140px
   .brif 
     &-title 
       font-size: 28px 
@@ -99,6 +233,15 @@
       font-size: 24px 
       line-height: 32px
 
+  .brif-mini 
+    &-text 
+      opacity: 0.8
+      .section-title 
+        margin-bottom: 30px
+    &-contact 
+      .phone 
+        font-size: 20px
+        line-height: 24px
 @media ( max-width: 425px )
   .brif 
     &-form 
@@ -107,3 +250,16 @@
       font-size: 21px 
       line-height: 26px
     
+  .brif-mini
+    .brif-form
+      padding:  15px 8px
+    .brif-submit 
+      width: 100%
+    &-text 
+      opacity: 0.8
+      .section-title 
+        margin-bottom: 30px
+    &-contact 
+      .phone 
+        font-size: 18px
+        line-height: 24px

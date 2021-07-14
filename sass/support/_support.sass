@@ -1,0 +1,55 @@
+.support 
+  &-form 
+    width: 700px
+    &__text 
+      font-weight: 500
+      font-size: 18px
+      line-height: 28px
+      color: $text
+      margin-bottom: 25px
+    .input-block
+      width: 490px
+      margin-bottom: 25px
+    .textarea-block 
+      width: 490px
+      margin-bottom: 25px
+      height: 170px
+    
+    .file-block 
+      margin-bottom: 30px
+
+  &-submit 
+    width: 280px
+    margin-bottom: 20px
+  &-privacy 
+    color: #8D9AA6
+    width: 490px
+    display: block
+    font-size: 16px
+    line-height: 24px
+
+@media ( max-width: 840px )
+  .support 
+    &-form 
+      width: 100%
+
+@media  ( max-width: 600px )
+  .support 
+    &-form 
+      .input-block, 
+      .textarea-block 
+        width: 100%
+    &-privacy 
+      width: 100%
+
+
+
+@media  ( max-width: 425px )
+  .support 
+    &-form
+      &__text 
+        font-size: 16px
+        line-height: 24px 
+    &-submit 
+      width: 100%
+
