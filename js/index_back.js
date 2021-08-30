@@ -322,6 +322,7 @@ const servicePhotoSlider = new Swiper('#servicePhotos', {
 
 });
 
+
 // Прослушивание адрессной строки, для открытия нужного слайда 
 const __URL__ = window.location.href
 if (__URL__.indexOf('?sl=travelcard') != -1) {
@@ -340,9 +341,6 @@ if (__URL__.indexOf('?sl=travelcard') != -1) {
   let slideNum = document.querySelector('#serviceSlider').getAttribute('data-travel-card')
   serviceSlider.slideTo(slideNum - 1)
 }
-
-
-
 
 
 // Слайдер на страницах сотруднечества 
@@ -457,6 +455,66 @@ $.validator.addMethod("pwcheckallowedchars", function (value) {
 $.validator.addMethod("emailMask", function (value) {
   return /^[a-zA-Z@.-_]+$/.test(value) // has only allowed chars letter
 }, "Недопустимое значение");
+
+
+
+// Валидация формы заказа
+$('#authForm').validate({
+  rules: {
+
+    login: {
+      required: true,
+    },
+
+    password: {
+      required: true,
+    },
+  },
+  messages: {
+
+    login: {
+      required: jQuery.validator.format("Поле не заполнено"),
+      maxlength: jQuery.validator.format("Максимум 80 символов"),
+    },
+    password: {
+      required: jQuery.validator.format("Поле не заполнено"),
+
+    },
+
+
+  },
+  errorElement: "span",
+  errorClass: "invalid",
+  highlight: function (element) {
+    $(element).parent().addClass("invalid");
+  },
+  unhighlight: function (element) {
+    $(element).parent().removeClass("invalid");
+  },
+  focusInvalid: false,
+  onkeyup: function (element) {
+    let submit = document.querySelector(' #orderForm .form-submit')
+
+    if ($('#orderForm').validate().checkForm()) {
+      submit.classList.remove('disabled')
+    } else {
+      submit.classList.add('disabled')
+    }
+
+    // этот код взят из события onkeyup по умолчанию. Нужен чтобы скрывать/показывать ошибку после каждого введенного символа
+    var excludedKeys = [
+      16, 17, 18, 20, 35, 36, 37,
+      38, 39, 40, 45, 144, 225
+    ];
+    if (event.which === 9 && this.elementValue(element) === "" || $.inArray(event.keyCode, excludedKeys) !== -1) {
+      return;
+    } else if (element.name in this.submitted || element.name in this.invalid) {
+      this.element(element);
+    }
+  },
+
+
+});
 
 $('#brifForm').validate({
   rules: {
@@ -826,7 +884,7 @@ let order = {
   type: 'Не выбрано',
   color: 'Не выбрано',
   address: 'Не выбрано',
-  price: '0',
+  price: 'Не выбрано',
   imgUrl: 'img/pages/order/colors/color-3.png',  // По умолчанию выбран этот цвет
   student: 'Не выбрано',
   bankBook: 'Не выбрано'
@@ -979,7 +1037,6 @@ if (orderStudents) {
   })
 }
 
-
 if (orderMapList.length != 0) {
   orderMapList.forEach(function (mapList) {
     const mapItems = mapList.querySelectorAll('.item')
@@ -1005,7 +1062,6 @@ if (orderMapList.length != 0) {
   })
 
 }
-
 if (orderMapSearch.length != 0) {
   orderMapSearch.forEach(function (mapSearch) {
     mapSearch.addEventListener('input', function (e) {
@@ -1053,7 +1109,6 @@ if (orderMapSearch.length != 0) {
   })
 
 }
-
 
 initOrder()
 setOrder()
@@ -1115,8 +1170,6 @@ function initOrder() {
         }
       }
     })
-
-
   if (orderMapList.length != 0) {
     orderMapList.forEach(function (mapList) {
       const mapItems = mapList.querySelectorAll('.item')
