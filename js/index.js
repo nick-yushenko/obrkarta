@@ -1,3 +1,6 @@
+import { langSettings } from "./lang.js"
+
+const lang = langSettings(document.querySelector('#langSettings'))
 // Шаблоны для динамической вставки 
 const templates = (document.querySelector('.templates')) ? document.querySelector('.templates') : document.body
 
@@ -48,20 +51,9 @@ $(document).click(function (e) {
       $('#menu').removeClass('active');
       $('.js-burger').removeClass('active');
       $('.header').removeClass('menuOpened');
-
-
     }
   }
-  // if (menu && menu.classList.contains('active')) {
-  //   if (!$(e.target).closest('#menu').length) {
-  //     $('#menu').removeClass('active');
-  //   }
-  // }
-  // else {
-  //   alert('no active menu')
-  // }
 });
-
 
 // Слейдер на главной странице
 const heroSlider = new Swiper('#heroSlider', {
@@ -452,16 +444,16 @@ $('input.phone').on('input', function () {
 
 $.validator.addMethod("pwcheckallowedchars", function (value) {
   return /^[a-zA-Zа-яА-я-()ёЁ ]+$/.test(value) // has only allowed chars letter
-}, "Недопустимое значение");
+}, lang.pwcheckallowedchars);
 
 $.validator.addMethod("emailMask", function (value) {
   return /^[a-zA-Z@.-_]+$/.test(value) // has only allowed chars letter
-}, "Недопустимое значение");
+}, lang.emailMask);
 
 $('#brifForm').validate({
   rules: {
     obrmail: {
-      email: true
+      email: true,
     },
     obrname: {
       required: true,
@@ -477,21 +469,21 @@ $('#brifForm').validate({
   },
   messages: {
     obrmail: {
-      email: jQuery.validator.format('Введен некорректный e-mail')
+      email: jQuery.validator.format(lang.email)
     },
     obrname: {
-      required: jQuery.validator.format("Поле не заполнено"),
-      minlength: jQuery.validator.format("Минимум 2 символа"),
-      maxlength: jQuery.validator.format("Максимум 80 символов"),
+      required: jQuery.validator.format(lang.required),
+      minlength: jQuery.validator.format(lang.nameMinLength),
+      maxlength: jQuery.validator.format(lang.nameMaxLength),
     },
     obrtel: {
-      required: jQuery.validator.format("Поле не заполнено"),
-      minlength: jQuery.validator.format("Номер указан не полностью"),
+      required: jQuery.validator.format(lang.required),
+      minlength: jQuery.validator.format(lang.phoneMinLength),
 
     },
     message: {
-      required: jQuery.validator.format("Поле не заполнено"),
-      minlength: jQuery.validator.format("Минимум 10 символов"),
+      required: jQuery.validator.format(lang.required),
+      minlength: jQuery.validator.format(lang.msgMinLength),
 
     }
   },
@@ -550,18 +542,17 @@ $('#orderForm').validate({
   messages: {
 
     orderName: {
-      required: jQuery.validator.format("Поле не заполнено"),
-      minlength: jQuery.validator.format("Минимум 2 символа"),
-      maxlength: jQuery.validator.format("Максимум 80 символов"),
+      required: jQuery.validator.format(lang.required),
+      minlength: jQuery.validator.format(lang.nameMinLength),
+      maxlength: jQuery.validator.format(lang.nameMaxLength),
     },
     orderTel: {
-      required: jQuery.validator.format("Поле не заполнено"),
-      minlength: jQuery.validator.format("Номер указан не полностью"),
+      required: jQuery.validator.format(lang.required),
+      minlength: jQuery.validator.format(lang.phoneMinLength),
 
     },
     student: {
-      required: jQuery.validator.format("Поле не заполнено"),
-
+      required: jQuery.validator.format(lang.required),
     },
 
 
@@ -626,23 +617,23 @@ $('#supportForm').validate({
   messages: {
 
     title: {
-      required: jQuery.validator.format("Поле не заполнено"),
-      maxlength: jQuery.validator.format("Максимум 100 символов"),
+      required: jQuery.validator.format(lang.required),
+      maxlength: jQuery.validator.format(lang.supportTitleMaxLength),
     },
     message: {
-      required: jQuery.validator.format("Поле не заполнено"),
-      minlength: jQuery.validator.format("Минимум 10 символов"),
-      maxlength: jQuery.validator.format("Минимум 2000 символов"),
+      required: jQuery.validator.format(lang.required),
+      minlength: jQuery.validator.format(lang.msgMinLength),
+      maxlength: jQuery.validator.format(lang.msgMaxLength),
 
     },
     supportmail: {
-      required: jQuery.validator.format("Поле не заполнено"),
-      email: jQuery.validator.format('Введен некорректный e-mail')
+      required: jQuery.validator.format(lang.required),
+      email: jQuery.validator.format(lang.email)
 
     },
     supporttel:
     {
-      minlength: jQuery.validator.format("Номер указан не полностью"),
+      minlength: jQuery.validator.format(lang.phoneMinLength),
       // required: true
     }
 
@@ -748,46 +739,6 @@ if (lockerItems && lockerNavItems) {
     })
   })
 
-  // Клик на элемент 
-  // lockerItems.forEach(function (item) {
-  //   item.addEventListener('click', function (e) {
-  //     let num = item.getAttribute('data-num')
-
-  //     lockerNavItems.forEach(function (navItem) {
-  //       let navNum = navItem.getAttribute('data-num')
-  //       if (num == navNum) {
-  //         navItem.classList.add('current-click')
-
-  //         item.classList.add('current-click')
-
-  //       } else {
-  //         navItem.classList.remove('current')
-  //         navItem.classList.remove('current-click')
-
-  //       }
-  //     })
-  //   })
-
-  // })
-
-  // lockerNavItems.forEach(function (navItem) {
-  //   navItem.addEventListener('click', function (e) {
-  //     let navNum = navItem.getAttribute('data-num')
-  //     lockerItems.forEach(function (item) {
-  //       let num = item.getAttribute('data-num')
-
-  //       if (num == navNum) {
-  //         item.classList.add('current-click')
-  //         navItem.classList.add('current-click')
-  //       } else {
-  //         item.classList.remove('current')
-  //         item.classList.remove('current-click')
-
-  //       }
-  //     })
-  //   })
-
-  // })
 }
 
 
@@ -823,13 +774,13 @@ const orderPrice = document.querySelector('.js-orderPrice')
 
 
 let order = {
-  type: 'Не выбрано',
-  color: 'Не выбрано',
-  address: 'Не выбрано',
-  price: '0',
+  type: lang.order.empty,
+  color: lang.order.empty,
+  address: lang.order.empty,
+  price: lang.order.defaultPrice,
   imgUrl: 'img/pages/order/colors/color-3.png',  // По умолчанию выбран этот цвет
-  student: 'Не выбрано',
-  bankBook: 'Не выбрано'
+  student: lang.order.empty,
+  bankBook: lang.order.empty
 }
 
 if (orderItems) {
